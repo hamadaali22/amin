@@ -22,7 +22,16 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('website.landingPage');
+});
+Route::get('/PurchaseFlow/AddVehicle', function () {
+    return view('website.addVehicle');
+});
+Route::get('/PurchaseFlow/checkout', function () {
+    return view('website.checkout');
+});
+Route::get('/PurchaseFlow/priceList', function () {
+    return view('website.priceList');
 });
 
 Auth::routes();
