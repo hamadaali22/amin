@@ -43,13 +43,12 @@
                 <div class="filter-wrap margin-bottom-30px">
                     <div class="filter-top d-flex align-items-center justify-content-between pb-4">
                         <div>
-                            <h3 class="title font-size-24">تم العثور على 44 سيارة</h3>
-                            <p class="font-size-14"><span class="mr-1 pt-1">احجز بثقة </span> بدون رسوم حجز سيارة</p>
+                            <h3 class="title font-size-24">تم العثور على 44 شركة</h3>
                         </div>
-                        <div class="layout-view d-flex align-items-center">
+                        <!-- <div class="layout-view d-flex align-items-center">
                             <a href="car-grid.html" data-toggle="tooltip" data-placement="top" title="عرض شبكي"><i class="la la-th-large"></i></a>
                             <a href="car-list.html" data-toggle="tooltip" data-placement="top" title="عرض القائمة" class="active"><i class="la la-th-list"></i></a>
-                        </div>
+                        </div> -->
                     </div><!-- end filter-top -->
                     <div class="filter-bar d-flex align-items-center justify-content-between">
                         <div class="filter-bar-filter d-flex flex-wrap align-items-center">

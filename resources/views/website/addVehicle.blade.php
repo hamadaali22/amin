@@ -234,7 +234,7 @@
                                                                     <label class="label-text">الميلاد تاريخ</label>
                                                                     <div class="form-group">
                                                                         <span class="la la-calendar form-icon"></span>
-                                                                        <input class="date-range form-control" type="text" name="daterange-single">
+                                                                        <input class="date-picker-single form-control" type="text" name="date" readonly="">
                                                                     </div>
                                                                 </div>
                                                             </div><!-- end col-lg-3 -->

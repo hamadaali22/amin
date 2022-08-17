@@ -46,7 +46,7 @@
             START HEADER AREA
 ================================= -->
     <header class="header-area">
-       
+
         <div class="header-menu-wrapper padding-right-100px padding-left-100px">
             <div class="container-fluid">
                 <div class="row">
@@ -64,18 +64,21 @@
                                 <nav>
                                     <ul>
                                         <li>
-                                            <a href="#">الصفحة الرئيسية <i class="la la-angle-down"></i></a>
+                                            <a href="#">تأمين السيارات<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="index.html">الصفحة الرئيسية - الرئيسية</a></li>
-                                                <li><a href="index2.html">الصفحة الرئيسية - فندق</a></li>
-                                                <li><a href="index3.html">الصفحة الرئيسية - النشاط</a></li>
-                                                <li><a href="index4.html">الصفحة الرئيسية - السيارة</a></li>
-                                                <li><a href="index5.html">الصفحة الرئيسية - كروز</a></li>
-                                                <li><a href="index6.html">المنزل - رحلة</a></li>
-                                                <li><a href="index7.html">المنزل - جولة في المدينة <span class="badge bg-2 text-white">New</span></a></li>
+                                                <li><a href="car-grid.html">تأمين ضدالغير</a></li>
+                                                <li><a href="car-list.html"> تأمين شامل</a></li>
+
                                             </ul>
                                         </li>
                                         <li>
+                                            <a href="#"> خدماتي <i class="la la-angle-down"></i></a>
+                                            <ul class="dropdown-menu-item">
+                                                <li><a href="#">طباعة وثيقة تأمين السيارات أونلاين</a></li>
+                                                <li><a href="index2.html">استعلام عن حالة ربط الوثيقة بالمرور</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- <li>
                                             <a href="#">جولة <i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
                                                 <li><a href="tour-fullwidth.html">العرض الكامل للجولة</a></li>
@@ -87,8 +90,8 @@
                                                 <li><a href="tour-booking.html">حجز الرحلات</a></li>
                                                 <li><a href="tour-search-result.html">نتيجة البحث عن الجولة</a></li>
                                             </ul>
-                                        </li>
-                                        <li>
+                                        </li> -->
+                                        <!-- <li>
                                             <a href="#">رحلة بحرية <i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
                                                 <li><a href="cruises.html">الرحلات البحرية</a></li>
@@ -98,110 +101,45 @@
                                                 <li><a href="cruise-booking.html">حجز الرحلات البحرية</a></li>
                                                 <li><a href="cruise-search-result.html">نتيجة بحث الرحلات البحرية</a></li>
                                             </ul>
-                                        </li>
+                                        </li> -->
                                         <li>
-                                            <a href="#">الصفحات <i class="la la-angle-down"></i></a>
-                                            <div class="dropdown-menu-item mega-menu">
-                                                <ul class="row no-gutters">
-                                                    <li class="col-lg-3 mega-menu-item">
-                                                        <ul>
-                                                            <li><a href="add-hotel.html">إضافة فندق </a></li>
-                                                            <li><a href="add-flight.html">أضف رحلة </a></li>
-                                                            <li><a href="add-tour.html">أضف جولة </a></li>
-                                                            <li><a href="add-cruise.html">أضف رحلة بحرية </a></li>
-                                                            <li><a href="add-car.html">أضف سيارة</a></li>
-                                                            <li><a href="user-dashboard.html">لوحة تحكم المستخدم</a></li>
-                                                            <li><a href="admin-dashboard.html">لوحة تحكم المسؤول</a></li>
-                                                            <li><a href="career.html">مسار مهني مسار وظيفي <span class="badge bg-2 text-white">New</span></a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="col-lg-3 mega-menu-item">
-                                                        <ul>
-                                                            <li><a href="career-details.html">تفاصيل المهنة <span class="badge bg-2 text-white">New</span></a></li>
-                                                            <li><a href="user-profile.html">ملف تعريفي للمستخدم</a></li>
-                                                            <li><a href="become-local-expert.html">كن خبيرًا محليًا</a></li>
-                                                            <li><a href="contact.html">اتصل</a></li>
-                                                            <li><a href="cart.html">عربة التسوق</a></li>
-                                                            <li><a href="checkout.html">الدفع</a></li>
-                                                            <li><a href="recover.html">إستعادة كلمة المرور</a></li>
-                                                            <li><a href="payment-received.html">تم استلام الدفع</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="col-lg-3 mega-menu-item">
-                                                        <ul>
-                                                            <li><a href="payment-complete.html">الدفع تم</a></li>
-                                                            <li><a href="destinations.html">الأماكن</a></li>
-                                                            <li><a href="about.html">حول</a></li>
-                                                            <li><a href="services.html">خدماتنا</a></li>
-                                                            <li><a href="gallery.html">صالة عرض</a></li>
-                                                            <li><a href="pricing.html">التسعير</a></li>
-                                                            <li><a href="faq.html">التعليمات</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="col-lg-3 mega-menu-item">
-                                                        <ul>
-                                                            <li><a href="blog-full-width.html">بلوق كاملة العرض</a></li>
-                                                            <li><a href="blog-grid.html">شبكة بلوق</a></li>
-                                                            <li><a href="blog-sidebar.html">الشريط الجانبي للمدونة</a></li>
-                                                            <li><a href="blog-single.html">تفاصيل المدونة</a></li>
-                                                            <li><a href="coming-soon.html">قريبا</a></li>
-                                                            <li><a href="page-404.html">404 صفحة</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <a href="#">تواصل معنا </a>
                                         </li>
+                                        @guest
+                                        @else
                                         <li>
-                                            <a href="#">طيران <i class="la la-angle-down"></i></a>
+                                            <a href="#">{{ Auth::user()->name }} حسابي<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="flight-grid.html">شبكة الطيران</a></li>
-                                                <li><a href="flight-list.html">قائمة الرحلات</a></li>
-                                                <li><a href="flight-sidebar.html">الشريط الجانبي للرحلة</a></li>
-                                                <li><a href="flight-single.html">تفاصيل الرحلة</a></li>
-                                                <li><a href="flight-booking.html">حجز رحلة طيران </a></li>
-                                                <li><a href="flight-search-result.html">نتيجة بحث الرحلة </a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">الفندق <i class="la la-angle-down"></i></a>
-                                            <ul class="dropdown-menu-item">
-                                                <li><a href="hotel-grid.html">فندق الشبكة </a></li>
-                                                <li><a href="hotel-list.html">قائمة الفنادق</a></li>
-                                                <li><a href="hotel-sidebar.html"> فندق الشريط الجانبي</a></li>
-                                                <li><a href="hotel-single.html">تفاصيل الفندق</a></li>
-                                                <li><a href="hotel-booking.html">حجز الفندق</a></li>
-                                                <li><a href="hotel-search-result.html">نتيجة بحث الفندق</a></li>
-                                                <li>
-                                                    <a href="#">غرف <i class="la la-plus"></i></a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="room-list.html">قائمة غرفة</a></li>
-                                                        <li><a href="room-grid.html">شبكة الغرفة</a></li>
-                                                        <li><a href="room-search-result.html">نتيجة البحث</a></li>
-                                                        <li><a href="room-search-result-list.html">قائمة نتائج البحث</a></li>
-                                                        <li><a href="room-details.html">تفاصيل الغرفة</a></li>
-                                                    </ul>
+                                                <li><a href="car-grid.html">الملف الشخصي</a></li>
+                                                <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                        تسجيل خروج
+                                                    </a>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                        @csrf
+                                                    </form>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li>
-                                            <a href="#">سيارة <i class="la la-angle-down"></i></a>
-                                            <ul class="dropdown-menu-item">
-                                                <li><a href="car-grid.html">شبكة السيارة</a></li>
-                                                <li><a href="car-list.html">قائمة سيارة</a></li>
-                                                <li><a href="car-sidebar.html">الشريط الجانبي للسيارة </a></li>
-                                                <li><a href="car-single.html">تفاصيل السيارة</a></li>
-                                                <li><a href="car-booking.html">حجز السيارة</a></li>
-                                                <li><a href="car-search-result.html">نتيجة البحث عن سيارة</a></li>
-                                            </ul>
-                                        </li>
+                                        @endguest
                                     </ul>
                                 </nav>
                             </div><!-- end main-menu-content -->
+
+                            @guest
                             <div class="header-right-action">
-                                    <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">سجل</a>
-                                    <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">تسجيل الدخول</a>
-                                </div>
-                           
+                                @if (Route::has('login'))
+
+                                <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">تسجيل الدخول</a>
+                                @endif
+
+                                @if (Route::has('register'))
+                                <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">سجل</a>
+
+                                @endif
+                            </div>
+                            @endguest
+
                         </div><!-- end menu-wrapper -->
                     </div><!-- end col-lg-12 -->
                 </div><!-- end row -->
@@ -348,45 +286,63 @@
                     </div>
                     <div class="modal-body">
                         <div class="contact-form-action">
-                            <form method="post">
-                                <div class="input-box">
-                                    <label class="label-text">اسم المستخدم</label>
-                                    <div class="form-group">
-                                        <span class="la la-user form-icon"></span>
-                                        <input class="form-control" type="text" name="text" placeholder="اكتب اسم المستخدم الخاص بك">
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box">
-                                    <label class="label-text">عنوان البريد الالكترونى</label>
-                                    <div class="form-group">
-                                        <span class="la la-envelope form-icon"></span>
-                                        <input class="form-control" type="text" name="text" placeholder="اكتب بريدك الإلكتروني">
-                                    </div>
-                                </div><!-- end input-box -->
+                            <form method="post" action="{{ route('register') }}">
+                                @csrf
+                                <div class="row">
+                                    <div class="input-box col-6">
+                                        <label class="label-text">الإسم الأول</label>
+                                        <div class="form-group">
+                                            <span class="la la-user form-icon"></span>
+                                            <input class="form-control" type="text" name="firstname" placeholder="اكتب اسم الأول الخاص بك">
+                                        </div>
+                                    </div><!-- end input-box -->
+                                    <div class="input-box col-6">
+                                        <label class="label-text">الإسم الأخير</label>
+                                        <div class="form-group">
+                                            <span class="la la-user form-icon"></span>
+                                            <input class="form-control" type="text" name="lastname" placeholder="اكتب اسم الأخير الخاص بك">
+                                        </div>
+                                    </div><!-- end input-box -->
+                                </div>
+                                <div class="row">
+                                    <div class="input-box col-6">
+                                        <label class="label-text">عنوان البريد الالكترونى</label>
+                                        <div class="form-group">
+                                            <span class="la la-envelope form-icon"></span>
+                                            <input class="form-control" type="email" name="email" placeholder="اكتب بريدك الإلكتروني">
+                                        </div>
+                                    </div><!-- end input-box -->
+                                    <div class="input-box col-6">
+                                        <label class="label-text">رقم الهاتف</label>
+                                        <div class="form-group">
+                                            <span class="la la-phone form-icon"></span>
+                                            <input class="form-control" type="number" name="phone" placeholder="07XXXXXXXX">
+                                        </div>
+                                    </div><!-- end input-box -->
+                                </div>
+
                                 <div class="input-box">
                                     <label class="label-text">كلمه السر</label>
                                     <div class="form-group">
                                         <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="text" name="text" placeholder="أكتب كلمة المرور">
+                                        <input class="form-control" type="password" name="password" placeholder="أكتب كلمة المرور">
                                     </div>
                                 </div><!-- end input-box -->
                                 <div class="input-box">
                                     <label class="label-text">اعد كلمة السر</label>
                                     <div class="form-group">
                                         <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="text" name="text" placeholder="اكتب كلمة المرور مرة أخرى">
+                                        <input class="form-control" type="password" name="password_confirmation" placeholder="اكتب كلمة المرور مرة أخرى">
                                     </div>
                                 </div><!-- end input-box -->
                                 <div class="btn-box pt-3 pb-4">
-                                    <button type="button" class="theme-btn w-100">تسجيل حساب</button>
+                                    <button type="submit" class="theme-btn w-100">تسجيل حساب</button>
                                 </div>
                                 <div class="action-box text-center">
                                     <p class="font-size-14">أو قم بالتسجيل باستخدام</p>
                                     <ul class="social-profile py-3">
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-facebook-f"></i></a></li>
-                                        <li><a href="#" class="bg-6 text-white"><i class="lab la-twitter"></i></a></li>
-                                        <li><a href="#" class="bg-7 text-white"><i class="lab la-instagram"></i></a></li>
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-linkedin-in"></i></a></li>
+                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-google"></i></a></li>
+
                                     </ul>
                                 </div>
                             </form>
@@ -413,19 +369,20 @@
                     </div>
                     <div class="modal-body">
                         <div class="contact-form-action">
-                            <form method="post">
+                            <form method="post" action="{{ route('login') }}">
+                                @csrf
                                 <div class="input-box">
-                                    <label class="label-text">اسم المستخدم</label>
+                                    <label class="label-text">ايميل المستخدم</label>
                                     <div class="form-group">
                                         <span class="la la-user form-icon"></span>
-                                        <input class="form-control" type="text" name="text" placeholder="اكتب اسم المستخدم الخاص بك">
+                                        <input class="form-control" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="اكتب الايميل الخاص بك">
                                     </div>
                                 </div><!-- end input-box -->
                                 <div class="input-box">
                                     <label class="label-text">كلمه السر</label>
                                     <div class="form-group mb-2">
                                         <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="text" name="text" placeholder="اكتب كلمة المرور الخاصة بك">
+                                        <input class="form-control" type="password" name="password" placeholder="اكتب كلمة المرور الخاصة بك">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="custom-checkbox mb-0">
@@ -438,15 +395,13 @@
                                     </div>
                                 </div><!-- end input-box -->
                                 <div class="btn-box pt-3 pb-4">
-                                    <button type="button" class="theme-btn w-100">تسجيل الدخول</button>
+                                    <button type="submit" class="theme-btn w-100">تسجيل الدخول</button>
                                 </div>
                                 <div class="action-box text-center">
                                     <p class="font-size-14">أو تسجيل الدخول باستخدام</p>
                                     <ul class="social-profile py-3">
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-facebook-f"></i></a></li>
-                                        <li><a href="#" class="bg-6 text-white"><i class="lab la-twitter"></i></a></li>
-                                        <li><a href="#" class="bg-7 text-white"><i class="lab la-instagram"></i></a></li>
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-linkedin-in"></i></a></li>
+                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-google"></i></a></li>
+
                                     </ul>
                                 </div>
                             </form>

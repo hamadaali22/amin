@@ -33,6 +33,9 @@ Route::get('/PurchaseFlow/checkout', function () {
 Route::get('/PurchaseFlow/priceList', function () {
     return view('website.priceList');
 });
+Route::get('/userProfile', function () {
+    return view('website.userProfile.index');
+});
 
 Auth::routes();
 
@@ -48,6 +51,6 @@ Route::resources([
     'coupons' => CouponController::class,
     'orders' => OrdersController::class,
 ]);
-Route::post('/login', [ApiAuthController::class, 'login'])->name('api.login');
-Route::post('/register', [ApiAuthController::class, 'register'])->name('api.register');
-Route::post('/forgot-password', [ApiAuthController::class, 'forgot'])->name('api.forgot-password');
+// Route::post('/login', [ApiAuthController::class, 'login'])->name('api.login');
+// Route::post('/register', [ApiAuthController::class, 'register'])->name('api.register');
+// Route::post('/forgot-password', [ApiAuthController::class, 'forgot'])->name('api.forgot-password');
