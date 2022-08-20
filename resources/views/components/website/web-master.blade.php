@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset('css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/style-rtl.css')}}">
+    @yield('style')
 </head>
 
 <body>

@@ -1,5 +1,10 @@
 <x-website.web-master>
 
+    @section('style')
+    <style>
+       
+    </style>
+    @endsection
     @section('content')
 
     <!-- ================================
@@ -15,6 +20,24 @@
                                 <h2 class="sec__title text-white">اضف مركبة</h2>
                             </div>
                             <div class="search-fields-container margin-top-30px">
+                            <div class="form-title-wrap">
+                        <div class="step-bar-wrap text-center">
+                            <ul class="step-bar-list d-flex align-items-center justify-content-around">
+                                <li class="step-bar flex-grow-1 step-bar-active">
+                                    <span class="icon-element">1</span>
+                                    <p class="pt-2 color-text-2">اختر غرفتك</p>
+                                </li>
+                                <li class="step-bar flex-grow-1 step-bar-active">
+                                    <span class="icon-element">2</span>
+                                    <p class="pt-2 color-text-2">تفاصيل الحجز والدفع</p>
+                                </li>
+                                <li class="step-bar flex-grow-1">
+                                    <span class="icon-element">3</span>
+                                    <p class="pt-2 color-text-2">اكتمل الحجز!</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                                 <div class="tab-content search-fields-container" id="myTabContent">
                                     <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
                                         <div class="section-tab section-tab-2 pb-3">
@@ -47,18 +70,12 @@
                                                         <div class="col-lg-3">
                                                             <div class="section-tab section-tab-2 pb-3">
                                                                 <label class="label-text"> هل تريد نقل ملكية المركبة؟</label>
-                                                                <ul class="nav nav-tabs" id="myTab3" role="tablist">
-                                                                    <li class="nav-item">
-                                                                        <a class="nav-link active" id="one-way-tab" data-toggle="tab" href="#hide-manufacturing-year" role="tab" aria-controls="one-way" aria-selected="true">
-                                                                            لا.
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="nav-item">
-                                                                        <a class="nav-link" id="round-trip-tab" data-toggle="tab" href="#manufacturing-year" role="tab" aria-controls="round-trip" aria-selected="false">
-                                                                            نعم.
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
+                                                                <label class="toggle d-flex justify-content-center">
+                                                                    <input id="toggle-me" class="toggle-checkbox" type="checkbox">
+                                                                    <div class="toggle-switch"></div>
+                                                                    
+                                                                </label>
+                                                                
                                                             </div><!-- end section-tab -->
                                                         </div><!-- end col-lg-3 -->
                                                         <div class="col-lg-2 col-sm-2 pr-0">
@@ -76,8 +93,7 @@
                                                                 </div>
                                                             </div>
                                                         </div><!-- end col-lg-3 -->
-                                                        <div id="hide-manufacturing-year" class="col-lg-0 col-sm-0 pr-0 tab-pane fade" id="hide-manufacturing-year"></div>
-                                                        <div id="manufacturing-year" class="col-lg-4 col-sm-2 d-flex flex-row pr-0 tab-pane fade">
+                                                        <div id="manufacturing-year" class="col-lg-4 col-sm-2  flex-row pr-0 " style="display: none;">
                                                             <div class="input-box col-lg-6 ">
                                                                 <label class="label-text">سنة الصنع</label>
                                                                 <div class="form-group">
@@ -263,9 +279,9 @@
                                     </div>
                                 </div>
                                 <label class="Form-label--tick">
-                            <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
-                            <span class="Form-label-text"> أوافق على منح شركة بيت التأمين الحق في الاستعلام من أي جهة ذات علاقة عن بياناتي أو أي بيانات أخرى </span>
-                        </label>
+                                    <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
+                                    <span class="Form-label-text"> أوافق على منح شركة بيت التأمين الحق في الاستعلام من أي جهة ذات علاقة عن بياناتي أو أي بيانات أخرى </span>
+                                </label>
                                 <!-- <div class="btn-box pt-3">
                                     <button class="theme-btn" type="button">ابحث الآن</button>
                                 </div> -->
@@ -290,6 +306,8 @@
 
     @endsection
     @section('script')
-
+<script src="{{asset('js/myJS.js')}}">
+   
+</script>
     @endsection
 </x-website.web-master>

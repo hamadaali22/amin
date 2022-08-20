@@ -1911,9 +1911,9 @@ body {
   -moz-border-radius: 5px;
   border-radius: 5px;
   background-color: #fff;
-  -webkit-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-  -moz-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-  box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+  -webkit-box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%);
+  -moz-box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%);
+  box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%);
   padding: 20px;
   border: 1px solid rgba(128, 137, 150, 0.1); }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -2763,9 +2763,9 @@ body {
   border-radius: 5px;
   margin-bottom: 30px;
   background-color: #fff;
-  -webkit-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-  -moz-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-  box-shadow: 0 0 40px rgba(82, 85, 90, 0.1); }
+  -webkit-box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%);
+  -moz-box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%);
+  box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%); }
 
 .form-title-wrap {
   padding: 20px;
@@ -4278,9 +4278,9 @@ body {
   -moz-border-radius: 5px;
   border-radius: 5px;
   background-color: #fff;
-  -webkit-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-  -moz-box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-  box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+  -webkit-box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%);
+  -moz-box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%);
+  box-shadow: 0 5px 50px 0 rgb(0 0 0 / 13%);
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
