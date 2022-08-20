@@ -12,10 +12,11 @@ class DriverController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
+        return view('dashboard.drivers.index');
         return response()->json(Driver::all());
     }
 
@@ -26,7 +27,7 @@ class DriverController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.drivers.create');
     }
 
     /**

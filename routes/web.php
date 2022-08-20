@@ -24,20 +24,25 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('website.landingPage');
 });
-Route::get('/PurchaseFlow/AddVehicle', function () {
+Route::get('/purchase_flow/add_vehicle', function () {
     return view('website.addVehicle');
 });
-Route::get('/PurchaseFlow/checkout', function () {
+Route::get('/purchase_flow/checkout', function () {
     return view('website.checkout');
 });
-Route::get('/PurchaseFlow/priceList', function () {
+Route::get('/purchase_flow/price_list', function () {
     return view('website.priceList');
 });
-Route::get('/userProfile', function () {
+
+Route::get('/user_profile', function () {
     return view('website.userProfile.index');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard.content');
+});
 
-Auth::routes();
+
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

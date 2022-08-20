@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('insurance_date_start', 10);
             $table->string('insurance_date_end', 10);
             $table->string('payment_id');
+            $table->string('iban');
             $table->string('coupon_id');
             $table->string('status')->default('Pending');
             $table->timestamps();
