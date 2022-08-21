@@ -7,7 +7,7 @@
         <div class="author-content">
             <div class="d-flex align-items-center">
                 <div class="author-img avatar-sm">
-                    <img src="{{asset('images/team9.jpg')}}" alt="testimonial image">
+                    <img src="{{asset('images/avatar.jpeg')}}" alt="testimonial image">
                 </div>
                 <div class="author-bio">
                     <h4 class="author__title">وكالة سفر روييل</h4>

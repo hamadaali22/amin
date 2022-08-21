@@ -479,14 +479,7 @@
                     </div><!-- end card-item -->
                 </div><!-- end col-lg-8 -->
             </div><!-- end row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="btn-box mt-3 text-center">
-                        <button type="button" class="theme-btn"><i class="la la-refresh mr-1"></i>تحميل المزيد</button>
-                        <p class="font-size-13 pt-2">عرض 1 - 8 من 44 سيارات</p>
-                    </div><!-- end btn-box -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
+         
         </div><!-- end container -->
     </section><!-- end card-area -->
     <!-- ================================

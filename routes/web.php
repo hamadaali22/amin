@@ -34,10 +34,35 @@ Route::get('/purchase_flow/checkout', function () {
 Route::get('/purchase_flow/price_list', function () {
     return view('website.priceList');
 });
-
-Route::get('/user_profile', function () {
-    return view('user_dashboard.index');
+Route::get('/car/تأمين-ضد-الغير', function () {
+    return view('website.Third_party_insurance');
 });
+Route::get('/car/التأمين-الشامل', function () {
+    return view('website.Third_party_insurance');
+});
+
+Route::prefix('/user_profile')->group(function () {
+    Route::get('', function () {
+        return view('user_dashboard.index');
+    });
+    Route::get('/purchased_documents', function () {
+        return view('user_dashboard.purchased_documents');
+    });
+    Route::get('/registered_IDs', function () {
+        return view('user_dashboard.registered_IDs');
+    });
+    Route::get('/registered_cars', function () {
+        return view('user_dashboard.registered_cars');
+    });
+    Route::get('/setting', function () {
+        return view('user_dashboard.setting');
+    });
+    
+});
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard.content');
 });

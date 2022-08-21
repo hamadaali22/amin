@@ -8,7 +8,7 @@
                     <div class="col-lg-6">
                         <div class="breadcrumb-content">
                             <div class="section-heading">
-                                <h2 class="sec__title font-size-30 text-white">لوحة التحكم</h2>
+                                <h2 class="sec__title font-size-30 text-white">المركبات المسجلة</h2>
                             </div>
                         </div><!-- end breadcrumb-content -->
                     </div><!-- end col-lg-6 -->
@@ -21,7 +21,7 @@
                     <div class="card-item car-card">
                         <div class="card-img">
                             <a href="car-single.html" class="d-block">
-                                <img src="images/car-img.png" alt="car-img">
+                                <img src="{{asset('images/car-img.png')}}" alt="car-img">
                             </a>
                             <span class="badge">الأكثر مبيعا</span>
                             <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="" data-original-title="احفظ لوقت لاحق">
@@ -57,7 +57,7 @@
                     <div class="card-item car-card">
                         <div class="card-img">
                             <a href="car-single.html" class="d-block">
-                                <img src="images/car-img2.png" alt="car-img">
+                                <img src="{{asset('images/car-img.png')}}" alt="car-img">
                             </a>
                             <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="" data-original-title="احفظ لوقت لاحق">
                                 <i class="la la-heart-o"></i>
@@ -92,7 +92,7 @@
                     <div class="card-item car-card">
                         <div class="card-img">
                             <a href="car-single.html" class="d-block">
-                                <img src="images/car-img3.png" alt="car-img">
+                                <img src="{{asset('images/car-img3.png')}}" alt="car-img">
                             </a>
                             <span class="badge">متميز</span>
                             <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="" data-original-title="احفظ لوقت لاحق">
@@ -128,7 +128,7 @@
                     <div class="card-item car-card">
                         <div class="card-img">
                             <a href="car-single.html" class="d-block">
-                                <img src="images/car-img4.png" alt="car-img">
+                                <img src="{{asset('images/car-img4.png')}}" alt="car-img">
                             </a>
                             <span class="badge">الأكثر مبيعا</span>
                             <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="" data-original-title="احفظ لوقت لاحق">
@@ -164,7 +164,7 @@
                     <div class="card-item car-card">
                         <div class="card-img">
                             <a href="car-single.html" class="d-block">
-                                <img src="images/car-img5.png" alt="car-img">
+                                <img src="{{asset('images/car-img.png')}}" alt="car-img">
                             </a>
                             <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="" data-original-title="احفظ لوقت لاحق">
                                 <i class="la la-heart-o"></i>
@@ -199,7 +199,7 @@
                     <div class="card-item car-card">
                         <div class="card-img">
                             <a href="car-single.html" class="d-block">
-                                <img src="images/car-img6.png" alt="car-img">
+                                <img src="{{asset('images/car-img.png')}}" alt="car-img">
                             </a>
                             <span class="badge">متميز</span>
                             <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="" data-original-title="احفظ لوقت لاحق">
