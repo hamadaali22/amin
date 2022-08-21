@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
 
         $driver = Driver::create([
              'identification_number' => 998566441,
-             'birthdate' => '5-22-1995',
+             'birthdate' => '22-05-1995',
              'name' => 'ahmad',
              'driving_percentage' => '40%'
          ]);
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
              'car_plate_number' => 4324,
              'production_year' => '2017',
              'use_purpose' => 'شخصي',
-             'car_owner' => $user1->id,
+             'car_owner' => $driver->id,
              'brand_id' => $carBrand->id,
             ]);
 

@@ -23,6 +23,7 @@
                 <li class="{{ request()->is('sub_insurance_types*') ? 'page-active' : '' }}"><a href="{{ route('sub_insurance_types.index') }}"><i class="la la-star mr-2 text-color-5"></i>sub_insurance_types</a></li>
                 <li class="{{ request()->is('drivers*') ? 'page-active' : '' }}"><a href="{{ route('drivers.index') }}"><i class="la la-star mr-2 text-color-5"></i>drivers</a></li>
                 <li class="{{ request()->is('cars*') ? 'page-active' : '' }}"><a href="{{ route('cars.index') }}"><i class="la la-star mr-2 text-color-5"></i>cars</a></li>
+                <li class="{{ request()->is('car_brands*') ? 'page-active' : '' }}"><a href="{{ route('car_brands.index') }}"><i class="la la-star mr-2 text-color-5"></i>car_brands</a></li>
                 <li class="{{ request()->is('companies*') ? 'page-active' : '' }}"><a href="{{ route('companies.index') }}"><i class="la la-star mr-2 text-color-5"></i>companies</a></li>
                 <li class="{{ request()->is('coupons*') ? 'page-active' : '' }}"><a href="{{ route('coupons.index') }}"><i class="la la-star mr-2 text-color-5"></i>coupons</a></li>
                 <li class="{{ request()->is('orders*') ? 'page-active' : '' }}"><a href="{{ route('orders.index') }}"><i class="la la-star mr-2 text-color-5"></i>orders</a></li>

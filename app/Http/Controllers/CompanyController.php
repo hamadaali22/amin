@@ -12,10 +12,11 @@ class CompanyController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
+        return view('dashboard.companies.index');
         return response()->json(Company::all());
     }
 

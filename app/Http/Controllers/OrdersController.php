@@ -12,10 +12,11 @@ class OrdersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
+        return view('dashboard.orders.index');
         return response()->json(Orders::all());
     }
 
