@@ -35,7 +35,6 @@
                                             <tr>
                                                 <th scope="row">1</th>
                                                 <td>تأمين السيارات</td>
-                                                <td>Kia</td>
                                                 <td>
                                                     <div class="table-content">
                                                         <h3 class="title">ضد الغير</h3>
