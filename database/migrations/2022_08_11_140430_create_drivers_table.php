@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
-            $table->integer('identification_number')->length(10);
+            $table->bigInteger('identification_number')->length(10);
             $table->string('birthdate', 10);
             $table->string('name');
             $table->string('driving_percentage');
