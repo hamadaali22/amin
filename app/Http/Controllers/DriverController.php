@@ -23,7 +23,7 @@ class DriverController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -71,11 +71,12 @@ class DriverController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Driver  $driver
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Driver $driver)
+    public function edit($id)
     {
-        //
+        $driver = Driver::find($id);
+        return view('dashboard.drivers.edit', compact('driver'));
     }
 
     /**
@@ -114,8 +115,12 @@ class DriverController extends Controller
      * @param  \App\Models\Driver  $driver
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(Driver $driver)
+    public function destroy($id)
     {
-        return response()->json(Driver::destroy($driver));
+        $driver = Driver::destroy($id);
+        return response()->json($driver);
+        /*$company = Company::find($id);
+        $company->delete();
+        return Redirect()->route('companies.index');*/
     }
 }

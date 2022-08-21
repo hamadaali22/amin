@@ -20,11 +20,11 @@ class CarBrandController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('dashboard.car_brands.create');
     }
 
     /**
@@ -53,11 +53,12 @@ class CarBrandController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\CarBrand  $carBrand
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(CarBrand $carBrand)
+    public function edit($id)
     {
-        //
+        $carBrand = CarBrand::find($id);
+        return view('dashboard.car_brands.edit', compact('carBrand'));
     }
 
     /**

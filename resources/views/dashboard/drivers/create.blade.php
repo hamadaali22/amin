@@ -8,7 +8,7 @@
                         <div class="col-lg-6">
                             <div class="breadcrumb-content">
                                 <div class="section-heading">
-                                    <h2 class="sec__title font-size-30 text-white">لوحة القيادة</h2>
+                                    <h2 class="sec__title font-size-30 text-white">أضف سائق</h2>
                                 </div>
                             </div><!-- end breadcrumb-content -->
                         </div><!-- end col-lg-6 -->
@@ -25,14 +25,43 @@
                         <form method="post" class="row">
                             <div class="col-lg-6 responsive-column">
                                 <div class="input-box">
-                                    <label class="label-text">الاسم التجاري الرسمي</label>
+                                    <label class="label-text">identification_number</label>
                                     <div class="form-group">
-                                        <span class="la la-briefcase form-icon"></span>
-                                        <input class="form-control" type="text" name="text" placeholder="الاسم التجاري الرسمي">
+                                        {{--<span class="la la-briefcase form-icon"></span>--}}
+                                        <input class="form-control" type="number" name="identification_number" placeholder="identification_number">
                                     </div>
                                 </div>
                             </div><!-- end col-lg-6 -->
+
                             <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
+                                    <label class="label-text">name</label>
+                                    <div class="form-group">
+                                        <input class="form-control" type="number" name="name" placeholder="name">
+                                    </div>
+                                </div>
+                            </div><!-- end col-lg-6 -->
+
+                            <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
+                                    <label class="label-text">birthdate</label>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="birthdate" placeholder="birthdate">
+                                    </div>
+                                </div>
+                            </div><!-- end col-lg-6 -->
+
+                            <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
+                                    <label class="label-text">driving_percentage</label>
+                                    <div class="form-group">
+                                        <input class="form-control" type="number" name="driving_percentage" placeholder="driving_percentage">
+                                    </div>
+                                </div>
+                            </div><!-- end col-lg-6 -->
+
+
+                            {{--<div class="col-lg-6 responsive-column">
                                 <div class="input-box">
                                     <label class="label-text">بلد</label>
                                     <div class="form-group select-contain w-100">
@@ -285,67 +314,9 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div><!-- end col-lg-6 -->
-                            <div class="col-lg-6 responsive-column">
-                                <div class="input-box">
-                                    <label class="label-text">طيران</label>
-                                    <div class="form-group select-contain w-100">
-                                        <select class="select-contain-select">
-                                            <option value="OneWay">رحلة باتجاه واحد</option>
-                                            <option value="RoundTrip">رحلة ذهابا وإيابا</option>
-                                            <option value="MultiCity">رحلة متعددة المدن</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- end col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-box">
-                                    <label class="label-text">اخلع</label>
-                                    <div class="form-group select-contain w-100">
-                                        <select class="select-contain-select">
-                                            <option value="">تحديد</option>
-                                            <option value="Mon">Mon Nov 12 6:50 AM</option>
-                                            <option value="Tue">Tue Nov 12 6:50 AM</option>
-                                            <option value="Wed">Wed Nov 12 6:50 AM</option>
-                                            <option value="Thu">Thu Nov 12 6:50 AM</option>
-                                            <option value="Fri">Fri Nov 12 6:50 AM</option>
-                                            <option value="Sat">Sat Nov 12 6:50 AM</option>
-                                            <option value="Sun">Sun Nov 12 6:50 AM</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- end col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-box">
-                                    <label class="label-text">الهبوط</label>
-                                    <div class="form-group select-contain w-100">
-                                        <select class="select-contain-select">
-                                            <option value="">تحديد</option>
-                                            <option value="Mon">Mon Nov 12 6:50 AM</option>
-                                            <option value="Tue">Tue Nov 12 6:50 AM</option>
-                                            <option value="Wed">Wed Nov 12 6:50 AM</option>
-                                            <option value="Thu">Thu Nov 12 6:50 AM</option>
-                                            <option value="Fri">Fri Nov 12 6:50 AM</option>
-                                            <option value="Sat">Sat Nov 12 6:50 AM</option>
-                                            <option value="Sun">Sun Nov 12 6:50 AM</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- end col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-box">
-                                    <label class="label-text">توقف الرحلة</label>
-                                    <div class="form-group select-contain w-100">
-                                        <select class="select-contain-select">
-                                            <option value="">Select</option>
-                                            <option value="stop1">1 Stop</option>
-                                            <option value="stops2">2 Stops</option>
-                                            <option value="stops3">3 Stops</option>
-                                            <option value="MultiStops">MultiStops</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div><!-- end col-lg-6 -->
+                            </div><!-- end col-lg-6 -->--}}
+
+
                         </form>
                     </div><!-- end form-content -->
                 </div>

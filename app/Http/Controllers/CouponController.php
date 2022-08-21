@@ -22,11 +22,11 @@ class CouponController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('dashboard.coupons.create');
     }
 
     /**
@@ -69,11 +69,12 @@ class CouponController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Coupon  $coupon
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Coupon $coupon)
+    public function edit($id)
     {
-        //
+        $coupon = Coupon::find($id);
+        return view('dashboard.coupons.edit', compact('coupon'));
     }
 
     /**
