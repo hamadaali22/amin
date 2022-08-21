@@ -1,8 +1,21 @@
-<x-website.user-dashboard-master>
-
-    @section('content')
-
-    <div class="container mt-5">
+@extends('dashboard.dashboard_layout')
+@section('content')
+    <section class="dashboard-area">
+        <div class="dashboard-content-wrap">
+            <div class="dashboard-bread dashboard--bread dashboard-bread-2">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="breadcrumb-content">
+                                <div class="section-heading">
+                                    <h2 class="sec__title font-size-30 text-white">مسافرين</h2>
+                                </div>
+                            </div><!-- end breadcrumb-content -->
+                        </div><!-- end col-lg-6 -->
+                    </div><!-- end row -->
+                </div>
+            </div><!-- end dashboard-bread -->
+            <div class="container mt-4">
         <div class="row">
             <div class="col-lg-4 responsive-column">
                 <div class="card-item car-card">
@@ -220,8 +233,6 @@
             </div><!-- end col-lg-4 -->
         </div>
     </div>
-    @endsection
-    @section('script')
-
-    @endsection
-</x-website.user-dashboard-master>
+        </div><!-- end dashboard-content-wrap -->
+    </section>
+@endsection

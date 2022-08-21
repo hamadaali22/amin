@@ -35,14 +35,14 @@ Route::get('/purchase_flow/price_list', function () {
 });
 
 Route::get('/user_profile', function () {
-    return view('website.userProfile.index');
+    return view('user_dashboard.index');
 });
 Route::get('/dashboard', function () {
     return view('dashboard.content');
 });
 
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

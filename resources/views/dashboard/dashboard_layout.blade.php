@@ -42,7 +42,7 @@
 <!-- end cssload-loader -->
 
 @include('dashboard.user')
-@include('dashboard.sidebar')
+@include('user_dashboard.user_sidebar')
 <section class="dashboard-area">
     <div class="dashboard-nav dashboard--nav">
         <div class="container-fluid">

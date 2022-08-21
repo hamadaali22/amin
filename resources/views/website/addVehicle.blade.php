@@ -2,7 +2,7 @@
 
     @section('style')
     <style>
-       
+
     </style>
     @endsection
     @section('content')
@@ -20,24 +20,28 @@
                                 <h2 class="sec__title text-white">اضف مركبة</h2>
                             </div>
                             <div class="search-fields-container margin-top-30px">
-                            <div class="form-title-wrap">
-                        <div class="step-bar-wrap text-center">
-                            <ul class="step-bar-list d-flex align-items-center justify-content-around">
-                                <li class="step-bar flex-grow-1 step-bar-active">
-                                    <span class="icon-element">1</span>
-                                    <p class="pt-2 color-text-2">اختر غرفتك</p>
-                                </li>
-                                <li class="step-bar flex-grow-1 step-bar-active">
-                                    <span class="icon-element">2</span>
-                                    <p class="pt-2 color-text-2">تفاصيل الحجز والدفع</p>
-                                </li>
-                                <li class="step-bar flex-grow-1">
-                                    <span class="icon-element">3</span>
-                                    <p class="pt-2 color-text-2">اكتمل الحجز!</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                                <div class="form-title-wrap">
+                                    <div class="step-bar-wrap text-center">
+                                        <ul class="step-bar-list d-flex align-items-center justify-content-around">
+                                            <li class="step-bar flex-grow-1 step-bar-active">
+                                                <span class="icon-element">1</span>
+                                                <p class="pt-2 color-text-2">معلومات مالك الوثيقة</p>
+                                            </li>
+                                            <li class="step-bar flex-grow-1 ">
+                                                <span class="icon-element">2</span>
+                                                <p class="pt-2 color-text-2">اضف مركبة</p>
+                                            </li>
+                                            <li class="step-bar flex-grow-1">
+                                                <span class="icon-element">3</span>
+                                                <p class="pt-2 color-text-2">قائمة الأسعار</p>
+                                            </li>
+                                            <li class="step-bar flex-grow-1">
+                                                <span class="icon-element">4</span>
+                                                <p class="pt-2 color-text-2">التفاصيل والدفع</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <div class="tab-content search-fields-container" id="myTabContent">
                                     <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
                                         <div class="section-tab section-tab-2 pb-3">
@@ -70,12 +74,12 @@
                                                         <div class="col-lg-3">
                                                             <div class="section-tab section-tab-2 pb-3">
                                                                 <label class="label-text"> هل تريد نقل ملكية المركبة؟</label>
-                                                                <label class="toggle d-flex justify-content-center">
+                                                                <label id="toggle" class="toggle d-flex justify-content-center">
                                                                     <input id="toggle-me" class="toggle-checkbox" type="checkbox">
-                                                                    <div class="toggle-switch"></div>
-                                                                    
+                                                                    <div id="toggle-switch" class="toggle-switch"></div>
+
                                                                 </label>
-                                                                
+
                                                             </div><!-- end section-tab -->
                                                         </div><!-- end col-lg-3 -->
                                                         <div class="col-lg-2 col-sm-2 pr-0">
@@ -306,8 +310,8 @@
 
     @endsection
     @section('script')
-<script src="{{asset('js/myJS.js')}}">
-   
-</script>
+    <script src="{{asset('js/myJS.js')}}">
+
+    </script>
     @endsection
 </x-website.web-master>

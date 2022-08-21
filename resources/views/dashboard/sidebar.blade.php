@@ -1,6 +1,4 @@
-<!-- ================================
-   START DASHBOARD NAV
-================================= -->
+
 <div class="sidebar-nav sidebar--nav">
     <div class="sidebar-nav-body">
         <div class="side-menu-close">
@@ -33,7 +31,4 @@
         </div><!-- end sidebar-menu-wrap -->
     </div>
 </div><!-- end sidebar-nav -->
-<!-- ================================
-       END DASHBOARD NAV
-================================= -->
 
