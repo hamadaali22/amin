@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarBrandController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ApiAuthController;
 use App\Http\Controllers\CarController;
@@ -51,6 +52,7 @@ Route::resources([
     'insurance_types' => InsuranceTypesController::class,
     'sub_insurance_types' => SubInsuranceTypeController::class,
     'drivers' => DriverController::class,
+    'car_brands' => CarBrandController::class,
     'cars' => CarController::class,
     'companies' => CompanyController::class,
     'coupons' => CouponController::class,

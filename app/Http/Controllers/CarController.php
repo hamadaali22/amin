@@ -12,21 +12,22 @@ class CarController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
+        return view('dashboard.cars.index');
         return response()->json(Car::all());
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('dashboard.cars.create');
     }
 
     /**
@@ -70,11 +71,12 @@ class CarController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Car  $car
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Car $car)
+    public function edit($id)
     {
-        //
+        $car = Car::find($id);
+        return view('dashboard.cars.edit', compact('car'));
     }
 
     /**
