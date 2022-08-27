@@ -6,9 +6,11 @@
     <meta name="author" content="TechyDevs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trizen - Travel Booking HTML Template</title>
+    @yield('title')
+    
+    
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="{{asset('images/ammenlogo.png')}}">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -55,20 +57,20 @@
                         <div class="menu-wrapper">
                             <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
                             <div class="logo">
-                                <a href="index.html"><img src="{{asset('images/logo.png')}}" alt="logo"></a>
+                                <a href="/"><img class="p-2" width="100px" height="100px" src="{{asset('images/ammenlogo.png')}}" alt="logo"> <span id="logo_name" style="">لتأمين المركبات</span></a>
                                 <div class="menu-toggler">
                                     <i class="la la-bars"></i>
                                     <i class="la la-times"></i>
                                 </div><!-- end menu-toggler -->
                             </div><!-- end logo -->
                             <div class="main-menu-content">
-                                <nav>
+                                <nav class="d-flex">
                                     <ul>
                                         <li>
                                             <a href="#">تأمين السيارات<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="car-grid.html">تأمين ضدالغير</a></li>
-                                                <li><a href="car-list.html"> تأمين شامل</a></li>
+                                                <li><a href="/car/تأمين-ضد-الغير">تأمين ضدالغير</a></li>
+                                                <li><a href="/car/التأمين-الشامل"> تأمين شامل</a></li>
 
                                             </ul>
                                         </li>
@@ -124,22 +126,24 @@
                                         </li>
                                         @endguest
                                     </ul>
+                                    @guest
+                                    <div class="header-right-action px-2">
+                                        @if (Route::has('login'))
+
+                                        <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">تسجيل الدخول</a>
+                                        @endif
+
+                                        @if (Route::has('register'))
+                                        <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">سجل</a>
+
+                                        @endif
+                                    </div>
+                                    @endguest
                                 </nav>
+
                             </div><!-- end main-menu-content -->
 
-                            @guest
-                            <div class="header-right-action">
-                                @if (Route::has('login'))
 
-                                <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">تسجيل الدخول</a>
-                                @endif
-
-                                @if (Route::has('register'))
-                                <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">سجل</a>
-
-                                @endif
-                            </div>
-                            @endguest
 
                         </div><!-- end menu-wrapper -->
                     </div><!-- end col-lg-12 -->
@@ -163,59 +167,50 @@
                 <div class="col-lg-3 responsive-column">
                     <div class="footer-item">
                         <div class="footer-logo padding-bottom-30px">
-                            <a href="index.html" class="foot__logo"><img src="images/logo.png" alt="logo"></a>
+                            <a href="index.html" class="foot__logo"><img class="p-2" width="100px" height="100px" src="{{asset('images/ammenlogo.png')}}" alt="logo"></a>
                         </div><!-- end logo -->
-                        <p class="footer__desc">كرة القدم شرب الوادي لسحب وعاء. تصوير Maecenas</p>
                         <ul class="list-items pt-3">
-                            <li>3015 Grand Ave، Coconut Grove، <br> Carrick Way، FL 12345</li>
                             <li>+123-456-789</li>
-                            <li><a href="#">trizen@yourwebsite.com</a></li>
+                            <li><a href="#">ammen@yourwebsite.com</a></li>
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
                 <div class="col-lg-3 responsive-column">
                     <div class="footer-item">
-                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">شركة</h4>
+                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">منتجاتنا</h4>
                         <ul class="list-items list--items">
-                            <li><a href="about.html">معلومات عنا</a></li>
-                            <li><a href="services.html">خدمات</a></li>
+                            <li><a href="/">تأمين السيارات</a></li>
+                            <!-- <li><a href="services.html">خدمات</a></li>
                             <li><a href="#">وظائف</a></li>
                             <li><a href="blog-grid.html">أخبار</a></li>
                             <li><a href="contact.html">الدعم</a></li>
-                            <li><a href="#">إعلان</a></li>
+                            <li><a href="#">إعلان</a></li> -->
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
                 <div class="col-lg-3 responsive-column">
                     <div class="footer-item">
-                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">روابط أخرى</h4>
+                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">المصادر</h4>
                         <ul class="list-items list--items">
-                            <li><a href="#">حزم عطلة الولايات المتحدة الأمريكية</a></li>
-                            <li><a href="#">رحلات طيران الولايات المتحدة الأمريكية</a></li>
-                            <li><a href="#">فنادق الولايات المتحدة الأمريكية</a></li>
-                            <li><a href="#">الولايات المتحدة الأمريكية تأجير السيارات</a></li>
-                            <li><a href="#">انشئ حساب</a></li>
-                            <li><a href="#">مراجعات Trizen</a></li>
+                            <li><a href="#">الأسئلة الشائعة</a></li>
+                            <li><a href="#">لوائح البنك المركزي</a></li>
+                            <li><a href="#">الوظائف</a></li>
+                            <li><a href="#">شركاؤنا</a></li>
+                           
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
                 <div class="col-lg-3 responsive-column">
                     <div class="footer-item">
-                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">إشترك الآن</h4>
+                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">الدعم</h4>
                         <p class="footer__desc pb-3">اشترك للحصول على آخر التحديثات والعروض الترويجية</p>
-                        <div class="contact-form-action">
-                            <form action="#">
-                                <div class="input-box">
-                                    <label class="label-text">أدخل عنوان البريد الالكتروني</label>
-                                    <div class="form-group mb-0">
-                                        <span class="la la-envelope form-icon"></span>
-                                        <input class="form-control" type="email" name="email" placeholder="عنوان البريد الالكترونى">
-                                        <button class="theme-btn theme-btn-small submit-btn" type="submit">اذهب</button>
-                                        <span class="font-size-14 pt-1"><i class="la la-lock mr-1"></i>معلوماتك فى امان معنا.</span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        <ul class="list-items list--items">
+                            <li><a href="#">تواصل معنا</a></li>
+                            <li><a href="#">سياسة الخصوصية</a></li>
+                            <li><a href="#">الشروط والاحكام</a></li>
+                            
+                           
+                        </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
             </div><!-- end row -->
@@ -247,15 +242,15 @@
                 <div class="col-lg-7">
                     <div class="copy-right padding-top-30px">
                         <p class="copy__desc">
-                            &copy; Copyright Trizen 2020. Made with
-                            <span class="la la-heart"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
+                            &copy; Copyright Ammen 2022. 
+                            
                         </p>
                     </div><!-- end copy-right -->
                 </div><!-- end col-lg-7 -->
                 <div class="col-lg-5">
                     <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
                         <h3 class="title font-size-15 pr-2">نحن نقبل</h3>
-                        <img src="images/payment-img.png" alt="">
+                        <img src="{{asset('images/payment-img.png')}}" alt="">
                     </div><!-- end copy-right-content -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->
@@ -398,13 +393,7 @@
                                 <div class="btn-box pt-3 pb-4">
                                     <button type="submit" class="theme-btn w-100">تسجيل الدخول</button>
                                 </div>
-                                <div class="action-box text-center">
-                                    <p class="font-size-14">أو تسجيل الدخول باستخدام</p>
-                                    <ul class="social-profile py-3">
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-google"></i></a></li>
-
-                                    </ul>
-                                </div>
+                               
                             </form>
                         </div><!-- end contact-form-action -->
                     </div>

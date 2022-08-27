@@ -63,7 +63,8 @@ section {
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font: normal normal normal 25px/40px Bahij TheSansArabic Plain;
+    ;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -3214,7 +3215,7 @@ input[type=submit].btn-block {
 }
 
 .fade:not(.show) {
-    display: none !important; 
+    display: none !important;
 }
 
 .collapse:not(.show) {
@@ -5539,7 +5540,7 @@ a.badge-dark:focus {
 .list-group-item {
     position: relative;
     display: block;
-    padding: .75rem 1.25rem;
+    /* padding: .75rem 1.25rem; */
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, .125)
@@ -5980,6 +5981,8 @@ a.close.disabled {
 }
 
 .modal-dialog-scrollable .modal-body {
+
+
     overflow-y: auto
 }
 
@@ -6011,7 +6014,9 @@ a.close.disabled {
 
 .modal-content {
     position: relative;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
@@ -6020,6 +6025,26 @@ a.close.disabled {
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;
     outline: 0
+}
+
+.modal-content2 {
+    width: 906px;
+    height: 480px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    pointer-events: auto;
+    /* background-color: #fff; */
+    background-clip: padding-box;
+    /* border: 1px solid rgba(0, 0, 0, .2); */
+    /* border-radius: .3rem; */
+    outline: 0;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 2px 2px 2px #00000029;
+    border: 3px solid #6184F0;
+    border-radius: 10px;
+
 }
 
 .modal-backdrop {
@@ -6056,11 +6081,25 @@ a.close.disabled {
 }
 
 .modal-title {
+    margin-right: auto;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #6184F0;
+    margin-bottom: 0;
+    line-height: 1.5
+}
+
+.modal-title2 {
+    margin-right: 248px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #6184F0;
     margin-bottom: 0;
     line-height: 1.5
 }
 
 .modal-body {
+    text-align: start;
     position: relative;
     flex: 1 1 auto;
     padding: 1rem

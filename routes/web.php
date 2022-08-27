@@ -25,6 +25,15 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('website.landingPage');
 });
+Route::get('/loading_page', function () {
+    return view('website.loading_page');
+});
+Route::get('/loading_page2', function () {
+    return view('website.loading_page2');
+});
+Route::get('/loading_page3', function () {
+    return view('website.loading_page3');
+});
 Route::get('/purchase_flow/add_vehicle', function () {
     return view('website.addVehicle');
 });
@@ -38,7 +47,7 @@ Route::get('/car/تأمين-ضد-الغير', function () {
     return view('website.Third_party_insurance');
 });
 Route::get('/car/التأمين-الشامل', function () {
-    return view('website.Third_party_insurance');
+    return view('website.full_insurance');
 });
 
 Route::prefix('/user_profile')->group(function () {
