@@ -1,5 +1,5 @@
 <x-website.web-master>
-@section('title')
+    @section('title')
     <title>التفاصيل والدفع</title>
     @endsection
     @section('content')
@@ -7,14 +7,14 @@
     <!-- ================================
     START BREADCRUMB AREA
 ================================= -->
-    <section class="breadcrumb-area bread-bg-10">
+    <section class="breadcrumb-area bread-bg-8">
         <div class="breadcrumb-wrap">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="breadcrumb-content text-center">
                             <div class="section-heading">
-                                <h2 class="sec__title text-white">التفاصيل والدفع</h2>
+                                <h2 class="sec__title text-black-50">التفاصيل والدفع</h2>
                             </div>
                             <span class="arrow-blink">
                                 <i class="la la-arrow-down"></i>
@@ -41,6 +41,28 @@
         <div class="container">
             <div class="filter-bar mb-2">
                 <div class="form-title-wrap">
+                    <div class="step-bar-wrap text-center">
+                        <ul class="step-bar-list d-flex align-items-center justify-content-around">
+                            <li class="step-bar flex-grow-1 step-bar-active">
+                                <span class="icon-element">1</span>
+                                <p class="pt-2 color-text-2 small">معلومات مالك الوثيقة</p>
+                            </li>
+                            <li class="step-bar flex-grow-1 step-bar-active">
+                                <span class="icon-element">2</span>
+                                <p class="pt-2 color-text-2 small">تفاصيل الحجز والدفع</p>
+                            </li>
+                            <li class="step-bar flex-grow-1 step-bar-active">
+                                <span class="icon-element">3</span>
+                                <p class="pt-2 color-text-2 small">قائمة الأسعار</p>
+                            </li>
+                            <li class="step-bar flex-grow-1">
+                                <span class="icon-element">4</span>
+                                <p class="pt-2 color-text-2 small">التفاصيل والدفع</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-title-wrap2">
                     <div class="row pr-3">
                         <div class="col-lg-3 col-sm-3 progress_car">
                             <svg xmlns="http://www.w3.org/2000/svg" width="57.917" height="24.126" viewBox="0 0 57.917 24.126">
@@ -79,374 +101,336 @@
             </div>
             <div class="row">
                 <div class="col-lg-8">
+                    <div class=" pb-3">
+                        <div class="row">
+                            <div class="col-lg-3 col-6  text-left mb-2 nav-item2">
+                                <a class=" nav-link2 theme-btn theme-btn-small theme-btn-transparent  text-center col-lg-12 col-10 " id="owner_information_tab" data-toggle="tab" href="#owner_information" role="tab" aria-controls="paypal" aria-selected="true">
+                                    <span class="d-block ">معلومات مالك الوثيقة</span>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-6   text-left mb-2 nav-item2">
+                                <a class=" nav-link2 theme-btn theme-btn-small theme-btn-transparent  text-center col-lg-12 col-10" id="Vehicle_information_tab" data-toggle="tab" href="#Vehicle_information" role="tab" aria-controls="payoneer" aria-selected="true">
+                                    <span class="d-block">معلومات المركبة</span>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-6   text-left mb-2 nav-item2">
+                                <a class=" nav-link2 theme-btn theme-btn-small theme-btn-transparent text-center  col-lg-12 col-10" id="Drivers_data_tab" data-toggle="tab" href="#Drivers_data" role="tab" aria-controls="payoneer" aria-selected="true">
+                                    <span class="d-block ">بيانات السائقين</span>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-6  text-left mb-2 nav-item2">
+                                <a class="nav-link2 active theme-btn theme-btn-small text-center col-lg-12 col-10" id="Document_details_tab" data-toggle="tab" href="#Document_details" role="tab" aria-controls="credit-card" aria-selected="false">
+                                    <span class="d-block ">تفاصيل الوثيقة</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+
+
+                            <li class="nav-item2">
+                                <a class="btn btn-primary font-weight-bold" id="owner_information_tab" data-toggle="tab" href="#owner_information" role="tab" aria-controls="paypal" aria-selected="true">
+                                    <i class="la la-check icon-element"></i>
+                                    <span class="d-block pt-3">معلومات مالك الوثيقة</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-weight-bold" id="Vehicle_information_tab" data-toggle="tab" href="#Vehicle_information" role="tab" aria-controls="payoneer" aria-selected="true">
+                                    <i class="la la-check icon-element"></i>
+                                    <span class="d-block pt-3">معلومات المركبة</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-weight-bold" id="Drivers_data_tab" data-toggle="tab" href="#Drivers_data" role="tab" aria-controls="payoneer" aria-selected="true">
+                                    <i class="la la-check icon-element"></i>
+                                    <span class="d-block pt-3">بيانات السائقين</span>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active font-weight-bold" id="Document_details_tab" data-toggle="tab" href="#Document_details" role="tab" aria-controls="credit-card" aria-selected="false">
+                                    <i class="la la-check icon-element"></i>
+                                    <span class="d-block pt-3">تفاصيل الوثيقة</span>
+                                </a>
+                            </li>
+                        </ul> -->
+                    </div>
                     <div class="form-box">
-                        <div class="form-title-wrap">
+                        <!-- <div class="form-title-wrap">
                             <h3 class="title">تقديم الحجز</h3>
-                        </div><!-- form-title-wrap -->
+                        </div>form-title-wrap -->
                         <div class="form-content ">
                             <div class="contact-form-action">
-                                <form method="post">
-                                    <div class="row">
-                                        <div class="col-lg-6 responsive-column">
-                                            <div class="input-box">
-                                                <label class="label-text">الاسم الاول</label>
-                                                <div class="form-group">
-                                                    <span class="la la-user form-icon"></span>
-                                                    <input class="form-control" type="text" name="text" placeholder="الاسم الاول">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-6 -->
-                                        <div class="col-lg-6 responsive-column">
-                                            <div class="input-box">
-                                                <label class="label-text">الكنية</label>
-                                                <div class="form-group">
-                                                    <span class="la la-user form-icon"></span>
-                                                    <input class="form-control" type="text" name="text" placeholder="الكنية">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-6 -->
-                                        <div class="col-lg-6 responsive-column">
-                                            <div class="input-box">
-                                                <label class="label-text">بريدك الالكتروني</label>
-                                                <div class="form-group">
-                                                    <span class="la la-envelope-o form-icon"></span>
-                                                    <input class="form-control" type="email" name="email" placeholder="بريدك الالكتروني">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-6 -->
-                                        <div class="col-lg-6 responsive-column">
-                                            <div class="input-box">
-                                                <label class="label-text">رقم الهاتف</label>
-                                                <div class="form-group">
-                                                    <span class="la la-phone form-icon"></span>
-                                                    <input class="form-control" type="text" name="text" placeholder="رقم الهاتف">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-6 -->
-                                        <div class="col-lg-12 responsive-column">
-                                            <div class="input-box">
-                                                <label class="label-text">خط عنوان</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marked form-icon"></span>
-                                                    <input class="form-control" type="text" name="text" placeholder="خط عنوان">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-12 -->
-                                        <div class="col-lg-6 responsive-column">
-                                            <div class="input-box">
-                                                <label class="label-text">بلد</label>
-                                                <div class="form-group">
-                                                    <div class="select-contain w-auto">
-                                                        <select class="select-contain-select">
-                                                            <option value="select-country">حدد الدولة</option>
-                                                            <option value="Afghanistan">Afghanistan</option>
-                                                            <option value="Åland Islands">Åland Islands</option>
-                                                            <option value="Albania">Albania</option>
-                                                            <option value="Algeria">Algeria</option>
-                                                            <option value="American Samoa">American Samoa</option>
-                                                            <option value="Andorra">Andorra</option>
-                                                            <option value="Angola">Angola</option>
-                                                            <option value="Anguilla">Anguilla</option>
-                                                            <option value="Antarctica">Antarctica</option>
-                                                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                                            <option value="Argentina">Argentina</option>
-                                                            <option value="Armenia">Armenia</option>
-                                                            <option value="Aruba">Aruba</option>
-                                                            <option value="Australia">Australia</option>
-                                                            <option value="Austria">Austria</option>
-                                                            <option value="Azerbaijan">Azerbaijan</option>
-                                                            <option value="Bahamas">Bahamas</option>
-                                                            <option value="Bahrain">Bahrain</option>
-                                                            <option value="Bangladesh">Bangladesh</option>
-                                                            <option value="Barbados">Barbados</option>
-                                                            <option value="Belarus">Belarus</option>
-                                                            <option value="Belgium">Belgium</option>
-                                                            <option value="Belize">Belize</option>
-                                                            <option value="Benin">Benin</option>
-                                                            <option value="Bermuda">Bermuda</option>
-                                                            <option value="Bhutan">Bhutan</option>
-                                                            <option value="Bolivia">Bolivia</option>
-                                                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                                                            <option value="Botswana">Botswana</option>
-                                                            <option value="Bouvet Island">Bouvet Island</option>
-                                                            <option value="Brazil">Brazil</option>
-                                                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                                                            <option value="Brunei Darussalam">Brunei Darussalam</option>
-                                                            <option value="Bulgaria">Bulgaria</option>
-                                                            <option value="Burkina Faso">Burkina Faso</option>
-                                                            <option value="Burundi">Burundi</option>
-                                                            <option value="Cambodia">Cambodia</option>
-                                                            <option value="Cameroon">Cameroon</option>
-                                                            <option value="Canada">Canada</option>
-                                                            <option value="Cape Verde">Cape Verde</option>
-                                                            <option value="Cayman Islands">Cayman Islands</option>
-                                                            <option value="Central African Republic">Central African Republic</option>
-                                                            <option value="Chad">Chad</option>
-                                                            <option value="Chile">Chile</option>
-                                                            <option value="China">China</option>
-                                                            <option value="Christmas Island">Christmas Island</option>
-                                                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                                                            <option value="Colombia">Colombia</option>
-                                                            <option value="Comoros">Comoros</option>
-                                                            <option value="Congo">Congo</option>
-                                                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
-                                                            <option value="Cook Islands">Cook Islands</option>
-                                                            <option value="Costa Rica">Costa Rica</option>
-                                                            <option value="Cote D'ivoire">Cote D'ivoire</option>
-                                                            <option value="Croatia">Croatia</option>
-                                                            <option value="Cuba">Cuba</option>
-                                                            <option value="Cyprus">Cyprus</option>
-                                                            <option value="Czech Republic">Czech Republic</option>
-                                                            <option value="Denmark">Denmark</option>
-                                                            <option value="Djibouti">Djibouti</option>
-                                                            <option value="Dominica">Dominica</option>
-                                                            <option value="Dominican Republic">Dominican Republic</option>
-                                                            <option value="Ecuador">Ecuador</option>
-                                                            <option value="Egypt">Egypt</option>
-                                                            <option value="El Salvador">El Salvador</option>
-                                                            <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                                            <option value="Eritrea">Eritrea</option>
-                                                            <option value="Estonia">Estonia</option>
-                                                            <option value="Ethiopia">Ethiopia</option>
-                                                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-                                                            <option value="Faroe Islands">Faroe Islands</option>
-                                                            <option value="Fiji">Fiji</option>
-                                                            <option value="Finland">Finland</option>
-                                                            <option value="France">France</option>
-                                                            <option value="French Guiana">French Guiana</option>
-                                                            <option value="French Polynesia">French Polynesia</option>
-                                                            <option value="French Southern Territories">French Southern Territories</option>
-                                                            <option value="Gabon">Gabon</option>
-                                                            <option value="Gambia">Gambia</option>
-                                                            <option value="Georgia">Georgia</option>
-                                                            <option value="Germany">Germany</option>
-                                                            <option value="Ghana">Ghana</option>
-                                                            <option value="Gibraltar">Gibraltar</option>
-                                                            <option value="Greece">Greece</option>
-                                                            <option value="Greenland">Greenland</option>
-                                                            <option value="Grenada">Grenada</option>
-                                                            <option value="Guadeloupe">Guadeloupe</option>
-                                                            <option value="Guam">Guam</option>
-                                                            <option value="Guatemala">Guatemala</option>
-                                                            <option value="Guernsey">Guernsey</option>
-                                                            <option value="Guinea">Guinea</option>
-                                                            <option value="Guinea-bissau">Guinea-bissau</option>
-                                                            <option value="Guyana">Guyana</option>
-                                                            <option value="Haiti">Haiti</option>
-                                                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
-                                                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
-                                                            <option value="Honduras">Honduras</option>
-                                                            <option value="Hong Kong">Hong Kong</option>
-                                                            <option value="Hungary">Hungary</option>
-                                                            <option value="Iceland">Iceland</option>
-                                                            <option value="India">India</option>
-                                                            <option value="Indonesia">Indonesia</option>
-                                                            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
-                                                            <option value="Iraq">Iraq</option>
-                                                            <option value="Ireland">Ireland</option>
-                                                            <option value="Isle of Man">Isle of Man</option>
-                                                            <option value="Israel">Israel</option>
-                                                            <option value="Italy">Italy</option>
-                                                            <option value="Jamaica">Jamaica</option>
-                                                            <option value="Japan">Japan</option>
-                                                            <option value="Jersey">Jersey</option>
-                                                            <option value="Jordan">Jordan</option>
-                                                            <option value="Kazakhstan">Kazakhstan</option>
-                                                            <option value="Kenya">Kenya</option>
-                                                            <option value="Kiribati">Kiribati</option>
-                                                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
-                                                            <option value="Korea, Republic of">Korea, Republic of</option>
-                                                            <option value="Kuwait">Kuwait</option>
-                                                            <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                                            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
-                                                            <option value="Latvia">Latvia</option>
-                                                            <option value="Lebanon">Lebanon</option>
-                                                            <option value="Lesotho">Lesotho</option>
-                                                            <option value="Liberia">Liberia</option>
-                                                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
-                                                            <option value="Liechtenstein">Liechtenstein</option>
-                                                            <option value="Lithuania">Lithuania</option>
-                                                            <option value="Luxembourg">Luxembourg</option>
-                                                            <option value="Macao">Macao</option>
-                                                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
-                                                            <option value="Madagascar">Madagascar</option>
-                                                            <option value="Malawi">Malawi</option>
-                                                            <option value="Malaysia">Malaysia</option>
-                                                            <option value="Maldives">Maldives</option>
-                                                            <option value="Mali">Mali</option>
-                                                            <option value="Malta">Malta</option>
-                                                            <option value="Marshall Islands">Marshall Islands</option>
-                                                            <option value="Martinique">Martinique</option>
-                                                            <option value="Mauritania">Mauritania</option>
-                                                            <option value="Mauritius">Mauritius</option>
-                                                            <option value="Mayotte">Mayotte</option>
-                                                            <option value="Mexico">Mexico</option>
-                                                            <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
-                                                            <option value="Moldova, Republic of">Moldova, Republic of</option>
-                                                            <option value="Monaco">Monaco</option>
-                                                            <option value="Mongolia">Mongolia</option>
-                                                            <option value="Montenegro">Montenegro</option>
-                                                            <option value="Montserrat">Montserrat</option>
-                                                            <option value="Morocco">Morocco</option>
-                                                            <option value="Mozambique">Mozambique</option>
-                                                            <option value="Myanmar">Myanmar</option>
-                                                            <option value="Namibia">Namibia</option>
-                                                            <option value="Nauru">Nauru</option>
-                                                            <option value="Nepal">Nepal</option>
-                                                            <option value="Netherlands">Netherlands</option>
-                                                            <option value="Netherlands Antilles">Netherlands Antilles</option>
-                                                            <option value="New Caledonia">New Caledonia</option>
-                                                            <option value="New Zealand">New Zealand</option>
-                                                            <option value="Nicaragua">Nicaragua</option>
-                                                            <option value="Niger">Niger</option>
-                                                            <option value="Nigeria">Nigeria</option>
-                                                            <option value="Niue">Niue</option>
-                                                            <option value="Norfolk Island">Norfolk Island</option>
-                                                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                                                            <option value="Norway">Norway</option>
-                                                            <option value="Oman">Oman</option>
-                                                            <option value="Pakistan">Pakistan</option>
-                                                            <option value="Palau">Palau</option>
-                                                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
-                                                            <option value="Panama">Panama</option>
-                                                            <option value="Papua New Guinea">Papua New Guinea</option>
-                                                            <option value="Paraguay">Paraguay</option>
-                                                            <option value="Peru">Peru</option>
-                                                            <option value="Philippines">Philippines</option>
-                                                            <option value="Pitcairn">Pitcairn</option>
-                                                            <option value="Poland">Poland</option>
-                                                            <option value="Portugal">Portugal</option>
-                                                            <option value="Puerto Rico">Puerto Rico</option>
-                                                            <option value="Qatar">Qatar</option>
-                                                            <option value="Reunion">Reunion</option>
-                                                            <option value="Romania">Romania</option>
-                                                            <option value="Russian Federation">Russian Federation</option>
-                                                            <option value="Rwanda">Rwanda</option>
-                                                            <option value="Saint Helena">Saint Helena</option>
-                                                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                                                            <option value="Saint Lucia">Saint Lucia</option>
-                                                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                                                            <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
-                                                            <option value="Samoa">Samoa</option>
-                                                            <option value="San Marino">San Marino</option>
-                                                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                                                            <option value="Saudi Arabia">Saudi Arabia</option>
-                                                            <option value="Senegal">Senegal</option>
-                                                            <option value="Serbia">Serbia</option>
-                                                            <option value="Seychelles">Seychelles</option>
-                                                            <option value="Sierra Leone">Sierra Leone</option>
-                                                            <option value="Singapore">Singapore</option>
-                                                            <option value="Slovakia">Slovakia</option>
-                                                            <option value="Slovenia">Slovenia</option>
-                                                            <option value="Solomon Islands">Solomon Islands</option>
-                                                            <option value="Somalia">Somalia</option>
-                                                            <option value="South Africa">South Africa</option>
-                                                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
-                                                            <option value="Spain">Spain</option>
-                                                            <option value="Sri Lanka">Sri Lanka</option>
-                                                            <option value="Sudan">Sudan</option>
-                                                            <option value="Suriname">Suriname</option>
-                                                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
-                                                            <option value="Swaziland">Swaziland</option>
-                                                            <option value="Sweden">Sweden</option>
-                                                            <option value="Switzerland">Switzerland</option>
-                                                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                                                            <option value="Taiwan, Province of China">Taiwan, Province of China</option>
-                                                            <option value="Tajikistan">Tajikistan</option>
-                                                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
-                                                            <option value="Thailand">Thailand</option>
-                                                            <option value="Timor-leste">Timor-leste</option>
-                                                            <option value="Togo">Togo</option>
-                                                            <option value="Tokelau">Tokelau</option>
-                                                            <option value="Tonga">Tonga</option>
-                                                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                                                            <option value="Tunisia">Tunisia</option>
-                                                            <option value="Turkey">Turkey</option>
-                                                            <option value="Turkmenistan">Turkmenistan</option>
-                                                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
-                                                            <option value="Tuvalu">Tuvalu</option>
-                                                            <option value="Uganda">Uganda</option>
-                                                            <option value="Ukraine">Ukraine</option>
-                                                            <option value="United Arab Emirates">United Arab Emirates</option>
-                                                            <option value="United Kingdom">United Kingdom</option>
-                                                            <option value="United States">United States</option>
-                                                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
-                                                            <option value="Uruguay">Uruguay</option>
-                                                            <option value="Uzbekistan">Uzbekistan</option>
-                                                            <option value="Vanuatu">Vanuatu</option>
-                                                            <option value="Venezuela">Venezuela</option>
-                                                            <option value="Viet Nam">Viet Nam</option>
-                                                            <option value="Virgin Islands, British">Virgin Islands, British</option>
-                                                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-                                                            <option value="Wallis and Futuna">Wallis and Futuna</option>
-                                                            <option value="Western Sahara">Western Sahara</option>
-                                                            <option value="Yemen">Yemen</option>
-                                                            <option value="Zambia">Zambia</option>
-                                                            <option value="Zimbabwe">Zimbabwe</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-6 -->
-                                        <div class="col-lg-6 responsive-column">
-                                            <div class="input-box">
-                                                <label class="label-text">الرقم الدولي</label>
-                                                <div class="form-group">
-                                                    <div class="select-contain w-auto">
-                                                        <select class="select-contain-select">
-                                                            <option value="country-code">حدد رمز الدولة</option>
-                                                            <option value="1">United Kingdom (+44)</option>
-                                                            <option value="2">United States (+1)</option>
-                                                            <option value="3">Bangladesh (+880)</option>
-                                                            <option value="4">Brazil (+55)</option>
-                                                            <option value="5">China (+86)</option>
-                                                            <option value="6">India (+91)</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-6 -->
-                                        <div class="col-lg-12">
-                                            <div class="input-box">
-                                                <div class="form-group mb-0">
-                                                    <div class="custom-checkbox mb-0">
-                                                        <input type="checkbox" id="receiveChb">
-                                                        <label for="receiveChb">أرغب في تلقي عروض Trizen الترويجية في المستقبل</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-12 -->
+                                <div class="row mb-3">
+                                    <div class="col-lg-3 col-12">
+                                        <img class="company_img" src="{{asset('images/balcony-cabin.jpg')}}" alt="">
                                     </div>
-                                </form>
+                                    <div class="col-lg-9 col-12">
+                                        <h6 class="pb-1 pt-lg-1 pt-2" style="color: #6184F0;">تأمين مع</h6>
+                                        <p style=" font-size: smaller;">
+                                            <img width="40px" height="40px" src="{{asset('images/Image 7.png')}}" alt="">
+                                            الحد الاقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات و المبالغ المقدرة عن الاصابات و المصاريف الطية ) و الاضرار المادية معا لن تتجاوز مبلغا اجماليا قدره ١٠٠٠
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="section-block"></div>
+                                <div class="row mt-2 mb-2">
+                                    <div class="col-lg-6 col-12 d-flex">
+                                        <div class="col-6 ">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">تاريخ بدء الوثيقة</li>
+                                                <li class="list-group-item">تاريخ اصدار الوثيقة</li>
+                                                <li class="list-group-item">نوع التأمين</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">5/8/2022</li>
+                                                <li class="list-group-item">5/8/2022</li>
+                                                <li class="list-group-item">ضد الغير</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12 d-flex">
+                                        <div class="col-6">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">تاريخ انتهاء الوثيقة</li>
+                                                <li class="list-group-item">الرقم المرجعي للتسعيرة</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">5/8/2022</li>
+                                                <li class="list-group-item">0000000000000000 </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div><!-- end contact-form-action -->
+                        </div><!-- end form-content -->
+                    </div><!-- end form-box -->
+
+                    <div class="form-box">
+                        <!-- <div class="form-title-wrap">
+                            <h3 class="title">تقديم الحجز</h3>
+                        </div>form-title-wrap -->
+                        <div class="form-content ">
+                            <div class="contact-form-action">
+
+                                <div class="d-flex flex-column mt-2">
+                                    <label class="Form-label--tick" style="position: relative;">
+                                        <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
+                                        <span class="Form-label-text"> هل لديك قسيمة خصم (كوبون)؟</span>
+
+                                    </label>
+                                    <!-- <span class="">
+                                        <span class="text-danger" id="agree-error"></span>
+                                    </span> -->
+                                </div>
+
+
                             </div><!-- end contact-form-action -->
                         </div><!-- end form-content -->
                     </div><!-- end form-box -->
                     <div class="form-box">
-                        <div class="form-title-wrap">
-                            <h3 class="title">معلومات بطاقتك</h3>
+
+                        <div class="form-content ">
+                            <div class="contact-form-action">
+                                <div class="row insurance_coverage d-flex justify-content-between">
+                                    <div class="col-12 d-flex justify-content-between">
+                                        <h6>توسيع التغطية التأمينية لتشمل مركبتك</h6>
+                                        <a href="http://">الشروط و الأحكام</a>
+                                    </div>
+
+                                </div>
+                                <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-lg-3 col-12">
+                                        <img class="company_img" src="{{asset('images/balcony-cabin.jpg')}}" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-12 d-flex align-items-center">
+                                        <p style=" font-size: smaller;">
+                                            بشرائك هذه التسعيرة المقدمة من شركة ستحصل على تغطية تأمينية مركبتك تغطي تكاليف إصلاح المركبة ضد الحوادث و السرقة
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-3 d-flex align-items-center">
+                                        <div class="Estimated_value d-flex flex-column justify-content-center align-items-center" style="">
+                                            <span class="edit_black">
+                                                <svg id="edit_black_24dp" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                                    <path id="Path_188" data-name="Path 188" d="M0,0H20V20H0Z" fill="none" />
+                                                    <path id="Path_189" data-name="Path 189" d="M3,14.083V17H5.917l8.6-8.6L11.6,5.481ZM16.775,6.142a.775.775,0,0,0,0-1.1l-1.82-1.82a.775.775,0,0,0-1.1,0L12.435,4.648l2.917,2.917,1.423-1.423Z" fill="#6184f0" />
+                                                </svg>
+                                            </span>
+                                            <span>القيمة التقديرية</span>
+                                            <span style="color: #6184F0;"> 42000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-block"></div>
+                                <div class="row" style=" height: 150px;">
+                                    <div class="col-12 d-flex flex-column justify-content-between">
+                                        <span class="font-weight-bold">
+                                            المميزات
+                                        </span>
+                                        <div class="d-flex flex-column mt-2 font-weight-bold">
+                                            <label class="Form-label--tick" style="position: relative;">
+                                                <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
+                                                <span class="Form-label-text">التكلفة الطبية الطارئة</span>
+
+                                            </label>
+                                            <!-- <span class="">
+                                            <span class="text-danger" id="agree-error"></span>
+                                        </span> -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row insurance_coverage_footer">
+                                    <div class="col-lg-2 responsive-column ">
+                                        <div class="input-box">
+                                            <label class="label-text">قيمة التحمل</label>
+                                            <div class="form-group">
+                                                <div class="select-contain w-auto">
+                                                    <div class="dropdown bootstrap-select select-contain-select"><select class="select-contain-select" tabindex="-98">
+                                                            <option value="select-country">5000</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 responsive-column">
+                                        <div class="input-box">
+                                            <label class="label-text"> الاصلاح في</label>
+                                            <div class="form-group">
+                                                <div class="select-contain w-auto">
+                                                    <div class="dropdown bootstrap-select select-contain-select">
+                                                        <select class="select-contain-select" tabindex="-98">
+                                                            <option value="select-country">الورشات المعتمدة</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 responsive-column">
+                                        <div class="input-box">
+                                            <label class="label-text">السعر</label>
+                                            <div class="form-group">
+                                                <div class="select-contain w-auto">
+                                                    <span style="color: #6184F0;">42000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end contact-form-action -->
+                                    <div class="col-lg-4 responsive-column d-flex align-items-center">
+                                        <div class="btn-box">
+                                            <button class="theme-btn insurance_coverage_footer_btn" type="submit">إضافة الوثيقة</button>
+                                        </div>
+                                    </div>
+                                </div><!-- end form-content -->
+                            </div><!-- end form-box -->
+                        </div><!-- end form-box -->
+                    </div><!-- end form-box -->
+                    <div class="form-box">
+                        <div class="row form-title-wrap" style="display: block;">
+                            <div class="col-lg-8 responsive-column">
+                                <h3 class="title  ">رقم الحساب الدولي الخاص بمالك الوثيقة (الايبان)</h3>
+                            </div>
+                            <div class="col-lg-4 responsive-column mt-2">
+                                <div class="input-box">
+                                    <div class="form-group">
+                                        <div class="select-contain w-auto">
+                                            <div class="dropdown bootstrap-select select-contain-select">
+                                                <div class="dropdown bootstrap-select select-contain-select"><select class="select-contain-select" tabindex="-98">
+                                                        <option value="select-country">اختر من القائمة</option>
+
+                                                    </select>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-10  responsive-column">
+                                <div class="input-box">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="text" placeholder="000000000000000000000000000000000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 responsive-column">
+                                <div class="col-lg-6 responsive-column">
+                                    <div class="input-box">
+                                        <label class="label-text">
+                                            <svg id="email_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                <path id="Path_182" data-name="Path 182" d="M0,0H24V24H0Z" fill="none" />
+                                                <path id="Path_183" data-name="Path 183" d="M20,4H4A2,2,0,0,0,2.01,6L2,18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V6A2.006,2.006,0,0,0,20,4Zm0,4-8,5L4,8V6l8,5,8-5Z" fill="rgba(112,112,112,0.5)" />
+                                            </svg>
+                                            البريد الالكتروني لمالك الوثيقة
+                                        </label>
+                                        <div class="form-group">
+
+                                            <input class="form-control" type="text" name="text" placeholder=" البريد الالكتروني لمالك الوثيقة">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 responsive-column">
+                                    <div class="input-box">
+                                        <label class="label-text">
+                                            <svg id="pin_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                <g id="Group_76" data-name="Group 76">
+                                                    <path id="Path_186" data-name="Path 186" d="M0,0H24V24H0Z" fill="none" />
+                                                </g>
+                                                <g id="Group_78" data-name="Group 78">
+                                                    <g id="Group_77" data-name="Group 77">
+                                                        <path id="Path_187" data-name="Path 187" d="M20,4H4A2.006,2.006,0,0,0,2,6V18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V6A2.006,2.006,0,0,0,20,4ZM7.64,15H6.49V10.5l-.9.66-.58-.89L6.77,9h.87Zm5.86,0H9.61V13.98c1.07-1.07,1.77-1.77,2.13-2.15a1.45,1.45,0,0,0,.54-1.06.736.736,0,0,0-.81-.72.945.945,0,0,0-.9.72l-1.01-.42a1.861,1.861,0,0,1,1-1.15,2.343,2.343,0,0,1,1.95.03,1.622,1.622,0,0,1,.91,1.48,2.632,2.632,0,0,1-.92,1.86c-.25.25-.72.71-1.4,1.39l.03.05H13.5V15Zm5.25-.85a1.972,1.972,0,0,1-1.76.85,2.042,2.042,0,0,1-2.05-1.51l1.03-.41a1.039,1.039,0,0,0,1.02.86.842.842,0,0,0,.89-.77c0-.55-.48-.79-1.04-.79h-.5v-1h.46c.33,0,.88-.14.88-.72a.671.671,0,0,0-.75-.65.857.857,0,0,0-.85.64l-.99-.41A1.868,1.868,0,0,1,16.94,9a1.883,1.883,0,0,1,1.62.75,1.5,1.5,0,0,1,.02,1.57,1.387,1.387,0,0,1-.52.48v.07a1.468,1.468,0,0,1,.68.52A1.626,1.626,0,0,1,18.75,14.15Z" fill="#b7b7b7" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            رقم هاتف مالك الوثيقة</label>
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" name="text" placeholder=" رقم هاتف مالك الوثيقة">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-block"></div>
                         </div><!-- form-title-wrap -->
+
                         <div class="form-content">
                             <div class="section-tab check-mark-tab text-center pb-4">
                                 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" id="credit-card-tab" data-toggle="tab" href="#credit-card" role="tab" aria-controls="credit-card" aria-selected="false">
                                             <i class="la la-check icon-element"></i>
-                                            <img src="{{asset('images/payment-img.png')}}" alt="">
-                                            <span class="d-block pt-2">الدفع ببطاقة الائتمان</span>
+                                            <img src="{{asset('images/Image 8.png')}}" alt="">
+                                            <span class="d-block pt-2"> بطاقة بنكية</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="paypal-tab" data-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="true">
+                                        <a class="nav-link pt-3" id="paypal-tab2" data-toggle="tab" href="#paypal2" role="tab" aria-controls="paypal" aria-selected="true">
                                             <i class="la la-check icon-element"></i>
-                                            <img src="{{asset('images/paypal.png')}}" alt="">
-                                            <span class="d-block pt-2">الدفع مع PayPal</span>
+                                            <img src="{{asset('images/Image 9.png')}}" alt="">
+                                            <span class="d-block pt-2">ماستركارد</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="payoneer-tab" data-toggle="tab" href="#payoneer" role="tab" aria-controls="payoneer" aria-selected="true">
+                                        <a class="nav-link" id="paypal-tab" data-toggle="tab" href="#paypal4" role="tab" aria-controls="paypal" aria-selected="true">
                                             <i class="la la-check icon-element"></i>
-                                            <img src="{{asset('images/payoneer.png')}}" alt="">
-                                            <span class="d-block pt-2">الدفع مع بايونير</span>
+                                            <img src="{{asset('images/Image 10.png')}}" alt="">
+                                            <span class="d-block pt-2">فيزا</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="payoneer-tab" data-toggle="tab" href="#payoneer4" role="tab" aria-controls="payoneer" aria-selected="true">
+                                            <i class="la la-check icon-element"></i>
+                                            <img src="{{asset('images/Image 11.png')}}" alt="">
+                                            <span class="d-block pt-2">فاتورة سداد</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -456,7 +440,7 @@
                                     <div class="contact-form-action">
                                         <form method="post">
                                             <div class="row">
-                                                <div class="col-lg-6">
+                                                <!-- <div class="col-lg-6">
                                                     <div class="input-box">
                                                         <label class="label-text">إسم صاحب البطاقة</label>
                                                         <div class="form-group">
@@ -464,8 +448,9 @@
                                                             <input class="form-control" type="text" name="text" placeholder="إسم صاحب البطاقة">
                                                         </div>
                                                     </div>
-                                                </div><!-- end col-lg-6 -->
-                                                <div class="col-lg-6">
+                                                </div> -->
+                                                <!-- end col-lg-6 -->
+                                                <!-- <div class="col-lg-6">
                                                     <div class="input-box">
                                                         <label class="label-text">رقم البطاقة</label>
                                                         <div class="form-group">
@@ -473,8 +458,9 @@
                                                             <input class="form-control" type="text" name="text" placeholder="رقم البطاقة">
                                                         </div>
                                                     </div>
-                                                </div><!-- end col-lg-6 -->
-                                                <div class="col-lg-6">
+                                                </div> -->
+                                                <!-- end col-lg-6 -->
+                                                <!-- <div class="col-lg-6">
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="input-box">
@@ -495,8 +481,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div><!-- end col-lg-6 -->
-                                                <div class="col-lg-6">
+                                                </div> -->
+                                                <!-- end col-lg-6 -->
+                                                <!-- <div class="col-lg-6">
                                                     <div class="input-box">
                                                         <label class="label-text">CVV</label>
                                                         <div class="form-group">
@@ -504,20 +491,31 @@
                                                             <input class="form-control" type="text" name="text" placeholder="CVV">
                                                         </div>
                                                     </div>
-                                                </div><!-- end col-lg-6 -->
+                                                </div> -->
+                                                <!-- end col-lg-6 -->
                                                 <div class="col-lg-12">
                                                     <div class="input-box">
                                                         <div class="form-group">
                                                             <div class="custom-checkbox">
                                                                 <input type="checkbox" id="agreechb">
-                                                                <label for="agreechb">بالمتابعة ، فإنك توافق على <a href="#"> البنود والشروط </a>.</label>
+                                                                <label for="agreechb">لا أرغب في التأمين الشامل على مركبتي و أدرك أن مسؤولية الشركة تقتصر على تعويض الغير فقط (تأمين ضد الغير) ولا تشمل التغطية إصلاح مركبتي</label>
+                                                            </div>
+                                                            <div class="custom-checkbox">
+                                                                <input type="checkbox" id="agreechb">
+                                                                <label for="agreechb">أقبل <a href="#">الشروط و الأحكام</a>.</label>
                                                             </div>
                                                         </div>
+
                                                     </div>
-                                                </div><!-- end col-lg-12 -->
+                                                </div>
+
+                                                <!-- end col-lg-12 -->
                                                 <div class="col-lg-12">
                                                     <div class="btn-box">
-                                                        <button class="theme-btn" type="submit">تأكيد الحجز</button>
+                                                        <button class="theme-btn" type="button" data-toggle="modal" data-target="#confirm_number">ادفع الآن
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                                                                <path id="arrow_forward_FILL0_wght400_GRAD0_opsz48" d="M24,40l2.1-2.15L13.75,25.5H40v-3H13.75L26.1,10.15,24,8,8,24Z" transform="translate(-8 -8)" fill="#fff" />
+                                                            </svg></button>
                                                     </div>
                                                 </div><!-- end col-lg-12 -->
                                             </div>
@@ -597,40 +595,79 @@
                         </div><!-- end form-title-wrap -->
                         <div class="form-content">
                             <div class="card-item shadow-none radius-none mb-0">
-                                <div class="card-img pb-4">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img5.jpg" alt="room-img">
-                                    </a>
-                                </div>
+
                                 <div class="card-body p-0">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h3 class="card-title">غرفة بريميوم مطلة على البحيرة</h3>
-                                            <p class="card-meta">فندق ماريانا ، المكسيك</p>
-                                        </div>
-                                        <div>
-                                            <a href="room-details.html" class="btn ml-1"><i class="la la-edit" data-toggle="tooltip" data-placement="top" title="تعديل"></i></a>
+                                            <h3 class="card-title">التفاصيل</h3>
                                         </div>
                                     </div>
                                     <div class="section-block"></div>
                                     <ul class="list-items list-items-2 list--items-2 py-2">
-                                        <li class="font-size-15"><span class="w-auto d-block mb-n1"><i class="la la-calendar mr-1 font-size-17"></i>من عند</span>12 مايو 2020 7:40 صباحًا</li>
-                                        <li class="font-size-15"><span class="w-auto d-block mb-n1"><i class="la la-calendar mr-1 font-size-17"></i>إلى</span>16 مايو 2020 8:40 صباحًا</li>
+                                        <li class="font-size-15 d-flex justify-content-between">
+                                            <div>
+                                                <span class="w-auto d-block mb-n1">
+                                                    تفاصيل الوثيقة
+                                                </span>
+                                                <p style="color: #70707080;font-weight: 400;">
+                                                    شامل كل ما بعد
+                                                </p>
+                                            </div>
+
+                                            <span>
+                                                14000
+                                            </span>
+                                        </li>
+                                        <li class="font-size-15 d-flex justify-content-between">
+                                            <div>
+                                                <span class="w-auto d-block mb-n1">
+                                                    قسط اشتراك التأمين
+                                                </span>
+
+                                            </div>
+
+                                            <span>
+                                                14000
+                                            </span>
+                                        </li>
                                     </ul>
-                                    <h3 class="card-title pb-3">تفاصيل الطلب</h3>
+
+
                                     <div class="section-block"></div>
-                                    <ul class="list-items list-items-2 py-3">
-                                        <li><span>نوع الغرفة:</span>فخم. ترف</li>
-                                        <li><span>ليل:</span>1</li>
-                                        <li><span>غرفة:</span>1</li>
-                                        <li><span>ضيوف:</span>2 الكبار</li>
-                                        <li><span>خدمات إضافية:</span>التنظيف ، الغسيل ، الإفطار</li>
+                                    <ul class="list-items list-items-2 list--items-2 py-2">
+                                        <li class="font-size-15 d-flex justify-content-between">
+                                            <div>
+                                                <span class="w-auto d-block mb-n1">
+                                                    المجموع الجزئي
+                                                </span>
+
+                                            </div>
+
+                                            <span>
+                                                14000
+                                            </span>
+                                        </li>
+                                        <li class="font-size-15 d-flex justify-content-between">
+                                            <div>
+                                                <span class="w-auto d-block mb-n1">
+                                                    ضريبة القيمة المضافة
+                                                </span>
+                                                <p style="color: #70707080;font-weight: 400;">
+                                                    (15%)
+                                                </p>
+                                            </div>
+                                            <span>
+                                                14000
+                                            </span>
+                                        </li>
+
                                     </ul>
                                     <div class="section-block"></div>
                                     <ul class="list-items list-items-2 pt-3">
-                                        <li><span>المجموع الفرعي:</span>$240</li>
-                                        <li><span>الضرائب والرسوم:</span>$5</li>
-                                        <li><span>السعر الكلي:</span>$245</li>
+                                        <li>
+                                            <span>السعر الكلي:</span>$245
+                                            <p>السعر شامل الضريبة</p>
+                                        </li>
                                     </ul>
                                 </div>
                             </div><!-- end card-item -->
@@ -735,7 +772,25 @@
     <!-- ================================
     END CTA AREA
 ================================= -->
-
+    <div class="modal fade" id="confirm_number" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">تأكيد</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <p>لتأكيد رقم الهاتف سوف يتم إرسال رمز التحقق لهذا الرقم 0700000000</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary">تأكيد</button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal" style="color: #6184F0; box-shadow: 3px 3px 6px #00000029;">تغيير الرقم</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     @endsection

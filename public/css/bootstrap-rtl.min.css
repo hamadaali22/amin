@@ -2106,7 +2106,7 @@ textarea.form-control {
 }
 
 .form-group {
-    margin-bottom: 1rem
+    margin-bottom: 2rem
 }
 
 .form-text {
@@ -10550,7 +10550,7 @@ a.text-dark:hover {
 }
 
 .text-black-50 {
-    color: rgba(0, 0, 0, .5) !important
+    color: rgba(0, 0, 0) !important
 }
 
 .text-white-50 {

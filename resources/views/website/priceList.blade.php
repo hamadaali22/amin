@@ -11,7 +11,7 @@
                     <div class="col-lg-6">
                         <div class="breadcrumb-content">
                             <div class="section-heading">
-                                <h2 class="sec__title text-white">قائمة الأسعار</h2>
+                                <h2 class="sec__title text-black-50">قائمة الأسعار</h2>
                             </div>
                         </div><!-- end breadcrumb-content -->
                     </div><!-- end col-lg-6 -->
@@ -47,7 +47,7 @@
                     <div class="filter-wrap margin-bottom-30px">
                         <div class="filter-top d-flex align-items-center justify-content-between pb-4">
                             <div>
-                                <h3 class="title font-size-24">تم العثور على 44 شركة</h3>
+                                <h3 class="title font-size-24">تم العثور على {{count($companies)}} شركة</h3>
                             </div>
                             <!-- <div class="layout-view d-flex align-items-center">
                             <a href="car-grid.html" data-toggle="tooltip" data-placement="top" title="عرض شبكي"><i class="la la-th-large"></i></a>
@@ -57,6 +57,28 @@
 
                         <div class="filter-bar">
                             <div class="form-title-wrap">
+                                <div class="step-bar-wrap text-center">
+                                    <ul class="step-bar-list d-flex align-items-center justify-content-around">
+                                        <li class="step-bar flex-grow-1 step-bar-active">
+                                            <span class="icon-element">1</span>
+                                            <p class="pt-2 color-text-2 small">معلومات مالك الوثيقة</p>
+                                        </li>
+                                        <li class="step-bar flex-grow-1 step-bar-active">
+                                            <span class="icon-element">2</span>
+                                            <p class="pt-2 color-text-2 small">تفاصيل الحجز والدفع</p>
+                                        </li>
+                                        <li class="step-bar flex-grow-1">
+                                            <span class="icon-element">3</span>
+                                            <p class="pt-2 color-text-2 small">قائمة الأسعار</p>
+                                        </li>
+                                        <li class="step-bar flex-grow-1">
+                                            <span class="icon-element">4</span>
+                                            <p class="pt-2 color-text-2 small">التفاصيل والدفع</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-title-wrap2">
                                 <div class="row pr-3">
                                     <div class="col-lg-3 col-sm-3 progress_car">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="57.917" height="24.126" viewBox="0 0 57.917 24.126">
@@ -91,7 +113,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class=" d-flex align-items-center justify-content-between pt-2">
+                            <div class="filter  d-flex align-items-center justify-content-between pt-2">
 
                                 <div class="filter-bar-filter d-flex flex-wrap align-items-center">
 
@@ -223,282 +245,168 @@
             <div class="row">
 
                 <div class="col-lg-12">
-                    <div class="card-item card-item-list car-card">
-                        <div class="card-img padding-top-50px">
-                            <a href="car-single.html" class="d-block">
-                                <img src="{{asset('images/car-img.png')}}" alt="car-img" class="h-100">
-                            </a>
-                            <span class="badge">الأكثر مبيعا</span>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
-                                <i class="la la-heart-o"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-meta">SUV مدمجة</p>
-                            <h3 class="card-title"><a href="car-single.html">تويوتا كورولا أو ما شابه ذلك</a></h3>
-                            <div class="card-rating">
-                                <span class="badge text-white">4.4/5</span>
-                                <span class="review__text">معدل</span>
-                                <span class="rating__text">(30 التعليقات)</span>
-                            </div>
-                            <div class="card-attributes">
-                                <ul class="d-flex align-items-center">
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="راكب"><i class="la la-users"></i><span>4</span></li>
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="أمتعة"><i class="la la-suitcase"></i><span>1</span></li>
-                                </ul>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p>
-                                    <span class="price__from">من عند</span>
-                                    <span class="price__num">$23.00</span>
-                                    <span class="price__text">في اليوم</span>
-                                </p>
-                                @guest
-                                <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm"> اختر<i class="la la-angle-right"></i></a>
-                                @else
-                                <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small"> اختر<i class="la la-angle-right"></i></a>
+                    @foreach($companies as $company)
 
-                                @endguest
+                    <div class="card-item card-item-list car-card d-flex flex-column">
+                        <div class="quote-top-row" style="     height: 60px;">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="icname">أمانة لتأمين التعاوني</div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <!-- <input type="hidden" value="34" id="hdnInsuranceCompanyId" class="clearable x onX">
+                                    <input type="hidden" value="9/1/2022 12:00:00 AM" id="hdnPolicyEffectiveDate" class="clearable x onX">
+                                    <input type="hidden" id="TplPolicyQuoteResponseID_34" value="595498800" class="clearable x onX">
+
+
+                                    <input id="NajmRating_34_1" name="NajmRating_34_1" type="hidden" value="4" class="clearable x onX">
+                                    <input id="NajmResponseTime_34_1" name="NajmResponseTime_34_1" type="hidden" value="3" class="clearable x onX">
+                                    <input id="CompanyAlias_34_1" name="CompanyAlias_34_1" type="hidden" value="أمانة للتأمين" class="clearable x onX"> -->
+
+                                    <div class="najmrating" data-toggle="tooltip" data-html="true" data-placement="top" data-original-title="رفع وثيقة التأمين للمرور / نجم من قبل <br>شركة أمانة للتأمين <br> سريع جدا!<br>الوقت المتوقع لعملية رفع الوثيقة هو 3 دقائق">
+                                        <div class="najmtitle">سرعة الربط</div>
+                                        <span><img class="mt-2" width="80" height="auto" src="//dmul2da2acg0k.cloudfront.net/Resources/images/star4.png?v=17.60" alt="" title=""></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="quotetop-right">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div><!-- end card-item -->
-                    <div class="card-item card-item-list car-card">
-                        <div class="card-img padding-top-50px">
-                            <a href="car-single.html" class="d-block">
-                                <img src="images/car-img2.png" alt="car-img" class="h-100">
-                            </a>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
+                        <div class="car-card d-flex flex-row">
+                            <div class="card-img col-2 ">
+                                <a href=" car-single.html" class="d-block company_logo">
+                                    <img src="{{asset('images/car-img.png')}}" alt="car-img" class="h-100">
+                                </a>
+                                <!-- <span class="badge">الأكثر مبيعا</span> -->
+                                <!-- <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
                                 <i class="la la-heart-o"></i>
+                            </div> -->
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-meta">اساسي</p>
-                            <h3 class="card-title"><a href="car-single.html">فولكس فاجن جيتا 2 أبواب أو ما شابه ذلك</a></h3>
-                            <div class="card-rating">
-                                <span class="badge text-white">4.4/5</span>
-                                <span class="review__text">معدل</span>
-                                <span class="rating__text">(30 التعليقات)</span>
-                            </div>
-                            <div class="card-attributes">
-                                <ul class="d-flex align-items-center">
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="راكب"><i class="la la-users"></i><span>4</span></li>
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="أمتعة"><i class="la la-suitcase"></i><span>1</span></li>
+                            <div class="card-body col-5">
+                                <div class="titlebox" style="margin-top: -13px;">
+                                    <div class="feature-title"> التأمين يشمل (مجاناً):</div>
+                                    <div class="show-all"> <a value="34" class="collapsed tpl" data-toggle="collapse" data-target="#MoreFeature_34" aria-expanded="false"></a> </div>
+
+                                </div>
+                                <div class="benifits-list-icons">
+                                    <ul class="d-flex">
+
+                                        <li class="m-2">
+                                            <a href="javascript:void(0);" data-toggle="tooltip" title="" data-placement="top" data-original-title="الحد الأقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات والمبالغ المقدرة عن الإصابات والمصاريف الطبية) والأضرار المادية معاً لن تتجاوز مبلغاً إجمالياً قدره 10,000,000 ريال (عشرة ملايين ريال سعودي) حداً أقصى لمسئولية الشركة">
+
+                                                <img src="//dmul2da2acg0k.cloudfront.net/Resources/images/featureicon/tpl-genral-icon.svg?v=17.60" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="m-2">
+                                            <a href="javascript:void(0);" data-toggle="tooltip" title="" data-placement="top" data-original-title="مسؤولية الطرف الثالث عن الاضرار الجسدية">
+
+                                                <img src="//dmul2da2acg0k.cloudfront.net/Resources/images/featureicon/tpl-genral-icon.svg?v=17.60" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+                                <ul class="feature-list">
+
+                                    <li class="clearfix">
+
+                                        <div class="feature-text tpl-feature" id="Feature_34">
+                                            الحد الأقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات والمبالغ المقدرة عن الإصابات والمصاريف الطبية) والأضرار المادية معاً لن تتجاوز مبلغاً إجمالياً قدره 10,000,000 ريال (عشرة ملايين ريال سعودي) حداً أقصى لمسئولية الشركة
+                                        </div>
+                                    </li>
+
+                                    <div id="MoreFeature_34" class="in collapse show" aria-expanded="false" style="">
+                                        <li class="clearfix">
+                                            <div class="feature-text">
+                                                مسؤولية الطرف الثالث عن الاضرار الجسدية
+                                            </div>
+                                        </li>
+                                    </div>
                                 </ul>
                             </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p>
-                                    <span class="price__from">من عند</span>
-                                    <span class="price__num">$33.00</span>
-                                    <span class="price__text">في اليوم</span>
-                                </p>
-                                <a href="car-single.html" class="btn-text">انظر التفاصيل<i class="la la-angle-right"></i></a>
+                            <div class="card-body col-5" style="border-right: 2px solid #c7c7c7;">
+
+                                <div class="featuremain-box">
+                                    <div class="advance-featurebox" id="additionalFeatureSection595498800">
+                                        <input type="hidden" id="TPLadditionValue595498800" value="0" class="clearable x onX">
+                                        <div class="titlebox" style="margin-top: -13px;">
+                                            <div class="feature-title">تغطيات إضافية</div>
+
+                                        </div>
+                                        <div class="benifits-list-icons icon-feature">
+                                            <ul>
+
+                                                <li>
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="" data-placement="top" data-original-title="لا يوجد تغطيات إضافية">
+
+                                                        <img src="//dmul2da2acg0k.cloudfront.net/Resources//images/featureicon/na-icon.svg">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="extension-checkboxes label-feature-tpl" id="addationalFeatureDivId595498800">
+                                        </div>
+                                    </div>
+                                    <div class="quote-termslink-new">
+                                        <a target="_blank" href="/Common/downloadpdf/dGgbEON1TKZIid2wJrMtMA9a7y261eLn-X1K3UjWLB0iQkJihZbsq8JvjBPRZDHbalc06vPr2V3tG9KD7GfkBg$$">
+                                            الشروط و الأحكام
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div><!-- end card-item -->
-                    <div class="card-item card-item-list car-card">
-                        <div class="card-img padding-top-50px">
-                            <a href="car-single.html" class="d-block">
-                                <img src="images/car-img3.png" alt="car-img" class="h-100">
-                            </a>
-                            <span class="badge">متميز</span>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
-                                <i class="la la-heart-o"></i>
+                        <div style="border-top: 2px solid #c7c7c7;">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="discount-box">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="tpl-bottom-price d-flex justify-content-end p-3">
+                                        <div class="tpl-price-box ">
+                                            <!-- Entities Logo -->
+                                            <!-- Entities Logo -->
+                                            <div class="company-price ">
+                                                <input id="PAMT" name="PAMT" type="hidden" value="1694.39" class="clearable x onX">
+                                                <div class="old-price">
+                                                    <span id="old-price-value-595498800"></span>
+                                                </div>
+                                                <input type="hidden" value="1694.39" id="totalPriceHiddenId595498800" class="clearable x onX">
+                                                <lable class="sorting-price"> 200</lable>
+                                                <sub>
+                                                    د.أ
+                                                </sub>
+                                            </div>
+                                        </div>
+
+                                        <div class="tpl-select-box" style="    margin-right: 18px !important;">
+                                            <input type="hidden" name="tplResponseHiddenID" id="tplResponseHiddenID" class="clearable">
+                                            <div class="select-btn select-btn-tpl" id="anch_34">
+
+                                                @guest
+                                                <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" style="    padding: 3px 89px; font-size: large;" data-target="#loginPopupForm"> اختر</a>
+                                                @else
+                                                <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small"> اختر</a>
+
+                                                @endguest
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <p class="card-meta">النخبة المدمجة</p>
-                            <h3 class="card-title"><a href="car-single.html">تويوتا ياريس أو ما شابه ذلك</a></h3>
-                            <div class="card-rating">
-                                <span class="badge text-white">4.4/5</span>
-                                <span class="review__text">معدل</span>
-                                <span class="rating__text">(30 التعليقات)</span>
-                            </div>
-                            <div class="card-attributes">
-                                <ul class="d-flex align-items-center">
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="راكب"><i class="la la-users"></i><span>4</span></li>
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="أمتعة"><i class="la la-suitcase"></i><span>1</span></li>
-                                </ul>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p>
-                                    <span class="price__from">من عند</span>
-                                    <span class="price__num">$23.00</span>
-                                    <span class="price__text">في اليوم</span>
-                                </p>
-                                <a href="car-single.html" class="btn-text">انظر التفاصيل<i class="la la-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                    <div class="card-item card-item-list car-card">
-                        <div class="card-img padding-top-50px">
-                            <a href="car-single.html" class="d-block">
-                                <img src="images/car-img4.png" alt="car-img" class="h-100">
-                            </a>
-                            <span class="badge">الأكثر مبيعا</span>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
-                                <i class="la la-heart-o"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-meta">شاحنة بالحجم الكامل</p>
-                            <h3 class="card-title"><a href="car-single.html">مقعد الحمراء أو ما شابه ذلك</a></h3>
-                            <div class="card-rating">
-                                <span class="badge text-white">4.4/5</span>
-                                <span class="review__text">معدل</span>
-                                <span class="rating__text">(30 التعليقات)</span>
-                            </div>
-                            <div class="card-attributes">
-                                <ul class="d-flex align-items-center">
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="راكب"><i class="la la-users"></i><span>6</span></li>
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="أمتعة"><i class="la la-suitcase"></i><span>2</span></li>
-                                </ul>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p>
-                                    <span class="price__from">من عند</span>
-                                    <span class="price__num">$45.00</span>
-                                    <span class="price__text">في اليوم</span>
-                                </p>
-                                <a href="car-single.html" class="btn-text">انظر التفاصيل<i class="la la-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                    <div class="card-item card-item-list car-card">
-                        <div class="card-img padding-top-50px">
-                            <a href="car-single.html" class="d-block">
-                                <img src="images/car-img5.png" alt="car-img" class="h-100">
-                            </a>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
-                                <i class="la la-heart-o"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-meta">فخم. ترف</p>
-                            <h3 class="card-title"><a href="car-single.html">مرسيدس الفئة E أو ما شابه ذلك</a></h3>
-                            <div class="card-rating">
-                                <span class="badge text-white">4.4/5</span>
-                                <span class="review__text">معدل</span>
-                                <span class="rating__text">(30 التعليقات)</span>
-                            </div>
-                            <div class="card-attributes">
-                                <ul class="d-flex align-items-center">
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="راكب"><i class="la la-users"></i><span>5</span></li>
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="أمتعة"><i class="la la-suitcase"></i><span>3</span></li>
-                                </ul>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p>
-                                    <span class="price__from">من عند</span>
-                                    <span class="price__num">$58.00</span>
-                                    <span class="price__text">في اليوم</span>
-                                </p>
-                                <a href="car-single.html" class="btn-text">انظر التفاصيل<i class="la la-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                    <div class="card-item card-item-list car-card">
-                        <div class="card-img padding-top-50px">
-                            <a href="car-single.html" class="d-block">
-                                <img src="images/car-img6.png" alt="car-img" class="h-100">
-                            </a>
-                            <span class="badge">متميز</span>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
-                                <i class="la la-heart-o"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-meta">ميني</p>
-                            <h3 class="card-title"><a href="car-single.html">فيات فييستا 2 باب أو مشابه</a></h3>
-                            <div class="card-rating">
-                                <span class="badge text-white">4.4/5</span>
-                                <span class="review__text">معدل</span>
-                                <span class="rating__text">(30 التعليقات)</span>
-                            </div>
-                            <div class="card-attributes">
-                                <ul class="d-flex align-items-center">
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="راكب"><i class="la la-users"></i><span>4</span></li>
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="أمتعة"><i class="la la-suitcase"></i><span>1</span></li>
-                                </ul>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p>
-                                    <span class="price__from">من عند</span>
-                                    <span class="price__num">$23.00</span>
-                                    <span class="price__text">في اليوم</span>
-                                </p>
-                                <a href="car-single.html" class="btn-text">انظر التفاصيل<i class="la la-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                    <div class="card-item card-item-list car-card">
-                        <div class="card-img padding-top-50px">
-                            <a href="car-single.html" class="d-block">
-                                <img src="images/car-img5.png" alt="car-img" class="h-100">
-                            </a>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
-                                <i class="la la-heart-o"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-meta">فخم. ترف</p>
-                            <h3 class="card-title"><a href="car-single.html">مرسيدس الفئة E أو ما شابه ذلك</a></h3>
-                            <div class="card-rating">
-                                <span class="badge text-white">4.4/5</span>
-                                <span class="review__text">معدل</span>
-                                <span class="rating__text">(30 التعليقات)</span>
-                            </div>
-                            <div class="card-attributes">
-                                <ul class="d-flex align-items-center">
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="راكب"><i class="la la-users"></i><span>5</span></li>
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="أمتعة"><i class="la la-suitcase"></i><span>3</span></li>
-                                </ul>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p>
-                                    <span class="price__from">من عند</span>
-                                    <span class="price__num">$58.00</span>
-                                    <span class="price__text">في اليوم</span>
-                                </p>
-                                <a href="car-single.html" class="btn-text">انظر التفاصيل<i class="la la-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                    <div class="card-item card-item-list car-card">
-                        <div class="card-img padding-top-50px">
-                            <a href="car-single.html" class="d-block">
-                                <img src="images/car-img6.png" alt="car-img" class="h-100">
-                            </a>
-                            <span class="badge">متميز</span>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
-                                <i class="la la-heart-o"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-meta">ميني</p>
-                            <h3 class="card-title"><a href="car-single.html">فيات فييستا 2 باب أو مشابه</a></h3>
-                            <div class="card-rating">
-                                <span class="badge text-white">4.4/5</span>
-                                <span class="review__text">معدل</span>
-                                <span class="rating__text">(30 التعليقات)</span>
-                            </div>
-                            <div class="card-attributes">
-                                <ul class="d-flex align-items-center">
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="راكب"><i class="la la-users"></i><span>4</span></li>
-                                    <li class="d-flex align-items-center" data-toggle="tooltip" data-placement="top" title="أمتعة"><i class="la la-suitcase"></i><span>1</span></li>
-                                </ul>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p>
-                                    <span class="price__from">من عند</span>
-                                    <span class="price__num">$23.00</span>
-                                    <span class="price__text">في اليوم</span>
-                                </p>
-                                <a href="car-single.html" class="btn-text">انظر التفاصيل<i class="la la-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                </div><!-- end col-lg-8 -->
-            </div><!-- end row -->
+                    </div>
+
+                </div><!-- end card-item -->
+                @endforeach
+
+
+
+            </div><!-- end col-lg-8 -->
+        </div><!-- end row -->
 
         </div><!-- end container -->
     </section><!-- end card-area -->

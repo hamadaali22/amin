@@ -7,10 +7,13 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\EndUserController;
 use App\Http\Controllers\InsuranceTypesController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\SubInsuranceTypeController;
 use App\Http\Controllers\UserController;
+use App\Models\Company;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +44,9 @@ Route::get('/purchase_flow/checkout', function () {
     return view('website.checkout');
 });
 Route::get('/purchase_flow/price_list', function () {
-    return view('website.priceList');
+    $companies = Company::all();
+    
+    return view('website.priceList',compact('companies'));
 });
 Route::get('/car/تأمين-ضد-الغير', function () {
     return view('website.Third_party_insurance');
@@ -66,7 +71,6 @@ Route::prefix('/user_profile')->group(function () {
     Route::get('/setting', function () {
         return view('user_dashboard.setting');
     });
-    
 });
 
 
@@ -95,3 +99,6 @@ Route::resources([
 // Route::post('/login', [ApiAuthController::class, 'login'])->name('api.login');
 // Route::post('/register', [ApiAuthController::class, 'register'])->name('api.register');
 // Route::post('/forgot-password', [ApiAuthController::class, 'forgot'])->name('api.forgot-password');
+
+Route::post('/Driver-Info', [EndUserController::class, 'GetDriverInfo'])->name('driver-info');
+Route::post('/car-Info', [EndUserController::class, 'GetCarInfo'])->name('car-info');

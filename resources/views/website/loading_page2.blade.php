@@ -16,7 +16,7 @@
         <div class="wrap background1">
 
             <div class="box" style="transform: rotateY(180deg);">
-                <svg class="content" style="    position: absolute; transform: rotateY(180deg);     top: 140px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="107.976" viewBox="0 0 366.674 107.976">
+                <svg class="content" style="    position: absolute; transform: rotateY(180deg);     top: 130px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="130.976" viewBox="0 0 366.674 107.976">
                     <defs>
                         <clipPath id="clip-path">
                             <path id="Path_16" data-name="Path 16" d="M135.079,179.54h-11.9l-18.9-12.287a19.578,19.578,0,0,1-8.907-16.414v-39.26a6.717,6.717,0,0,1,5.667-6.634l19.895-3.141a8.693,8.693,0,0,0,1.674-.435l37.329-13.713a200.627,200.627,0,0,1,61.927-12.173c15.769-.57,34.642-1.253,49.943-1.808A114.035,114.035,0,0,1,326.232,85.3l34.655,17.036a9.671,9.671,0,0,0,3.109.923c31.591,3.9,69,14.715,91.7,27.629a10.082,10.082,0,0,1,4.792,9.532c-.541,6.169-1.429,15.84-2.182,24.022a16.623,16.623,0,0,1-16.553,15.1H416.12a36.155,36.155,0,1,0-68.072,0h-144.9a36.155,36.155,0,1,0-68.072,0Z" transform="translate(-95.37 -73.6)" fill="none" stroke="#707070" stroke-width="1.5" />
@@ -63,7 +63,7 @@
                         <path id="Path_18" data-name="Path 18" d="M353.99,115a36.172,36.172,0,0,0-34.036,48.371h-144.9a36.174,36.174,0,0,0-7.757-37.038" transform="translate(422.723 165.676)" fill="none" stroke="#575757" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
                     </g>
                 </svg>
-                <svg style=" position: relative;top: 180px; left: -21px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110" height="57.124" viewBox="0 0 270.093 57.124">
+                <svg style=" position: relative;top: 187px; left: -28px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="147" height="57.124" viewBox="0 0 270.093 57.124">
                     <defs>
                         <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
                             <stop offset="0" stop-color="#fff" />
@@ -92,7 +92,7 @@
     <script>
         car = anime({
             targets: '.content',
-            translateY: -2,
+            translateY: -4,
             easing: 'easeInOutSine',
             duration: 1000,
             delay: function(el, i) {
@@ -101,9 +101,9 @@
             direction: 'alternate',
             loop: true
         });
-        setTimeout(function() {
-            window.location.href = 'http://127.0.0.1:8000/purchase_flow/price_list';
-        }, 5000);
+        // setTimeout(function() {
+        //     window.location.href = 'http://127.0.0.1:8000/purchase_flow/price_list';
+        // }, 5000);
     </script>
     @endsection
 </x-website.web-master>

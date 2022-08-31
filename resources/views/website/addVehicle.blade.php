@@ -25,6 +25,28 @@
                             </div>
                             <div class="search-fields-container margin-top-30px">
                                 <div class="form-title-wrap">
+                                    <div class="step-bar-wrap text-center">
+                                        <ul class="step-bar-list d-flex align-items-center justify-content-around">
+                                            <li class="step-bar flex-grow-1 step-bar-active">
+                                                <span class="icon-element">1</span>
+                                                <p class="pt-2 color-text-2 small">معلومات مالك الوثيقة</p>
+                                            </li>
+                                            <li class="step-bar flex-grow-1">
+                                                <span class="icon-element">2</span>
+                                                <p class="pt-2 color-text-2 small">تفاصيل الحجز والدفع</p>
+                                            </li>
+                                            <li class="step-bar flex-grow-1">
+                                                <span class="icon-element">3</span>
+                                                <p class="pt-2 color-text-2 small">قائمة الأسعار</p>
+                                            </li>
+                                            <li class="step-bar flex-grow-1">
+                                                <span class="icon-element">4</span>
+                                                <p class="pt-2 color-text-2 small">التفاصيل والدفع</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-title-wrap2">
                                     <div class="row pr-3">
                                         <div class="col-lg-3 col-sm-3 progress_car">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="57.917" height="24.126" viewBox="0 0 57.917 24.126">
@@ -63,7 +85,7 @@
                                     <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
                                         <div class="section-tab section-tab-2 ">
                                             <div class="form-group">
-                                                <label for="happy" class="col-lg-2 col-sm-4 col-md-4 d-flex label-text control-label justify-content-between" style="color: #707070;    font-weight: 600;">
+                                                <label for="happy" class="col-lg-2 col-sm-4 col-md-4 d-flex label-text control-label justify-content-between" style="color: #707070; padding-left: 0px;   font-weight: 600;">
                                                     <svg id="article_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                                         <path id="Path_11" data-name="Path 11" d="M0,0H24V24H0Z" fill="none" />
                                                         <path id="Path_12" data-name="Path 12" d="M19,3H5A2.006,2.006,0,0,0,3,5V19a2.006,2.006,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,19,3ZM14,17H7V15h7Zm3-4H7V11H17Zm0-4H7V7H17Z" fill="rgba(112,112,112,0.85)" />
@@ -99,7 +121,9 @@
                                         <div class="tab-content p-3" id="myTabContent3">
                                             <div class="tab-pane fade show active" id="one-way" role="tabpanel" aria-labelledby="one-way-tab">
                                                 <div class="contact-form-action">
-                                                    <form action="#" class=" flex-lg-column">
+                                                    <form id="the_form" class=" flex-lg-column">
+                                                        @csrf
+                                                        <input hidden id="Vehicle-document-type" type="text" name="Vehicle_document_type" value="الإستمارة">
                                                         <div class="row align-items-center">
                                                             <div class="col-lg-3 pr-0">
                                                                 <div class="input-box">
@@ -121,7 +145,10 @@
                                                                                     </g>
                                                                                 </g>
                                                                             </svg></span>
-                                                                        <input class="form-control" type="text" placeholder="الرقم التسلسلي">
+                                                                        <input id="Serial-Number" name="customs_serial_number" class="form-control" type="number" placeholder="الرقم التسلسلي">
+                                                                        <span class="error_validate">
+                                                                            <span class="text-danger" id="Serial-Number-error"></span>
+                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div><!-- end col-lg-3 -->
@@ -134,7 +161,7 @@
                                                                         </svg>
                                                                         هل تريد نقل ملكية المركبة؟</label>
                                                                     <label id="toggle" class="toggle d-flex justify-content-center">
-                                                                        <input id="toggle-me" class="toggle-checkbox" type="checkbox">
+                                                                        <input name="Ownership" id="toggle-me" class="toggle-checkbox" type="checkbox">
                                                                         <div id="toggle-switch" class="toggle-switch"></div>
 
                                                                     </label>
@@ -151,26 +178,131 @@
                                                                         </span></label>
                                                                     <div class="form-group">
                                                                         <div class="select-contain w-auto">
-                                                                            <select class="select-contain-select">
-                                                                                <option value="1200AM">12:00صباحا</option>
-                                                                                <option value="1230AM">12:30صباحا</option>
-                                                                                <option value="0100AM">1:00صباحا</option>
-
+                                                                            <select id="Purpose-of-use" name="use_purpose" class="select-contain-select">
+                                                                                <option value="">اختيار الغرض من استخدام المركبة.</option>
+                                                                                <option value="1">شخصي</option>
+                                                                                <option value="2">تجاري</option>
+                                                                                <option value="3">تأجير</option>
+                                                                                <option value="4">نقل الركاب أو كريم-أوبر </option>
+                                                                                <option value="5">نقل بضائع</option>
+                                                                                <option value="6">نقل مشتقات نفطية</option>
                                                                             </select>
+
                                                                         </div>
+                                                                        <span class="error_validate">
+                                                                            <span class="text-danger" id="use-error"></span>
+                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div><!-- end col-lg-3 -->
                                                             <div id="manufacturing-year" class="col-lg-4 col-sm-12  flex-row pr-0 " style="display: none;">
+                                                                <!-- <input hidden name="Ownership" id="Ownership" checked class="toggle-checkbox" type="checkbox"> -->
                                                                 <div class="input-box col-lg-6 col-sm-6">
                                                                     <label class="label-text">سنة الصنع</label>
                                                                     <div class="form-group">
                                                                         <div class="select-contain w-auto">
-                                                                            <select class="select-contain-select">
-                                                                                <option value="1200AM">12:00صباحا</option>
-
+                                                                            <select id="production_year" name="production_year" class="select-contain-select">
+                                                                                <option value="" data-select2-id="select2-data-5480-i0fc">اختر السنة</option>
+                                                                                <option data-select2-id="select2-data-5598-a7hs">2023</option>
+                                                                                <option data-select2-id="select2-data-5599-2m7u">2022</option>
+                                                                                <option data-select2-id="select2-data-5600-f5zd">2021</option>
+                                                                                <option data-select2-id="select2-data-5601-yi2c">2020</option>
+                                                                                <option data-select2-id="select2-data-5602-2wt8">2019</option>
+                                                                                <option data-select2-id="select2-data-5603-njwd">2018</option>
+                                                                                <option data-select2-id="select2-data-5604-3stz">2017</option>
+                                                                                <option data-select2-id="select2-data-5605-1n93">2016</option>
+                                                                                <option data-select2-id="select2-data-5606-l8s9">2015</option>
+                                                                                <option data-select2-id="select2-data-5607-q8yy">2014</option>
+                                                                                <option data-select2-id="select2-data-5608-kb94">2013</option>
+                                                                                <option data-select2-id="select2-data-5609-9ei2">2012</option>
+                                                                                <option data-select2-id="select2-data-5610-jayi">2011</option>
+                                                                                <option data-select2-id="select2-data-5611-wcpl">2010</option>
+                                                                                <option data-select2-id="select2-data-5612-ix9t">2009</option>
+                                                                                <option data-select2-id="select2-data-5613-8p4k">2008</option>
+                                                                                <option data-select2-id="select2-data-5614-rz1s">2007</option>
+                                                                                <option data-select2-id="select2-data-5615-z9cs">2006</option>
+                                                                                <option data-select2-id="select2-data-5616-hvwl">2005</option>
+                                                                                <option data-select2-id="select2-data-5617-i1fc">2004</option>
+                                                                                <option data-select2-id="select2-data-5618-sq6h">2003</option>
+                                                                                <option data-select2-id="select2-data-5619-r3ba">2002</option>
+                                                                                <option data-select2-id="select2-data-5620-0h06">2001</option>
+                                                                                <option data-select2-id="select2-data-5621-sd6p">2000</option>
+                                                                                <option data-select2-id="select2-data-5622-3o59">1999</option>
+                                                                                <option data-select2-id="select2-data-5623-9uyj">1998</option>
+                                                                                <option data-select2-id="select2-data-5624-jar5">1997</option>
+                                                                                <option data-select2-id="select2-data-5625-4nyo">1996</option>
+                                                                                <option data-select2-id="select2-data-5626-0uch">1995</option>
+                                                                                <option data-select2-id="select2-data-5627-1li7">1994</option>
+                                                                                <option data-select2-id="select2-data-5628-s31c">1993</option>
+                                                                                <option data-select2-id="select2-data-5629-rwf1">1992</option>
+                                                                                <option data-select2-id="select2-data-5630-ed00">1991</option>
+                                                                                <option data-select2-id="select2-data-5631-efwh">1990</option>
+                                                                                <option data-select2-id="select2-data-5632-wjs8">1989</option>
+                                                                                <option data-select2-id="select2-data-5633-qv7g">1988</option>
+                                                                                <option data-select2-id="select2-data-5634-ixwo">1987</option>
+                                                                                <option data-select2-id="select2-data-5635-e2zo">1986</option>
+                                                                                <option data-select2-id="select2-data-5636-zx8r">1985</option>
+                                                                                <option data-select2-id="select2-data-5637-k3ld">1984</option>
+                                                                                <option data-select2-id="select2-data-5638-s2nz">1983</option>
+                                                                                <option data-select2-id="select2-data-5639-2a4q">1982</option>
+                                                                                <option data-select2-id="select2-data-5640-cukc">1981</option>
+                                                                                <option data-select2-id="select2-data-5641-l9mm">1980</option>
+                                                                                <option data-select2-id="select2-data-5642-t1uo">1979</option>
+                                                                                <option data-select2-id="select2-data-5643-lj5m">1978</option>
+                                                                                <option data-select2-id="select2-data-5644-dmq3">1977</option>
+                                                                                <option data-select2-id="select2-data-5645-k47y">1976</option>
+                                                                                <option data-select2-id="select2-data-5646-dhw5">1975</option>
+                                                                                <option data-select2-id="select2-data-5647-aie6">1974</option>
+                                                                                <option data-select2-id="select2-data-5648-gt5j">1973</option>
+                                                                                <option data-select2-id="select2-data-5649-8pfs">1972</option>
+                                                                                <option data-select2-id="select2-data-5650-hplv">1971</option>
+                                                                                <option data-select2-id="select2-data-5651-93ht">1970</option>
+                                                                                <option data-select2-id="select2-data-5652-mkgz">1969</option>
+                                                                                <option data-select2-id="select2-data-5653-w77p">1968</option>
+                                                                                <option data-select2-id="select2-data-5654-anoc">1967</option>
+                                                                                <option data-select2-id="select2-data-5655-n15t">1966</option>
+                                                                                <option data-select2-id="select2-data-5656-qqsc">1965</option>
+                                                                                <option data-select2-id="select2-data-5657-byea">1964</option>
+                                                                                <option data-select2-id="select2-data-5658-yh8s">1963</option>
+                                                                                <option data-select2-id="select2-data-5659-iw2e">1962</option>
+                                                                                <option data-select2-id="select2-data-5660-fvtk">1961</option>
+                                                                                <option data-select2-id="select2-data-5661-grwm">1960</option>
+                                                                                <option data-select2-id="select2-data-5662-geuf">1959</option>
+                                                                                <option data-select2-id="select2-data-5663-mbdg">1958</option>
+                                                                                <option data-select2-id="select2-data-5664-chmn">1957</option>
+                                                                                <option data-select2-id="select2-data-5665-c1kj">1956</option>
+                                                                                <option data-select2-id="select2-data-5666-ewi8">1955</option>
+                                                                                <option data-select2-id="select2-data-5667-iv6x">1954</option>
+                                                                                <option data-select2-id="select2-data-5668-eo2o">1953</option>
+                                                                                <option data-select2-id="select2-data-5669-76l3">1952</option>
+                                                                                <option data-select2-id="select2-data-5670-5vfj">1951</option>
+                                                                                <option data-select2-id="select2-data-5671-w6eb">1950</option>
+                                                                                <option data-select2-id="select2-data-5672-pk57">1949</option>
+                                                                                <option data-select2-id="select2-data-5673-14ut">1948</option>
+                                                                                <option data-select2-id="select2-data-5674-15gy">1947</option>
+                                                                                <option data-select2-id="select2-data-5675-c43a">1946</option>
+                                                                                <option data-select2-id="select2-data-5676-4fpo">1945</option>
+                                                                                <option data-select2-id="select2-data-5677-nhiu">1944</option>
+                                                                                <option data-select2-id="select2-data-5678-7y34">1943</option>
+                                                                                <option data-select2-id="select2-data-5679-eejb">1942</option>
+                                                                                <option data-select2-id="select2-data-5680-nxc2">1941</option>
+                                                                                <option data-select2-id="select2-data-5681-w3zo">1940</option>
+                                                                                <option data-select2-id="select2-data-5682-vptn">1939</option>
+                                                                                <option data-select2-id="select2-data-5683-cs29">1938</option>
+                                                                                <option data-select2-id="select2-data-5684-px4q">1937</option>
+                                                                                <option data-select2-id="select2-data-5685-sdoa">1936</option>
+                                                                                <option data-select2-id="select2-data-5686-27l9">1935</option>
+                                                                                <option data-select2-id="select2-data-5687-wugf">1934</option>
+                                                                                <option data-select2-id="select2-data-5688-eaob">1933</option>
+                                                                                <option data-select2-id="select2-data-5689-mxj2">1932</option>
+                                                                                <option data-select2-id="select2-data-5690-0djw">1931</option>
+                                                                                <option data-select2-id="select2-data-5691-1qqx">1930</option>
                                                                             </select>
+
                                                                         </div>
+                                                                        <span class="error_validate">
+                                                                            <span class="text-danger" id="production_year-error"></span>
+                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-sm-6 pr-0">
@@ -178,7 +310,10 @@
                                                                         <label class="label-text">تاريخ الميلاد</label>
                                                                         <div class="form-group">
                                                                             <span class="la la-calendar form-icon"></span>
-                                                                            <input class="date-picker-single form-control" type="text" name="date" readonly="">
+                                                                            <input id="Date-of-Birth" class="date-picker-single form-control" type="text" name="Date_of_Birth" readonly="">
+                                                                            <span class="error_validate">
+                                                                                <span class="text-danger" id="Birth-error"></span>
+                                                                            </span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -191,7 +326,7 @@
                                                                 <a href="/" class="theme-btn theme-btn-transparent w-100 text-center margin-top-20px">السابق</a>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <a href="/loading_page2" class="theme-btn w-100 text-center margin-top-20px">الإستمرار</a>
+                                                                <button type="submit" class="theme-btn w-100 text-center margin-top-20px">الإستمرار</button>
                                                             </div>
                                                         </div>
 
@@ -201,7 +336,10 @@
                                             <div class="tab-pane fade" id="round-trip" role="tabpanel" aria-labelledby="round-trip-tab">
                                                 <div class="contact-form-action">
 
-                                                    <form action="#" class="  flex-lg-column">
+                                                    <form id="Customs_card_form" class="flex-lg-column">
+                                                        @csrf
+                                                        <input hidden id="Customs-Vehicle-document-type" type="text" name="Vehicle_document_type" value="البطاقة الجمركية">
+
                                                         <div class="row align-items-center">
                                                             <div class="col-lg-3 pr-0">
                                                                 <div class="input-box">
@@ -214,7 +352,10 @@
                                                                     </label>
                                                                     <div class="form-group">
                                                                         <span class="la la-credit-card form-icon"></span>
-                                                                        <input class="form-control" type="text" placeholder="رقم البطاقة الجمركية">
+                                                                        <input id="customs-card-number" name="customs_form_number" class="form-control" type="number" placeholder="رقم البطاقة الجمركية">
+                                                                        <span class="error_validate">
+                                                                            <span class="text-danger" id="customs-card-number-error"></span>
+                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div><!-- end col-lg-3 -->
@@ -222,13 +363,110 @@
                                                                 <label class="label-text">سنة الصنع</label>
                                                                 <div class="form-group">
                                                                     <div class="select-contain w-auto">
-                                                                        <select class="select-contain-select">
-                                                                            <option value="1200AM">12:00صباحا</option>
+                                                                        <select id="Customs_production_year" name="production_year" class="select-contain-select">
+                                                                            <option value="" data-select2-id="select2-data-5480-i0fc">اختر السنة</option>
+                                                                            <option data-select2-id="select2-data-5598-a7hs">2023</option>
+                                                                            <option data-select2-id="select2-data-5599-2m7u">2022</option>
+                                                                            <option data-select2-id="select2-data-5600-f5zd">2021</option>
+                                                                            <option data-select2-id="select2-data-5601-yi2c">2020</option>
+                                                                            <option data-select2-id="select2-data-5602-2wt8">2019</option>
+                                                                            <option data-select2-id="select2-data-5603-njwd">2018</option>
+                                                                            <option data-select2-id="select2-data-5604-3stz">2017</option>
+                                                                            <option data-select2-id="select2-data-5605-1n93">2016</option>
+                                                                            <option data-select2-id="select2-data-5606-l8s9">2015</option>
+                                                                            <option data-select2-id="select2-data-5607-q8yy">2014</option>
+                                                                            <option data-select2-id="select2-data-5608-kb94">2013</option>
+                                                                            <option data-select2-id="select2-data-5609-9ei2">2012</option>
+                                                                            <option data-select2-id="select2-data-5610-jayi">2011</option>
+                                                                            <option data-select2-id="select2-data-5611-wcpl">2010</option>
+                                                                            <option data-select2-id="select2-data-5612-ix9t">2009</option>
+                                                                            <option data-select2-id="select2-data-5613-8p4k">2008</option>
+                                                                            <option data-select2-id="select2-data-5614-rz1s">2007</option>
+                                                                            <option data-select2-id="select2-data-5615-z9cs">2006</option>
+                                                                            <option data-select2-id="select2-data-5616-hvwl">2005</option>
+                                                                            <option data-select2-id="select2-data-5617-i1fc">2004</option>
+                                                                            <option data-select2-id="select2-data-5618-sq6h">2003</option>
+                                                                            <option data-select2-id="select2-data-5619-r3ba">2002</option>
+                                                                            <option data-select2-id="select2-data-5620-0h06">2001</option>
+                                                                            <option data-select2-id="select2-data-5621-sd6p">2000</option>
+                                                                            <option data-select2-id="select2-data-5622-3o59">1999</option>
+                                                                            <option data-select2-id="select2-data-5623-9uyj">1998</option>
+                                                                            <option data-select2-id="select2-data-5624-jar5">1997</option>
+                                                                            <option data-select2-id="select2-data-5625-4nyo">1996</option>
+                                                                            <option data-select2-id="select2-data-5626-0uch">1995</option>
+                                                                            <option data-select2-id="select2-data-5627-1li7">1994</option>
+                                                                            <option data-select2-id="select2-data-5628-s31c">1993</option>
+                                                                            <option data-select2-id="select2-data-5629-rwf1">1992</option>
+                                                                            <option data-select2-id="select2-data-5630-ed00">1991</option>
+                                                                            <option data-select2-id="select2-data-5631-efwh">1990</option>
+                                                                            <option data-select2-id="select2-data-5632-wjs8">1989</option>
+                                                                            <option data-select2-id="select2-data-5633-qv7g">1988</option>
+                                                                            <option data-select2-id="select2-data-5634-ixwo">1987</option>
+                                                                            <option data-select2-id="select2-data-5635-e2zo">1986</option>
+                                                                            <option data-select2-id="select2-data-5636-zx8r">1985</option>
+                                                                            <option data-select2-id="select2-data-5637-k3ld">1984</option>
+                                                                            <option data-select2-id="select2-data-5638-s2nz">1983</option>
+                                                                            <option data-select2-id="select2-data-5639-2a4q">1982</option>
+                                                                            <option data-select2-id="select2-data-5640-cukc">1981</option>
+                                                                            <option data-select2-id="select2-data-5641-l9mm">1980</option>
+                                                                            <option data-select2-id="select2-data-5642-t1uo">1979</option>
+                                                                            <option data-select2-id="select2-data-5643-lj5m">1978</option>
+                                                                            <option data-select2-id="select2-data-5644-dmq3">1977</option>
+                                                                            <option data-select2-id="select2-data-5645-k47y">1976</option>
+                                                                            <option data-select2-id="select2-data-5646-dhw5">1975</option>
+                                                                            <option data-select2-id="select2-data-5647-aie6">1974</option>
+                                                                            <option data-select2-id="select2-data-5648-gt5j">1973</option>
+                                                                            <option data-select2-id="select2-data-5649-8pfs">1972</option>
+                                                                            <option data-select2-id="select2-data-5650-hplv">1971</option>
+                                                                            <option data-select2-id="select2-data-5651-93ht">1970</option>
+                                                                            <option data-select2-id="select2-data-5652-mkgz">1969</option>
+                                                                            <option data-select2-id="select2-data-5653-w77p">1968</option>
+                                                                            <option data-select2-id="select2-data-5654-anoc">1967</option>
+                                                                            <option data-select2-id="select2-data-5655-n15t">1966</option>
+                                                                            <option data-select2-id="select2-data-5656-qqsc">1965</option>
+                                                                            <option data-select2-id="select2-data-5657-byea">1964</option>
+                                                                            <option data-select2-id="select2-data-5658-yh8s">1963</option>
+                                                                            <option data-select2-id="select2-data-5659-iw2e">1962</option>
+                                                                            <option data-select2-id="select2-data-5660-fvtk">1961</option>
+                                                                            <option data-select2-id="select2-data-5661-grwm">1960</option>
+                                                                            <option data-select2-id="select2-data-5662-geuf">1959</option>
+                                                                            <option data-select2-id="select2-data-5663-mbdg">1958</option>
+                                                                            <option data-select2-id="select2-data-5664-chmn">1957</option>
+                                                                            <option data-select2-id="select2-data-5665-c1kj">1956</option>
+                                                                            <option data-select2-id="select2-data-5666-ewi8">1955</option>
+                                                                            <option data-select2-id="select2-data-5667-iv6x">1954</option>
+                                                                            <option data-select2-id="select2-data-5668-eo2o">1953</option>
+                                                                            <option data-select2-id="select2-data-5669-76l3">1952</option>
+                                                                            <option data-select2-id="select2-data-5670-5vfj">1951</option>
+                                                                            <option data-select2-id="select2-data-5671-w6eb">1950</option>
+                                                                            <option data-select2-id="select2-data-5672-pk57">1949</option>
+                                                                            <option data-select2-id="select2-data-5673-14ut">1948</option>
+                                                                            <option data-select2-id="select2-data-5674-15gy">1947</option>
+                                                                            <option data-select2-id="select2-data-5675-c43a">1946</option>
+                                                                            <option data-select2-id="select2-data-5676-4fpo">1945</option>
+                                                                            <option data-select2-id="select2-data-5677-nhiu">1944</option>
+                                                                            <option data-select2-id="select2-data-5678-7y34">1943</option>
+                                                                            <option data-select2-id="select2-data-5679-eejb">1942</option>
+                                                                            <option data-select2-id="select2-data-5680-nxc2">1941</option>
+                                                                            <option data-select2-id="select2-data-5681-w3zo">1940</option>
+                                                                            <option data-select2-id="select2-data-5682-vptn">1939</option>
+                                                                            <option data-select2-id="select2-data-5683-cs29">1938</option>
+                                                                            <option data-select2-id="select2-data-5684-px4q">1937</option>
+                                                                            <option data-select2-id="select2-data-5685-sdoa">1936</option>
+                                                                            <option data-select2-id="select2-data-5686-27l9">1935</option>
+                                                                            <option data-select2-id="select2-data-5687-wugf">1934</option>
+                                                                            <option data-select2-id="select2-data-5688-eaob">1933</option>
+                                                                            <option data-select2-id="select2-data-5689-mxj2">1932</option>
+                                                                            <option data-select2-id="select2-data-5690-0djw">1931</option>
+                                                                            <option data-select2-id="select2-data-5691-1qqx">1930</option>
                                                                         </select>
                                                                     </div>
+                                                                    <span class="error_validate">
+                                                                        <span class="text-danger" id="Customs_production_year_error"></span>
+                                                                    </span>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-lg-2 col-sm-12 pr-0">
+                                                            <div class="col-lg-3 col-sm-12 pr-0">
                                                                 <div class="input-box">
                                                                     <label class="label-text d-flex control-label justify-content-between">الغرض من الإستخدام
                                                                         <span class="tt" data-bs-toggle="tooltip" data-bs-placement="top" title="إذا أردت استخدام المركبة لأغراض شخصية وفي بعض الأوقات ستقوم بنقل ركاب عبر تطبيق أوبر على سبيل المثال فعليك اختيار نقل ركاب">
@@ -238,33 +476,43 @@
                                                                         </span></label>
                                                                     <div class="form-group">
                                                                         <div class="select-contain w-auto">
-                                                                            <select class="select-contain-select">
-                                                                                <option value="1200AM">12:00صباحا</option>
-                                                                                <option value="1230AM">12:30صباحا</option>
-                                                                                <option value="0100AM">1:00صباحا</option>
+                                                                            <select id="Customs-Purpose-of-use" name="use_purpose" class="select-contain-select">
+                                                                                <option value="">اختيار الغرض من استخدام المركبة.</option>
+                                                                                <option value="1">شخصي</option>
+                                                                                <option value="2">تجاري</option>
+                                                                                <option value="3">تأجير</option>
+                                                                                <option value="4">نقل الركاب أو كريم-أوبر </option>
+                                                                                <option value="5">نقل بضائع</option>
+                                                                                <option value="6">نقل مشتقات نفطية</option>
 
                                                                             </select>
                                                                         </div>
+                                                                        <span class="error_validate">
+                                                                            <span class="text-danger" id="Customs-use-error"></span>
+                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div><!-- end col-lg-3 -->
 
-                                                            <div class="col-lg-2 col-sm-12 pr-0">
+                                                            <div class="col-lg-3 col-sm-12 pr-0">
                                                                 <div class="input-box">
                                                                     <label class="label-text">تاريخ الميلاد</label>
                                                                     <div class="form-group">
                                                                         <span class="la la-calendar form-icon"></span>
-                                                                        <input class="date-picker-single form-control" type="text" name="date" readonly="">
+                                                                        <input id="Customs-Date-of-Birth" class="date-picker-single form-control" type="text" name="Date_of_Birth" readonly="">
+                                                                        <span class="error_validate">
+                                                                            <span class="text-danger" id="Customs-Birth-error"></span>
+                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row  justify-content-between">
+                                                        <div class="row justify-content-between">
                                                             <div class="col-lg-3">
                                                                 <a href="/" class="theme-btn theme-btn-transparent w-100 text-center margin-top-20px">السابق</a>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <a href="/loading_page2" class="theme-btn w-100 text-center margin-top-20px">الإستمرار</a>
+                                                                <button type="submit" class="theme-btn w-100 text-center margin-top-20px">الإستمرار</button>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -323,7 +571,7 @@
                                                 <div class="tab-pane fade show active" id="" role="tabpanel" aria-labelledby="one-way-tab">
                                                     <div class="contact-form-action">
                                                         <form action="#" class="row align-items-center">
-                                                            <div class="col-lg-6 pr-0">
+                                                            <div class="col-lg-3 pr-0">
                                                                 <div class="input-box">
                                                                     <label class="label-text">رقم الهوية</label>
                                                                     <div class="form-group">
@@ -332,7 +580,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div><!-- end col-lg-3 -->
-                                                            <div class="col-lg-6">
+                                                            <div class="col-lg-3">
                                                                 <div class="input-box">
                                                                     <label class="label-text">الميلاد تاريخ</label>
                                                                     <div class="form-group">
@@ -341,18 +589,27 @@
                                                                     </div>
                                                                 </div>
                                                             </div><!-- end col-lg-3 -->
-                                                            <div class="col-lg-6 pr-0">
+                                                            <div class="col-lg-3">
                                                                 <div class="input-box">
-                                                                    <label class="label-text">رمز التحقق</label>
+                                                                    <label class="label-text"> أسم السائق</label>
+                                                                    <div class="form-group">
+                                                                        <span class="la la-car form-icon"></span>
+                                                                        <input class="form-control" type="text" placeholder="أسم السائق">
+                                                                    </div>
+                                                                </div>
+                                                            </div><!-- end col-lg-3 -->
+                                                            <div class="col-lg-3 pr-0">
+                                                                <div class="input-box">
+                                                                    <label class="label-text">نسبة القيادة</label>
                                                                     <div class="form-group">
                                                                         <span class="la la-meh-o form-icon"></span>
-                                                                        <input class="form-control" type="text" placeholder="رمز التحقق">
+                                                                        <input class="form-control" type="text" placeholder="نسبة القيادة">
                                                                     </div>
                                                                 </div>
                                                             </div><!-- end col-lg-3 -->
 
 
-                                                            <div class="col-lg-6">
+                                                            <div class="col-lg-3 pr-0">
                                                                 <a href="flight-search-result.html" class="theme-btn w-100 text-center margin-top-20px">أضف هذا السائق
                                                                 </a>
                                                             </div>
@@ -365,10 +622,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <label class="Form-label--tick">
-                                    <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
-                                    <span class="Form-label-text"> أوافق على منح شركة بيت التأمين الحق في الاستعلام من أي جهة ذات علاقة عن بياناتي أو أي بيانات أخرى </span>
-                                </label>
+                                <div class="d-flex flex-column">
+                                    <label class="Form-label--tick" style="position: relative;">
+                                        <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
+                                        <span class="Form-label-text"> أوافق على منح شركة بيت أمن الحق في الاستعلام من أي جهة ذات علاقة عن بياناتي أو أي بيانات أخرى </span>
+
+                                    </label>
+                                    <span class="">
+                                        <span class="text-danger" id="agree-error"></span>
+                                    </span>
+                                </div>
                                 <!-- <div class="btn-box pt-3">
                                     <button class="theme-btn" type="button">ابحث الآن</button>
                                 </div> -->
@@ -474,11 +737,57 @@
 
     @endsection
     @section('script')
-    <script src="{{asset('js/myJS.js')}}">
+    <script src="{{asset('js/myJS.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/add_vehicleJS.js')}}"></script>
 
-    </script>
-    <script>
+    <script type="text/javascript">
+        $('#Customs_card_form').on('submit', function(event) {
+            event.preventDefault();
+            $('#customs-card-number-errorr').text('');
+            $('#Customs-use-error').text('');
+            $('#Customs_production_year_error').text('');
+            $('#Customs-Birth-error').text('');
 
+
+            _token = $("input[name='_token']").val();
+            customs_form_number = $('#customs-card-number').val();
+            use_purpose = $('#Customs-Purpose-of-use').val();
+            production_year = $('#Customs_production_year').val();
+            Date_of_Birth = $('#Customs-Date-of-Birth').val();
+            Vehicle_document_type = $('#Customs-Vehicle-document-type').val();
+            agreed = document.getElementById('Declaration').checked;
+
+
+            $.ajax({
+                url: "/car-Info",
+                type: "POST",
+                data: {
+                    _token: _token,
+                    customs_form_number: customs_form_number,
+                    use_purpose: use_purpose,
+                    production_year: production_year,
+                    Date_of_Birth: Date_of_Birth,
+                    Vehicle_document_type: Vehicle_document_type,
+                },
+                success: function(response) {
+                    console.log(response);
+                    if (response[0] == 401) { // check whether response is received
+                        console.log(response[0]);
+                        agreed == false ? $('#agree-error').text('يرجى قراءة الإقرار والموافقة عليه للمتابعة') : $('#agree-error').text('');
+                        $('#customs-card-number-error').text(response['error'].customs_form_number);
+                        $('#Customs-use-error').text(response['error'].use_purpose);
+                        $('#Customs_production_year_error').text(response['error'].production_year);
+                        $('#Customs-Birth-error').text(response['error'].Date_of_Birth);
+
+
+                    } else {
+                        console.log(response);
+                        window.location = "http://127.0.0.1:8000/loading_page2";
+                    }
+                },
+
+            });
+        });
     </script>
     @endsection
 </x-website.web-master>

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('title')
-    
-    
+
+
     <!-- Favicon -->
     <link rel="icon" href="{{asset('images/ammenlogo.png')}}">
 
@@ -67,7 +67,7 @@
                                 <nav class="d-flex">
                                     <ul>
                                         <li>
-                                            <a href="#">تأمين السيارات<i class="la la-angle-down"></i></a>
+                                            <a href="#">تأمين السيارات<i class="la la-angle-down" style="margin-right: 4px !important;"></i></a>
                                             <ul class="dropdown-menu-item">
                                                 <li><a href="/car/تأمين-ضد-الغير">تأمين ضدالغير</a></li>
                                                 <li><a href="/car/التأمين-الشامل"> تأمين شامل</a></li>
@@ -76,7 +76,7 @@
                                         </li>
                                         <li>
                                             <a href="#"> خدماتي <i class="la la-angle-down"></i></a>
-                                            <ul class="dropdown-menu-item">
+                                            <ul class="dropdown-menu-item" style="width: 276px !important;">
                                                 <li><a href="#">طباعة وثيقة تأمين السيارات أونلاين</a></li>
                                                 <li><a href="index2.html">استعلام عن حالة ربط الوثيقة بالمرور</a></li>
                                             </ul>
@@ -113,7 +113,7 @@
                                         <li>
                                             <a href="#">{{ Auth::user()->name }} حسابي<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="car-grid.html">الملف الشخصي</a></li>
+                                                <li><a href="/user_profile">الملف الشخصي</a></li>
                                                 <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                         تسجيل خروج
@@ -130,7 +130,17 @@
                                     <div class="header-right-action px-2">
                                         @if (Route::has('login'))
 
-                                        <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">تسجيل الدخول</a>
+                                        <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">
+                                            <svg id="login_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                <g id="Group_47" data-name="Group 47">
+                                                    <rect id="Rectangle_114" data-name="Rectangle 114" width="24" height="24" fill="none" />
+                                                </g>
+                                                <g id="Group_48" data-name="Group 48">
+                                                    <path id="Path_69" data-name="Path 69" d="M11,7,9.6,8.4,12.2,11H2v2H12.2L9.6,15.6,11,17l5-5Zm9,12H12v2h8a2.006,2.006,0,0,0,2-2V5a2.006,2.006,0,0,0-2-2H12V5h8Z" fill="#fff" />
+                                                </g>
+                                            </svg>
+                                            تسجيل الدخول
+                                        </a>
                                         @endif
 
                                         @if (Route::has('register'))
@@ -196,7 +206,7 @@
                             <li><a href="#">لوائح البنك المركزي</a></li>
                             <li><a href="#">الوظائف</a></li>
                             <li><a href="#">شركاؤنا</a></li>
-                           
+
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
@@ -208,8 +218,8 @@
                             <li><a href="#">تواصل معنا</a></li>
                             <li><a href="#">سياسة الخصوصية</a></li>
                             <li><a href="#">الشروط والاحكام</a></li>
-                            
-                           
+
+
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
@@ -242,8 +252,8 @@
                 <div class="col-lg-7">
                     <div class="copy-right padding-top-30px">
                         <p class="copy__desc">
-                            &copy; Copyright Ammen 2022. 
-                            
+                            &copy; Copyright Ammen 2022.
+
                         </p>
                     </div><!-- end copy-right -->
                 </div><!-- end col-lg-7 -->
@@ -393,7 +403,7 @@
                                 <div class="btn-box pt-3 pb-4">
                                     <button type="submit" class="theme-btn w-100">تسجيل الدخول</button>
                                 </div>
-                               
+
                             </form>
                         </div><!-- end contact-form-action -->
                     </div>
@@ -404,7 +414,7 @@
 
 
     <!-- Template JS Files -->
-    @yield('script')
+
     <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{asset('js/jquery-ui.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
@@ -420,6 +430,7 @@
     <script src="{{asset('js/jquery.ripples-min.js')}}"></script>
     <script src="{{asset('js/quantity-input.js')}}"></script>
     <script src="{{asset('js/main-rtl.js')}}"></script>
+    @yield('script')
 </body>
 
 </html>

@@ -54,9 +54,9 @@
             direction: 'reverse',
         });
 
-        setTimeout(function() {
-            window.location.href = 'http://127.0.0.1:8000/purchase_flow/price_list';
-        }, 5000);
+        // setTimeout(function() {
+        //     window.location.href = 'http://127.0.0.1:8000/purchase_flow/price_list';
+        // }, 5000);
     </script>
     @endsection
 </x-website.web-master>

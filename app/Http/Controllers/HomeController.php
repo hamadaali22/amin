@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect()->back();
+        return redirect('/purchase_flow/checkout');
     }
 }
