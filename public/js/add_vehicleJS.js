@@ -47,7 +47,7 @@ $('#the_form').on('submit', function (event) {
 
             } else {
                 console.log(response);
-                window.location = "https://amin-jo.ghaidtech.com//loading_page";
+                window.location = "https://amin-jo.ghaidtech.com/loading_page";
                 // window.location = "http://127.0.0.1:8000/loading_page";
             }
         },
