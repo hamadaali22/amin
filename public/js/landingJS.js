@@ -47,7 +47,7 @@ $('#Third-party-insurance').on('submit', function (event) {
                 $('#code-error').text(response['error'].code);
             } else {
                 console.log(response);
-                window.location = "http://127.0.0.1:8000/purchase_flow/add_vehicle";
+                window.location = "https://amin-jo.ghaidtech.com/purchase_flow/add_vehicle";
             }
         },
 
@@ -87,7 +87,8 @@ $('#full-insurance').on('submit', function (event) {
                 $('#full-code-error').text(response['error'].code);
             } else {
                 console.log(response);
-                window.location = "http://127.0.0.1:8000/purchase_flow/add_vehicle";
+                // window.location = "http://127.0.0.1:8000/purchase_flow/add_vehicle";
+                window.location = "https://amin-jo.ghaidtech.com/purchase_flow/add_vehicle";
             }
         },
 
