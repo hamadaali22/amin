@@ -198,7 +198,7 @@
             <div class="author-content">
                 <div class="d-flex align-items-center">
                     <div class="author-img avatar-sm">
-                        <img src="images/team8.jpg" alt="testimonial image">
+                        <img src="{{asset('images/avatar.jpeg')}}" alt="testimonial image">
                     </div>
                     <div class="author-bio">
                         <h4 class="author__title">علي توفان</h4>
@@ -207,13 +207,44 @@
                 </div>
             </div>
             <div class="sidebar-menu-wrap">
+                {{request()->is('user_profile/purchased_documents')}}
                 <ul class="sidebar-menu list-items">
-                    <li class="page-active"><a href="user-dashboard.html"><i class="la la-dashboard mr-2"></i>لوحة التحكم</a></li>
-                    <li><a href="user-dashboard-booking.html"><i class="la la-shopping-cart mr-2 text-color"></i>استرجع وثيقة التأمين</a></li>
-                    <li><a href="user-dashboard-profile.html"><i class="la la-user mr-2 text-color-2"></i>الوثائق التي تم شراؤها</a></li>
-                    <li><a href="user-dashboard-reviews.html"><i class="la la-star mr-2 text-color-3"></i>الهويات المسجلة</a></li>
-                    <li><a href="user-dashboard-wishlist.html"><i class="la la-heart mr-2 text-color-4"></i>المركبات المسجلة</a></li>
-                    <li><a href="user-dashboard-settings.html"><i class="la la-cog mr-2 text-color-5"></i>الإعدادات</a></li>
+                    <li class="{{ request()->is('user_profile') ? 'page-active' : '' }}">
+                        <a href="/user_profile">
+                            <i class=" mr-2">
+                                @if(request()->is('user_profile'))
+                                <svg id="tune_black_24dp_1_" data-name="tune_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 37 36">
+                                    <path id="Path_228" data-name="Path 228" d="M0,0H37V36H0Z" fill="none" />
+                                    <path id="Path_229" data-name="Path 229" d="M3,26.333v3.333H13.333V26.333Zm0-20V9.667H20.222V6.333ZM20.222,33V29.667H34V26.333H20.222V23H16.778V33ZM9.889,13v3.333H3v3.333H9.889V23h3.444V13ZM34,19.667V16.333H16.778v3.333ZM23.667,13h3.444V9.667H34V6.333H27.111V3H23.667Z" transform="translate(0 0)" fill="#fff" />
+                                </svg>
+                                @else
+                                <svg id="tune_black_24dp_1_" data-name="tune_black_24dp (1)" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 37 36">
+                                    <path id="Path_228" data-name="Path 228" d="M0,0H37V36H0Z" fill="none" />
+                                    <path id="Path_229" data-name="Path 229" d="M3,26.333v3.333H13.333V26.333Zm0-20V9.667H20.222V6.333ZM20.222,33V29.667H34V26.333H20.222V23H16.778V33ZM9.889,13v3.333H3v3.333H9.889V23h3.444V13ZM34,19.667V16.333H16.778v3.333ZM23.667,13h3.444V9.667H34V6.333H27.111V3H23.667Z" transform="translate(0 0)" fill="#6184f0" />
+                                </svg>
+                                @endif
+                            </i>لوحة التحكم</a>
+                    </li>
+                    <li>
+                        <a class="" href="/user_profile/purchased_documents">
+                            <i class=" mr-2 text-color">
+                                @if(request()->is('/user_profile/purchased_documents'))
+                                <svg xmlns="http://www.w3.org/2000/svg" id="replay_circle_filled_black_48dp" width="25" height="25" viewBox="0 0 39 39">
+                                    <path id="Path_235" data-name="Path 235" d="M0,0H39V39H0Z" fill="none" />
+                                    <path id="Path_236" data-name="Path 236" d="M19.5,2A17.5,17.5,0,1,0,37,19.5,17.506,17.506,0,0,0,19.5,2ZM30,19.5a10.5,10.5,0,1,1-21,0h3.5a7,7,0,1,0,7-7v5.25l-7-7,7-7V9A10.508,10.508,0,0,1,30,19.5Z" fill="#fff" fill-rule="evenodd" />
+                                </svg>
+                                @else
+                                <svg xmlns="http://www.w3.org/2000/svg" id="replay_circle_filled_black_48dp" width="25" height="25" viewBox="0 0 39 39">
+  <path id="Path_235" data-name="Path 235" d="M0,0H39V39H0Z" fill="none"/>
+  <path id="Path_236" data-name="Path 236" d="M19.5,2A17.5,17.5,0,1,0,37,19.5,17.506,17.506,0,0,0,19.5,2ZM30,19.5a10.5,10.5,0,1,1-21,0h3.5a7,7,0,1,0,7-7v5.25l-7-7,7-7V9A10.508,10.508,0,0,1,30,19.5Z" fill="#6184f0" fill-rule="evenodd"/>
+</svg>
+                                @endif
+                            </i>استرجع وثيقة التأمين</a>
+                    </li>
+                    <li class="{{ request()->is('user_profile/purchased_documents') ? 'page-active' : '' }}"><a href="/user_profile/purchased_documents"><i class="la la-user mr-2 text-color-2"></i>الوثائق التي تم شراؤها</a></li>
+                    <li class="{{ request()->is('user_profile/registered_IDs*') ? 'page-active' : '' }}"><a href="/user_profile/registered_IDs"><i class="la la-credit-card mr-2 text-color-3"></i>الهويات المسجلة</a></li>
+                    <li class="{{ request()->is('user_profile/registered_cars*') ? 'page-active' : '' }}"><a href="/user_profile/registered_cars"><i class="la la-car mr-2 text-color-4"></i>المركبات المسجلة</a></li>
+                    <li class="{{ request()->is('user_profile/setting*') ? 'page-active' : '' }}"><a href="/user_profile/setting"><i class="la la-cog mr-2 text-color-5"></i>الإعدادات</a></li>
                     <li><a href="index.html"><i class="la la-power-off mr-2 text-color-6"></i>تسجيل خروج</a></li>
                 </ul>
             </div><!-- end sidebar-menu-wrap -->
@@ -233,7 +264,7 @@
                     <div class="col-lg-12">
                         <div class="menu-wrapper">
                             <div class="logo mr-5">
-                                <a href="/"><img src="images/logo2.png" alt="logo"></a>
+                                <a href="/"><img class="p-2" width="100px" height="70px" src="{{asset('images/ammenlogo.png')}}" alt="logo"> <span id="logo_name" style="">لتأمين المركبات</span></a>
                                 <div class="menu-toggler">
                                     <i class="la la-bars"></i>
                                     <i class="la la-times"></i>

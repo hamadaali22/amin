@@ -244,16 +244,15 @@
             </div><!-- end row -->
             <div class="row">
 
-                <div class="col-lg-12">
-                    @foreach($companies as $company)
+                <div class="col-lg-12 col-12">
 
                     <div class="card-item card-item-list car-card d-flex flex-column">
-                        <div class="quote-top-row" style="     height: 60px;">
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <div class="icname">أمانة لتأمين التعاوني</div>
+                        <div class="quote-top-row col-sm-12" style="     height: 60px;">
+                            <div class="row col-sm-12">
+                                <div class="col-lg-6 col-sm-8">
+                                    <div class="icname">أسم الشركة</div>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-lg-2 col-sm-4">
                                     <!-- <input type="hidden" value="34" id="hdnInsuranceCompanyId" class="clearable x onX">
                                     <input type="hidden" value="9/1/2022 12:00:00 AM" id="hdnPolicyEffectiveDate" class="clearable x onX">
                                     <input type="hidden" id="TplPolicyQuoteResponseID_34" value="595498800" class="clearable x onX">
@@ -269,14 +268,14 @@
                                     </div>
 
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-lg-4 col-sm-0">
                                     <div class="quotetop-right">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="car-card d-flex flex-row">
-                            <div class="card-img col-2 ">
+                            <div class="card-img col-2 col-sm-12">
                                 <a href=" car-single.html" class="d-block company_logo">
                                     <img src="{{asset('images/car-img.png')}}" alt="car-img" class="h-100">
                                 </a>
@@ -285,7 +284,7 @@
                                 <i class="la la-heart-o"></i>
                             </div> -->
                             </div>
-                            <div class="card-body col-5">
+                            <div class="card-body col-5 col-sm-12">
                                 <div class="titlebox" style="margin-top: -13px;">
                                     <div class="feature-title"> التأمين يشمل (مجاناً):</div>
                                     <div class="show-all"> <a value="34" class="collapsed tpl" data-toggle="collapse" data-target="#MoreFeature_34" aria-expanded="false"></a> </div>
@@ -295,15 +294,15 @@
                                     <ul class="d-flex">
 
                                         <li class="m-2">
-                                            <a href="javascript:void(0);" data-toggle="tooltip" title="" data-placement="top" data-original-title="الحد الأقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات والمبالغ المقدرة عن الإصابات والمصاريف الطبية) والأضرار المادية معاً لن تتجاوز مبلغاً إجمالياً قدره 10,000,000 ريال (عشرة ملايين ريال سعودي) حداً أقصى لمسئولية الشركة">
+                                            <a href="javascript:void(0);" data-toggle="tooltip" title="" data-placement="top" data-original-title="الحد الأقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات والمبالغ المقدرة عن الإصابات والمصاريف الطبية) والأضرار المادية معاً لن تتجاوز مبلغاً إجمالياً قدره 1,000 دينار (الف دينار أردني) حداً أقصى لمسئولية الشركة">
 
-                                                <img src="//dmul2da2acg0k.cloudfront.net/Resources/images/featureicon/tpl-genral-icon.svg?v=17.60" alt="">
+                                                <img src="{{asset('images/Image 20.png')}}" alt="">
                                             </a>
                                         </li>
                                         <li class="m-2">
                                             <a href="javascript:void(0);" data-toggle="tooltip" title="" data-placement="top" data-original-title="مسؤولية الطرف الثالث عن الاضرار الجسدية">
 
-                                                <img src="//dmul2da2acg0k.cloudfront.net/Resources/images/featureicon/tpl-genral-icon.svg?v=17.60" alt="">
+                                                <img src="{{asset('images/Image 14.png')}}" alt="">
                                             </a>
                                         </li>
                                     </ul>
@@ -314,7 +313,7 @@
                                     <li class="clearfix">
 
                                         <div class="feature-text tpl-feature" id="Feature_34">
-                                            الحد الأقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات والمبالغ المقدرة عن الإصابات والمصاريف الطبية) والأضرار المادية معاً لن تتجاوز مبلغاً إجمالياً قدره 10,000,000 ريال (عشرة ملايين ريال سعودي) حداً أقصى لمسئولية الشركة
+                                            الحد الأقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات والمبالغ المقدرة عن الإصابات والمصاريف الطبية) والأضرار المادية معاً لن تتجاوز مبلغاً إجمالياً قدره 1,000 دينار (الف دينار أردني) حداً أقصى لمسئولية الشركة
                                         </div>
                                     </li>
 
@@ -327,7 +326,159 @@
                                     </div>
                                 </ul>
                             </div>
-                            <div class="card-body col-5" style="border-right: 2px solid #c7c7c7;">
+                            <div class="card-body col-5 col-sm-12" style="border-right: 2px solid #c7c7c7;">
+
+                                <div class="featuremain-box">
+                                    <div class="advance-featurebox" id="additionalFeatureSection595498800">
+                                        <input type="hidden" id="TPLadditionValue595498800" value="0" class="clearable x onX">
+                                        <div class="titlebox" style="margin-top: -13px;">
+                                            <div class="feature-title">تغطيات إضافية</div>
+
+                                        </div>
+                                        <div class="benifits-list-icons icon-feature">
+                                            <ul>
+
+                                                <li>
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="" data-placement="top" data-original-title="لا يوجد تغطيات إضافية">
+
+                                                        <img src="//dmul2da2acg0k.cloudfront.net/Resources//images/featureicon/na-icon.svg">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="extension-checkboxes label-feature-tpl" id="addationalFeatureDivId595498800">
+                                        </div>
+                                    </div>
+                                    <div class="quote-termslink-new">
+                                        <a target="_blank" href="/Common/downloadpdf/dGgbEON1TKZIid2wJrMtMA9a7y261eLn-X1K3UjWLB0iQkJihZbsq8JvjBPRZDHbalc06vPr2V3tG9KD7GfkBg$$">
+                                            الشروط و الأحكام
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="border-top: 2px solid #c7c7c7;">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="discount-box">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="tpl-bottom-price d-flex justify-content-end p-3">
+                                        <div class="tpl-price-box ">
+                                            <!-- Entities Logo -->
+                                            <!-- Entities Logo -->
+                                            <div class="company-price ">
+                                                <input id="PAMT" name="PAMT" type="hidden" value="1694.39" class="clearable x onX">
+                                                <div class="old-price">
+                                                    <span id="old-price-value-595498800"></span>
+                                                </div>
+                                                <input type="hidden" value="1694.39" id="totalPriceHiddenId595498800" class="clearable x onX">
+                                                <lable class="sorting-price"> 200</lable>
+                                                <sub>
+                                                    د.أ
+                                                </sub>
+                                            </div>
+                                        </div>
+
+                                        <div class="tpl-select-box" style="    margin-right: 18px !important;">
+                                            <input type="hidden" name="tplResponseHiddenID" id="tplResponseHiddenID" class="clearable">
+                                            <div class="select-btn select-btn-tpl" id="anch_34">
+
+                                                @guest
+                                                <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" style="    padding: 3px 89px; font-size: large;" data-target="#loginPopupForm"> اختر</a>
+                                                @else
+                                                <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small"> اختر</a>
+
+                                                @endguest
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-item card-item-list car-card d-flex flex-column">
+                        <div class="quote-top-row col-sm-12" style="     height: 60px;">
+                            <div class="row col-sm-12">
+                                <div class="col-lg-6 col-sm-8">
+                                    <div class="icname">أسم الشركة</div>
+                                </div>
+                                <div class="col-lg-2 col-sm-4">
+                                    <!-- <input type="hidden" value="34" id="hdnInsuranceCompanyId" class="clearable x onX">
+                                    <input type="hidden" value="9/1/2022 12:00:00 AM" id="hdnPolicyEffectiveDate" class="clearable x onX">
+                                    <input type="hidden" id="TplPolicyQuoteResponseID_34" value="595498800" class="clearable x onX">
+
+
+                                    <input id="NajmRating_34_1" name="NajmRating_34_1" type="hidden" value="4" class="clearable x onX">
+                                    <input id="NajmResponseTime_34_1" name="NajmResponseTime_34_1" type="hidden" value="3" class="clearable x onX">
+                                    <input id="CompanyAlias_34_1" name="CompanyAlias_34_1" type="hidden" value="أمانة للتأمين" class="clearable x onX"> -->
+
+                                    <div class="najmrating" data-toggle="tooltip" data-html="true" data-placement="top" data-original-title="رفع وثيقة التأمين للمرور / نجم من قبل <br>شركة أمانة للتأمين <br> سريع جدا!<br>الوقت المتوقع لعملية رفع الوثيقة هو 3 دقائق">
+                                        <div class="najmtitle">سرعة الربط</div>
+                                        <span><img class="mt-2" width="80" height="auto" src="//dmul2da2acg0k.cloudfront.net/Resources/images/star4.png?v=17.60" alt="" title=""></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 col-sm-0">
+                                    <div class="quotetop-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="car-card d-flex flex-row">
+                            <div class="card-img col-2 col-sm-12">
+                                <a href=" car-single.html" class="d-block company_logo">
+                                    <img src="{{asset('images/car-img.png')}}" alt="car-img" class="h-100">
+                                </a>
+                                <!-- <span class="badge">الأكثر مبيعا</span> -->
+                                <!-- <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="احفظ لوقت لاحق">
+                                <i class="la la-heart-o"></i>
+                            </div> -->
+                            </div>
+                            <div class="card-body col-5 col-sm-12">
+                                <div class="titlebox" style="margin-top: -13px;">
+                                    <div class="feature-title"> التأمين يشمل (مجاناً):</div>
+                                    <div class="show-all"> <a value="34" class="collapsed tpl" data-toggle="collapse" data-target="#MoreFeature_34" aria-expanded="false"></a> </div>
+
+                                </div>
+                                <div class="benifits-list-icons">
+                                    <ul class="d-flex">
+
+                                        <li class="m-2">
+                                            <a href="javascript:void(0);" data-toggle="tooltip" title="" data-placement="top" data-original-title="الحد الأقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات والمبالغ المقدرة عن الإصابات والمصاريف الطبية) والأضرار المادية معاً لن تتجاوز مبلغاً إجمالياً قدره 1,000 دينار (الف دينار أردني) حداً أقصى لمسئولية الشركة">
+
+                                                <img src="{{asset('images/Image 20.png')}}" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="m-2">
+                                            <a href="javascript:void(0);" data-toggle="tooltip" title="" data-placement="top" data-original-title="مسؤولية الطرف الثالث عن الاضرار الجسدية">
+
+                                                <img src="{{asset('images/Image 14.png')}}" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+                                <ul class="feature-list">
+
+                                    <li class="clearfix">
+
+                                        <div class="feature-text tpl-feature" id="Feature_34">
+                                            الحد الأقصى لمسؤولية الشركة في الواقعة الواحدة وخلال فترة سريان وثيقة التأمين بالنسبة للأضرار الجسدية (بما في ذلك الديات والمبالغ المقدرة عن الإصابات والمصاريف الطبية) والأضرار المادية معاً لن تتجاوز مبلغاً إجمالياً قدره 1,000 دينار (الف دينار أردني) حداً أقصى لمسئولية الشركة
+                                        </div>
+                                    </li>
+
+                                    <div id="MoreFeature_34" class="in collapse show" aria-expanded="false" style="">
+                                        <li class="clearfix">
+                                            <div class="feature-text">
+                                                مسؤولية الطرف الثالث عن الاضرار الجسدية
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="card-body col-5 col-sm-12" style="border-right: 2px solid #c7c7c7;">
 
                                 <div class="featuremain-box">
                                     <div class="advance-featurebox" id="additionalFeatureSection595498800">
@@ -401,7 +552,6 @@
                     </div>
 
                 </div><!-- end card-item -->
-                @endforeach
 
 
 

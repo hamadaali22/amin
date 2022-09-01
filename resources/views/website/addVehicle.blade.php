@@ -782,7 +782,7 @@
 
                     } else {
                         console.log(response);
-                        window.location = "http://127.0.0.1:8000/loading_page2";
+                        window.location = "http://127.0.0.1:8000/loading_page";
                     }
                 },
 

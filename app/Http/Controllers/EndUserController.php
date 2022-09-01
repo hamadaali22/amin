@@ -18,7 +18,7 @@ class EndUserController extends Controller
             'code.required' => 'رمز التحقق مطلوب',
         ];
         $validator = Validator::make($request->all(), [
-            'id_number'           => 'required|max:10|min:10|numeric',
+            'id_number'           => 'required|numeric',
             'start_date'          => 'required',
             'code'        => 'required',
         ], $messages);

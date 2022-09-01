@@ -6328,7 +6328,11 @@ body {
   .cruise-line-list {
     margin-bottom: 30px;
   }
+  .car-card{
+    flex-direction: column !important;
+  }
 }
+
 
 @media (max-width: 375px) {
   .cruise-line-list {
@@ -11497,7 +11501,7 @@ body {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   font-weight: 500;
-  height: 130px;
+  /* height: 130px; */
 }
 
 .section-tab .nav-tabs .nav-link i {
