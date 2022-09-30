@@ -782,7 +782,7 @@
 
                     } else {
                         console.log(response);
-                        window.location = "https://amin-jo.ghaidtech.com/loading_page";
+                        window.location = "https://amin-jo.net/loading_page";
                     }
                 },
 

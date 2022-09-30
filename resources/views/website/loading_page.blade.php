@@ -102,7 +102,7 @@
             loop: true
         });
         setTimeout(function() {
-            window.location.href = 'https://amin-jo.ghaidtech.com/purchase_flow/price_list';
+            window.location.href = 'https://amin-jo.net/purchase_flow/price_list';
         }, 5000);
     </script>
     @endsection
