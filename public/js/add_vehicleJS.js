@@ -48,7 +48,7 @@ $('#the_form').on('submit', function (event) {
             } else {
                 console.log(response);
                 window.location = "https://amin-jo.net/loading_page";
-                // window.location = "http://143.198.173.61/loading_page";
+                // window.location = "http://127.0.1.1:8080//loading_page";
             }
         },
 

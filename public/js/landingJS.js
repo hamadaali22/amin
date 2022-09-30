@@ -87,7 +87,7 @@ $('#full-insurance').on('submit', function (event) {
                 $('#full-code-error').text(response['error'].code);
             } else {
                 console.log(response);
-                // window.location = "143.198.173.61/purchase_flow/add_vehicle";
+                // window.location = "http://127.0.1.1:8080/purchase_flow/add_vehicle";
                 window.location = "https://amin-jo.net/purchase_flow/add_vehicle";
             }
         },
