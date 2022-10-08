@@ -1,6 +1,6 @@
 /*
  * Anime v1.1.3
- * https://animejs.com
+ * https://amin-jo.net
  * JavaScript animation engine
  * Copyright (c) 2016 Julian Garnier
  * http://juliangarnier.com

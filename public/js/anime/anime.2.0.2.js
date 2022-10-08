@@ -1,5 +1,5 @@
 /**
- * http://anime-js.com
+ * https://amin-jo.net
  * JavaScript animation engine
  * @version v2.0.2
  * @author Julian Garnier
