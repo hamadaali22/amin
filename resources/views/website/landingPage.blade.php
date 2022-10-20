@@ -22,8 +22,8 @@
                         <div class="hero-content pb-5">
                             <div class="section-heading">
                                 <h2 class="sec__title cd-headline zoom">
-                                    قارن أسعار تأمين السيارات<span class="cd-words-wrapper">
-                                        <b class="is-visible">ضد الغير </b>
+                                     قارن أسعار تأمين السيارات<span class="cd-words-wrapper">
+                                        <b class="is-visible">الإلزامي  </b>
                                         <b>شامل </b>
 
                                     </span>
@@ -36,7 +36,7 @@
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center active" id="flight-tab" data-toggle="tab" href="#flight" role="tab" aria-controls="flight" aria-selected="true">
-                                        <i class="la la-car mr-1"></i> تأمين ضد الغير
+                                        <i class="la la-car mr-1"></i> تأمين الإلزامي 
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -57,7 +57,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" id="one-way-tab" data-toggle="tab"
                                                 href="#one-way" role="tab" aria-controls="one-way" aria-selected="true">
-                                                تأمين ضد الغير
+                                                تأمين الإلزامي
                                             </a>
                                         </li>
                                         <li class="nav-item">

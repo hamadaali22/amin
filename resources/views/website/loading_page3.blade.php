@@ -44,7 +44,7 @@
             direction: 'reverse',
         });
         // setTimeout(function() {
-        //     window.location.href = 'http://127.0.0.1:8000/purchase_flow/price_list';
+        //     window.location.href = 'http://amin-jo.net/purchase_flow/price_list';
         // }, 5000);
     </script>
     @endsection
