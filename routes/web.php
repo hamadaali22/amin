@@ -1,18 +1,20 @@
 <?php
 
-use App\Http\Controllers\CarBrandController;
+use App\Models\Company;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\ApiAuthController;
 use App\Http\Controllers\CarController;
-use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\DriverController;
-use App\Http\Controllers\EndUserController;
-use App\Http\Controllers\InsuranceTypesController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EndUserController;
+use App\Http\Controllers\CarBrandController;
+use App\Http\Controllers\Auth\ApiAuthController;
+use App\Http\Controllers\InsuranceTypesController;
 use App\Http\Controllers\SubInsuranceTypeController;
-use App\Http\Controllers\UserController;
-use App\Models\Company;
+use App\Http\Controllers\VerifyCarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +47,7 @@ Route::get('/purchase_flow/checkout', function () {
 });
 Route::get('/purchase_flow/price_list', function () {
     $companies = Company::all();
-    
-    return view('website.priceList',compact('companies'));
+    return view('website.priceList', compact('companies'));
 });
 Route::get('/car/تأمين-ضد-الغير', function () {
     return view('website.Third_party_insurance');
@@ -102,3 +103,6 @@ Route::resources([
 
 Route::post('/Driver-Info', [EndUserController::class, 'GetDriverInfo'])->name('driver-info');
 Route::post('/car-Info', [EndUserController::class, 'GetCarInfo'])->name('car-info');
+
+
+Route::post('/verifyCar', [VerifyCarController::class, 'index'])->name('verifyCar');

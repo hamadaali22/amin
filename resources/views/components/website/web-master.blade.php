@@ -3,6 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="TechyDevs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,27 +11,28 @@
 
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('images/ammenlogo.png')}}">
+    <link rel="icon" href="{{ asset('images/ammenlogo.png') }}">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
     <!-- Template CSS Files -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap-rtl.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/line-awesome.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/jquery.fancybox.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/daterangepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/animated-headline.css')}}">
-    <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
-    <link rel="stylesheet" href="{{asset('css/jquery.filer.css')}}">
-    <link rel="stylesheet" href="{{asset('css/flag-icon.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style-rtl.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-rtl.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/line-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/daterangepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animated-headline.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.filer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-rtl.css') }}">
     @yield('style')
 </head>
 
@@ -39,7 +41,8 @@
     <div class="preloader" id="preloader">
         <div class="loader">
             <svg class="spinner" viewBox="0 0 50 50">
-                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5">
+                </circle>
             </svg>
         </div>
     </div>
@@ -57,7 +60,9 @@
                         <div class="menu-wrapper">
                             <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
                             <div class="logo">
-                                <a href="/"><img class="p-2" width="100px" height="100px" src="{{asset('images/ammenlogo.png')}}" alt="logo"> <span id="logo_name" style="">لتأمين المركبات</span></a>
+                                <a href="/"><img class="p-2" width="100px" height="100px"
+                                        src="{{ asset('images/ammenlogo.png') }}" alt="logo"> <span id="logo_name"
+                                        style="">لتأمين المركبات</span></a>
                                 <div class="menu-toggler">
                                     <i class="la la-bars"></i>
                                     <i class="la la-times"></i>
@@ -67,7 +72,8 @@
                                 <nav class="d-flex">
                                     <ul>
                                         <li>
-                                            <a href="#">تأمين السيارات<i class="la la-angle-down" style="margin-right: 4px !important;"></i></a>
+                                            <a href="#">تأمين السيارات<i class="la la-angle-down"
+                                                    style="margin-right: 4px !important;"></i></a>
                                             <ul class="dropdown-menu-item">
                                                 <li><a href="/car/تأمين-ضد-الغير">تأمين ضدالغير</a></li>
                                                 <li><a href="/car/التأمين-الشامل"> تأمين شامل</a></li>
@@ -110,44 +116,52 @@
                                         </li>
                                         @guest
                                         @else
-                                        <li>
-                                            <a href="#">{{ Auth::user()->name }} حسابي<i class="la la-angle-down"></i></a>
-                                            <ul class="dropdown-menu-item">
-                                                <li><a href="/user_profile">الملف الشخصي</a></li>
-                                                <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            <li>
+                                                <a href="#">{{ Auth::user()->name }} حسابي<i
+                                                        class="la la-angle-down"></i></a>
+                                                <ul class="dropdown-menu-item">
+                                                    <li><a href="/user_profile">الملف الشخصي</a></li>
+                                                    <li> <a class="dropdown-item" href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                        تسجيل خروج
-                                                    </a>
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                        @csrf
-                                                    </form>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                                            تسجيل خروج
+                                                        </a>
+                                                        <form id="logout-form" action="{{ route('logout') }}"
+                                                            method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         @endguest
                                     </ul>
                                     @guest
-                                    <div class="header-right-action px-2">
-                                        @if (Route::has('login'))
+                                        <div class="header-right-action px-2">
+                                            @if (Route::has('login'))
+                                                <a href="#" class="theme-btn theme-btn-small" data-toggle="modal"
+                                                    data-target="#loginPopupForm">
+                                                    <svg id="login_black_24dp" xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24" viewBox="0 0 24 24">
+                                                        <g id="Group_47" data-name="Group 47">
+                                                            <rect id="Rectangle_114" data-name="Rectangle 114"
+                                                                width="24" height="24" fill="none" />
+                                                        </g>
+                                                        <g id="Group_48" data-name="Group 48">
+                                                            <path id="Path_69" data-name="Path 69"
+                                                                d="M11,7,9.6,8.4,12.2,11H2v2H12.2L9.6,15.6,11,17l5-5Zm9,12H12v2h8a2.006,2.006,0,0,0,2-2V5a2.006,2.006,0,0,0-2-2H12V5h8Z"
+                                                                fill="#fff" />
+                                                        </g>
+                                                    </svg>
+                                                    تسجيل الدخول
+                                                </a>
+                                            @endif
 
-                                        <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">
-                                            <svg id="login_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                                <g id="Group_47" data-name="Group 47">
-                                                    <rect id="Rectangle_114" data-name="Rectangle 114" width="24" height="24" fill="none" />
-                                                </g>
-                                                <g id="Group_48" data-name="Group 48">
-                                                    <path id="Path_69" data-name="Path 69" d="M11,7,9.6,8.4,12.2,11H2v2H12.2L9.6,15.6,11,17l5-5Zm9,12H12v2h8a2.006,2.006,0,0,0,2-2V5a2.006,2.006,0,0,0-2-2H12V5h8Z" fill="#fff" />
-                                                </g>
-                                            </svg>
-                                            تسجيل الدخول
-                                        </a>
-                                        @endif
-
-                                        @if (Route::has('register'))
-                                        <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">سجل</a>
-
-                                        @endif
-                                    </div>
+                                            @if (Route::has('register'))
+                                                <a href="#"
+                                                    class="theme-btn theme-btn-small theme-btn-transparent mr-1"
+                                                    data-toggle="modal" data-target="#signupPopupForm">سجل</a>
+                                            @endif
+                                        </div>
                                     @endguest
                                 </nav>
 
@@ -177,7 +191,8 @@
                 <div class="col-lg-3 responsive-column">
                     <div class="footer-item">
                         <div class="footer-logo padding-bottom-30px">
-                            <a href="index.html" class="foot__logo"><img class="p-2" width="100px" height="100px" src="{{asset('images/ammenlogo.png')}}" alt="logo"></a>
+                            <a href="index.html" class="foot__logo"><img class="p-2" width="100px"
+                                    height="100px" src="{{ asset('images/ammenlogo.png') }}" alt="logo"></a>
                         </div><!-- end logo -->
                         <ul class="list-items pt-3">
                             <li>+123-456-789</li>
@@ -260,7 +275,7 @@
                 <div class="col-lg-5">
                     <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
                         <h3 class="title font-size-15 pr-2">نحن نقبل</h3>
-                        <img src="{{asset('images/payment-img.png')}}" alt="">
+                        <img src="{{ asset('images/payment-img.png') }}" alt="">
                     </div><!-- end copy-right-content -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->
@@ -299,14 +314,16 @@
                                         <label class="label-text">الإسم الأول</label>
                                         <div class="form-group">
                                             <span class="la la-user form-icon"></span>
-                                            <input class="form-control" type="text" name="firstname" placeholder="اكتب اسم الأول الخاص بك">
+                                            <input class="form-control" type="text" name="firstname"
+                                                placeholder="اكتب اسم الأول الخاص بك">
                                         </div>
                                     </div><!-- end input-box -->
                                     <div class="input-box col-6">
                                         <label class="label-text">الإسم الأخير</label>
                                         <div class="form-group">
                                             <span class="la la-user form-icon"></span>
-                                            <input class="form-control" type="text" name="lastname" placeholder="اكتب اسم الأخير الخاص بك">
+                                            <input class="form-control" type="text" name="lastname"
+                                                placeholder="اكتب اسم الأخير الخاص بك">
                                         </div>
                                     </div><!-- end input-box -->
                                 </div>
@@ -315,14 +332,16 @@
                                         <label class="label-text">عنوان البريد الالكترونى</label>
                                         <div class="form-group">
                                             <span class="la la-envelope form-icon"></span>
-                                            <input class="form-control" type="email" name="email" placeholder="اكتب بريدك الإلكتروني">
+                                            <input class="form-control" type="email" name="email"
+                                                placeholder="اكتب بريدك الإلكتروني">
                                         </div>
                                     </div><!-- end input-box -->
                                     <div class="input-box col-6">
                                         <label class="label-text">رقم الهاتف</label>
                                         <div class="form-group">
                                             <span class="la la-phone form-icon"></span>
-                                            <input class="form-control" type="number" name="phone" placeholder="07XXXXXXXX">
+                                            <input class="form-control" type="number" name="phone"
+                                                placeholder="07XXXXXXXX">
                                         </div>
                                     </div><!-- end input-box -->
                                 </div>
@@ -331,14 +350,16 @@
                                     <label class="label-text">كلمه السر</label>
                                     <div class="form-group">
                                         <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="password" name="password" placeholder="أكتب كلمة المرور">
+                                        <input class="form-control" type="password" name="password"
+                                            placeholder="أكتب كلمة المرور">
                                     </div>
                                 </div><!-- end input-box -->
                                 <div class="input-box">
                                     <label class="label-text">اعد كلمة السر</label>
                                     <div class="form-group">
                                         <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="password" name="password_confirmation" placeholder="اكتب كلمة المرور مرة أخرى">
+                                        <input class="form-control" type="password" name="password_confirmation"
+                                            placeholder="اكتب كلمة المرور مرة أخرى">
                                     </div>
                                 </div><!-- end input-box -->
                                 <div class="btn-box pt-3 pb-4">
@@ -347,7 +368,8 @@
                                 <div class="action-box text-center">
                                     <p class="font-size-14">أو قم بالتسجيل باستخدام</p>
                                     <ul class="social-profile py-3">
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-google"></i></a></li>
+                                        <li><a href="#" class="bg-5 text-white"><i
+                                                    class="lab la-google"></i></a></li>
 
                                     </ul>
                                 </div>
@@ -381,14 +403,17 @@
                                     <label class="label-text">ايميل المستخدم</label>
                                     <div class="form-group">
                                         <span class="la la-user form-icon"></span>
-                                        <input class="form-control" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="اكتب الايميل الخاص بك">
+                                        <input class="form-control" type="email" name="email"
+                                            value="{{ old('email') }}" required autocomplete="email" autofocus
+                                            placeholder="اكتب الايميل الخاص بك">
                                     </div>
                                 </div><!-- end input-box -->
                                 <div class="input-box">
                                     <label class="label-text">كلمه السر</label>
                                     <div class="form-group mb-2">
                                         <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="password" name="password" placeholder="اكتب كلمة المرور الخاصة بك">
+                                        <input class="form-control" type="password" name="password"
+                                            placeholder="اكتب كلمة المرور الخاصة بك">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="custom-checkbox mb-0">
@@ -412,24 +437,93 @@
         </div>
     </div><!-- end modal-popup -->
 
+    {{-- Continue using Mobile Modal form  --}}
+    <div class="modal-popup">
+        <div class="modal fade" id="continueUsingMobileModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <img src="{{ asset('images/mobile_phone_icon.png') }}" alt="mobile_icon" width="70em"
+                                height="auto" style="float: right" />
+                            <h2 class="modal-title title float-right" id="exampleModalLongTitle2"
+                                style="font-size: 22px">
+                                هذه التسعيرة تتطلب أخذ صور للمركبة من الجوال.
+                            </h2>
+                            <br>
+                            <p class="font-size-16">سيتم ارسال رسالة نصية الى جوالك لاتمام عملية الشراء </p>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="la la-close"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="contact-form-action">
+                            <form method="post" action="{{ route('login') }}">
+                                @csrf
+                                <div class="input-box">
+                                    <label class="label-text font-size-17">أدخل رقم جوالك واستكمل عملية الشراء من جوالك.</label>
+                                    <div class="form-group">
+                                        {{-- <span class="la la-user form-icon"></span> --}}
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" style="direction: ltr">+962</div>
+                                              </div>
+                                            <input class="form-control" type="text" name="phone"
+                                                value="{{ old('phone') }}" required autofocus
+                                                placeholder="أدخل رقم الجوال">
+                                        </div>
+                                    </div>
+                                </div><!-- end input-box -->
+                                {{-- <div class="input-box">
+                                    <label class="label-text">كلمه السر</label>
+                                    <div class="form-group mb-2">
+                                        <span class="la la-lock form-icon"></span>
+                                        <input class="form-control" type="password" name="password"
+                                            placeholder="اكتب كلمة المرور الخاصة بك">
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="custom-checkbox mb-0">
+                                            <input type="checkbox" id="rememberchb">
+                                            <label for="rememberchb">تذكرنى</label>
+                                        </div>
+                                        <p class="forgot-password">
+                                            <a href="recover.html">هل نسيت كلمة المرور؟</a>
+                                        </p>
+                                    </div>
+                                </div><!-- end input-box --> --}}
+                                <div class="btn-box pt-3 pb-4">
+                                    <button type="submit" class="theme-btn w-100">استمرار</button>
+                                </div>
+
+                            </form>
+                        </div><!-- end contact-form-action -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal-popup -->
+
+    {{-- end of continue using mobile modal form  --}}
+
 
     <!-- Template JS Files -->
 
-    <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-    <script src="{{asset('js/jquery-ui.js')}}"></script>
-    <script src="{{asset('js/popper.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap-select.min.js')}}"></script>
-    <script src="{{asset('js/moment.min.js')}}"></script>
-    <script src="{{asset('js/daterangepicker.js')}}"></script>
-    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/jquery.fancybox.min.js')}}"></script>
-    <script src="{{asset('js/jquery.countTo.min.js')}}"></script>
-    <script src="{{asset('js/animated-headline.js')}}"></script>
-    <script src="{{asset('js/jquery.filer.min.js')}}"></script>
-    <script src="{{asset('js/jquery.ripples-min.js')}}"></script>
-    <script src="{{asset('js/quantity-input.js')}}"></script>
-    <script src="{{asset('js/main-rtl.js')}}"></script>
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/daterangepicker.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.countTo.min.js') }}"></script>
+    <script src="{{ asset('js/animated-headline.js') }}"></script>
+    <script src="{{ asset('js/jquery.filer.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.ripples-min.js') }}"></script>
+    <script src="{{ asset('js/quantity-input.js') }}"></script>
+    <script src="{{ asset('js/main-rtl.js') }}"></script>
     @yield('script')
 </body>
 

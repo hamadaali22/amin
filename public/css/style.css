@@ -121,6 +121,21 @@
             - $small_mobile_five: '(max-width: 375px)';
             - $small_mobile_two: '(max-width: 320px)';
 -------------------------------------------------------------------*/
+
+/*---------------- placeholder size ----------------*/
+
+::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+     font-size: 16px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+     font-size: 16px;
+}
+
 /*---------------- css loader ----------------*/
 @keyframes rotate {
   100% {
