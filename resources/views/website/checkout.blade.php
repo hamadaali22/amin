@@ -3,6 +3,13 @@
     <title>التفاصيل والدفع</title>
     @endsection
     @section('content')
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('css-up/jquery.uploader.css')}}">
+
+
+
+
+        
 
     <!-- ================================
     START BREADCRUMB AREA
@@ -233,49 +240,186 @@
                             </div><!-- end contact-form-action -->
                         </div><!-- end form-content -->
                     </div><!-- end form-box -->
-                    <div class="form-box">
 
+                    <!-- start my update -->
+                    <div class="form-box">
                         <div class="form-content ">
                             <div class="contact-form-action">
                                 <div class="row insurance_coverage d-flex justify-content-between">
                                     <div class="col-12 d-flex justify-content-between">
-                                        <h6>توسيع التغطية التأمينية لتشمل مركبتك</h6>
-                                        <a href="http://">الشروط و الأحكام</a>
+                                        <h6>متطلبات التأمين الشامل</h6>
+                                        <!-- <a href="http://">الشروط و الأحكام</a> -->
                                     </div>
 
                                 </div>
                                 <div class="row mb-3 mt-3 insurance_coverage_body">
-                                    <div class="col-lg-3 col-12">
-                                        <img class="company_img" src="{{asset('images/balcony-cabin.jpg')}}" alt="">
+                                    <div class="col-lg-2  col-4">
+                                        <ul>
+                                            <li>
+                                                <span>الامامية </span>
+                                                <input type="text" id="demo1" value="" accept="image/*" >
+                                            </li>
+                                            
+                                        </ul>
                                     </div>
-                                    <div class="col-lg-6 col-12 d-flex align-items-center">
+                                    <div class="col-lg-8 col-8">
+                                        <ul style="padding: 5px;">
+                                            <br>
+                                            <i>صورة من الجهة الأمامية للمركبة ، بحيث تتوسط مقدمة المركبة الصورة ويمكن من خلالها روؤية لوحة المركبة بشكل واضح</i>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-lg-2  col-4">
+                                        <ul>
+                                            <li>
+                                                <span>صورة من الخلف</span>
+                                                <input type="text" id="demo2" value="" accept="image/*" >
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-8 col-8">
+                                        <ul style="padding: 5px;">
+                                            <br>
+                                            <i>صورة من الجهة الخلفية للمركبة ، بحيث تتوسط مؤخرة المركبة الصورة ويمكن من خلالها روؤية لوحة المركبة بشكل واضح وكامل الصدام الخلفي</i>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-lg-2  col-4">
+                                        <ul>
+                                            <li>
+                                                <span>صورة من اليمين</span>
+                                                <input type="text" id="demo3" value="" accept="image/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-8 col-8">
+                                        <ul style="padding: 5px;">
+                                            <br>
+                                            <i>صورة من الجانب الأيمن للمركبة يجب ان تشمل جانب المركبة كاملا ومن خلالها يمكن روؤية الرفرف الأمامي و الأبواب الجانبية و الرفرف الخلفي </i>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-lg-2  col-4">
+                                        <ul>
+                                            <li>
+                                                <span>صورة من اليسار</span>
+                                                <input type="text" id="demo4" value="" accept="image/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-8 col-8">
+                                        <ul style="padding: 5px;">
+                                            <br>
+                                            <i>صورة من الجانب الأيسر للمركبة يجب ان تشمل جانب المركبة كاملا ومن خلالها يمكن روؤية الرفرف الأمامي و الأبواب الجانبية و الرفرف الخلفي </i>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-lg-2  col-4">
+                                        <ul>
+                                            <li>
+                                                <span>رقم الهيكل</span>
+                                                <input type="text" id="demo5" value="" accept="image/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-8 col-8">
+                                        <ul style="padding: 5px;">
+                                            <br>
+                                            <i>صوره رقم هيكل المربة (رقم الشاص) و الموجود على النافذة الأمامية في الزاوية السفلية من جهة السائق يجب ان يكون رقم الهيكل مقروء ويمكن التعرف عليه بكل سهولة من خلال الصورة</i>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-lg-2  col-4">
+                                        <ul>
+                                            <li>
+                                                <span>الفيديو</span>
+                                                <input type="text" id="demo6" value="" accept="video/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-8 col-8">
+                                        <ul style="padding: 5px;">
+                                            <br>
+                                            <i>تصوير فيديو كامل للمركبة يبدأ من الجهة اليسرى او اليمنى ويكون فيها واضحة الرفرف الامامي والابواب الجانبية والرفرف الخلفي ويكمل تصوير الفيديو للجهة الخلفية للمركبة مع اللوحة والصدام الخلفي كاملا ومن ثم الجانب الاخر مثل الجانب الاول ومن ثم مقدمة السيارة مع ابراز اللوحه ومن ثم هيكل السياره على الزجاج الامامي ان يكون بشكل واضح وثابت لمدة دقيقه واحده</i>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-md-2 col-12">
+                                        <ul>
+                                            <li>
+                                                <i>  من الأمام</i>
+                                                <input type="text" id="demo10" value="" accept="image/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2 col-12">
+                                        <ul>
+                                            <li>
+                                                <i>من الخلف</i>
+                                                <input type="text" id="demo11" value="" accept="image/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2 col-12">
+                                        <ul>
+                                            <li>
+                                                <i>الجهة اليمنى</i>
+                                                <input type="text" id="demo12" value="" accept="image/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2 col-12">
+                                        <ul>
+                                            <li>
+                                                <i>الجهة اليسرى</i>
+                                                <input type="text" id="demo13" value="" accept="image/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2 col-12">
+                                        <ul>
+                                            <li>
+                                                <i>رقم الهيكل</i>
+                                                <input type="text" id="demo14" value="" accept="image/*" >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> -->
+
+                                <!-- <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    
+                                    <div class="col-md-12 col-12 d-flex align-items-center">
                                         <p style=" font-size: smaller;">
                                             بشرائك هذه التسعيرة المقدمة من شركة ستحصل على تغطية تأمينية مركبتك تغطي تكاليف إصلاح المركبة ضد الحوادث و السرقة
                                         </p>
                                     </div>
-                                    <div class="col-lg-3 d-flex align-items-center">
-                                        <div class="Estimated_value d-flex flex-column justify-content-center align-items-center" style="">
-                                            <span class="edit_black">
-                                                <svg id="edit_black_24dp" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                                                    <path id="Path_188" data-name="Path 188" d="M0,0H20V20H0Z" fill="none" />
-                                                    <path id="Path_189" data-name="Path 189" d="M3,14.083V17H5.917l8.6-8.6L11.6,5.481ZM16.775,6.142a.775.775,0,0,0,0-1.1l-1.82-1.82a.775.775,0,0,0-1.1,0L12.435,4.648l2.917,2.917,1.423-1.423Z" fill="#6184f0" />
-                                                </svg>
-                                            </span>
-                                            <span>القيمة التقديرية</span>
-                                            <span style="color: #6184F0;"> 42000</span>
-                                        </div>
+                                    
+                                </div>   -->
+                                <!--  <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-md-2 col-12">
+                                        <ul>
+                                            <li>
+                                                <i>  رفع فيديو</i>
+                                                <input type="text"  id="demo6" value="" accept="video/*" >
+                                            </li>
+                                        </ul>
                                     </div>
-                                </div>
-                                <div class="section-block"></div>
-                                <div class="row" style=" height: 150px;">
+                                </div> -->
+                                <div class="row" style="">
                                     <div class="col-12 d-flex flex-column justify-content-between">
-                                        <span class="font-weight-bold">
-                                            المميزات
-                                        </span>
-                                        <div class="d-flex flex-column mt-2 font-weight-bold">
+                                       
+                                        <div class="d-flex flex-column mt-2 ">
                                             <label class="Form-label--tick" style="position: relative;">
                                                 <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
-                                                <span class="Form-label-text">التكلفة الطبية الطارئة</span>
+                                                <span class="Form-label-text">أقر بأن الصور والفيديو المرفوعه هي الصور و الفيديو الحقيقية للمركبة المؤمن عليها والتي تم اخذها مؤخرا ولم يتم التعديل عليها بأي شكل من الأشكال و أقر بمعرفتي بأن في حال إثبات عكس ذلك فإن هذا سيؤدي الى الغاء وثيقة التأمين وسيؤثر على المطالبات المرفوعة على المركبة</span>
 
                                             </label>
                                             <!-- <span class="">
@@ -283,57 +427,13 @@
                                         </span> -->
                                         </div>
                                     </div>
-
-                                </div>
-                                <div class="row insurance_coverage_footer">
-                                    <div class="col-lg-2 responsive-column ">
-                                        <div class="input-box">
-                                            <label class="label-text">قيمة التحمل</label>
-                                            <div class="form-group">
-                                                <div class="select-contain w-auto">
-                                                    <div class="dropdown bootstrap-select select-contain-select"><select class="select-contain-select" tabindex="-98">
-                                                            <option value="select-country">5000</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="input-box">
-                                            <label class="label-text"> الاصلاح في</label>
-                                            <div class="form-group">
-                                                <div class="select-contain w-auto">
-                                                    <div class="dropdown bootstrap-select select-contain-select">
-                                                        <select class="select-contain-select" tabindex="-98">
-                                                            <option value="select-country">الورشات المعتمدة</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 responsive-column">
-                                        <div class="input-box">
-                                            <label class="label-text">السعر</label>
-                                            <div class="form-group">
-                                                <div class="select-contain w-auto">
-                                                    <span style="color: #6184F0;">42000</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end contact-form-action -->
-                                    <div class="col-lg-4 responsive-column d-flex align-items-center">
-                                        <div class="btn-box">
-                                            <button class="theme-btn insurance_coverage_footer_btn" type="submit">إضافة الوثيقة</button>
-                                        </div>
-                                    </div>
-                                </div><!-- end form-content -->
+                                </div>                              
                             </div><!-- end form-box -->
                         </div><!-- end form-box -->
                     </div><!-- end form-box -->
+                   
+                    <!-- end my update -->
+
                     <div class="form-box">
                         <div class="row form-title-wrap" style="display: block;">
                             <div class="col-lg-8 responsive-column">
@@ -791,6 +891,49 @@
             </div>
         </div>
     </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{asset('dist-up/jquery.uploader.min.js')}}"></script>
+    <script type="application/javascript">
+        let ajaxConfig = {
+            ajaxRequester: function (config, uploadFile, pCall, sCall, eCall) {
+                let progress = 0
+                let interval = setInterval(() => {
+                    progress += 10;
+                    pCall(progress)
+                    if (progress >= 100) {
+                        clearInterval(interval)
+                        const windowURL = window.URL || window.webkitURL;
+                        sCall({
+                            data: windowURL.createObjectURL(uploadFile.file)
+                        })
+                    }
+                }, 300)
+            }
+        }
+        $("#demo1").uploader({ajaxConfig: ajaxConfig})
+        $("#demo2").uploader({ajaxConfig: ajaxConfig})
+        $("#demo3").uploader({ajaxConfig: ajaxConfig})
+        $("#demo4").uploader({ajaxConfig: ajaxConfig})
+        $("#demo5").uploader({ajaxConfig: ajaxConfig})
+        $("#demo6").uploader({ajaxConfig: ajaxConfig})
+
+        $("#demo10").uploader({ajaxConfig: ajaxConfig})
+        $("#demo11").uploader({ajaxConfig: ajaxConfig})
+        $("#demo12").uploader({ajaxConfig: ajaxConfig})
+        $("#demo13").uploader({ajaxConfig: ajaxConfig})
+        $("#demo14").uploader({ajaxConfig: ajaxConfig})
+    </script>
+
+
+
+
+
+
+
 
 
     @endsection
