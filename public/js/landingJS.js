@@ -47,7 +47,7 @@ $('#Third-party-insurance').on('submit', function (event) {
                 $('#code-error').text(response['error'].code);
             } else {
                 console.log(response);
-                window.location = "https://amin-jo.net/purchase_flow/add_vehicle";
+                window.location = "http://127.0.0.1:8000/purchase_flow/add_vehicle";
             }
         },
 

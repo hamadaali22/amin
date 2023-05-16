@@ -431,10 +431,117 @@
                             </div><!-- end form-box -->
                         </div><!-- end form-box -->
                     </div><!-- end form-box -->
-                   
-                    <!-- end my update -->
+                    <!-- <div class="form-box">
 
-                    <div class="form-box">
+                        <div class="form-content ">
+                            <div class="contact-form-action">
+                                <div class="row insurance_coverage d-flex justify-content-between">
+                                    <div class="col-12 d-flex justify-content-between">
+                                        <h6>توسيع التغطية التأمينية لتشمل مركبتك</h6>
+                                        <a href="http://">الشروط و الأحكام</a>
+                                    </div>
+
+                                </div>
+                                <div class="row mb-3 mt-3 insurance_coverage_body">
+                                    <div class="col-lg-3 col-12">
+                                        <img class="company_img" src="{{asset('images/balcony-cabin.jpg')}}" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-12 d-flex align-items-center">
+                                        <p style=" font-size: smaller;">
+                                            بشرائك هذه التسعيرة المقدمة من شركة ستحصل على تغطية تأمينية مركبتك تغطي تكاليف إصلاح المركبة ضد الحوادث و السرقة
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-3 d-flex align-items-center">
+                                        <div class="Estimated_value d-flex flex-column justify-content-center align-items-center" style="">
+                                            <span class="edit_black">
+                                                <svg id="edit_black_24dp" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                                    <path id="Path_188" data-name="Path 188" d="M0,0H20V20H0Z" fill="none" />
+                                                    <path id="Path_189" data-name="Path 189" d="M3,14.083V17H5.917l8.6-8.6L11.6,5.481ZM16.775,6.142a.775.775,0,0,0,0-1.1l-1.82-1.82a.775.775,0,0,0-1.1,0L12.435,4.648l2.917,2.917,1.423-1.423Z" fill="#6184f0" />
+                                                </svg>
+                                            </span>
+                                            <span>القيمة التقديرية</span>
+                                            <span style="color: #6184F0;"> 42000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-block"></div>
+                                <div class="row" style=" height: 150px;">
+                                    <div class="col-12 d-flex flex-column justify-content-between">
+                                        <span class="font-weight-bold">
+                                            المميزات
+                                        </span>
+                                        <div class="d-flex flex-column mt-2 font-weight-bold">
+                                            <label class="Form-label--tick" style="position: relative;">
+                                                <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
+                                                <span class="Form-label-text">التكلفة الطبية الطارئة</span>
+
+                                            </label>
+                                            <span class="">
+                                            <span class="text-danger" id="agree-error"></span>
+                                        </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row insurance_coverage_footer">
+                                    <div class="col-lg-2 responsive-column ">
+                                        <div class="input-box">
+                                            <label class="label-text">قيمة التحمل</label>
+                                            <div class="form-group">
+                                                <div class="select-contain w-auto">
+                                                    <div class="dropdown bootstrap-select select-contain-select"><select class="select-contain-select" tabindex="-98">
+                                                            <option value="select-country">5000</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 responsive-column">
+                                        <div class="input-box">
+                                            <label class="label-text"> الاصلاح في</label>
+                                            <div class="form-group">
+                                                <div class="select-contain w-auto">
+                                                    <div class="dropdown bootstrap-select select-contain-select">
+                                                        <select class="select-contain-select" tabindex="-98">
+                                                            <option value="select-country">الورشات المعتمدة</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 responsive-column">
+                                        <div class="input-box">
+                                            <label class="label-text">السعر</label>
+                                            <div class="form-group">
+                                                <div class="select-contain w-auto">
+                                                    <span style="color: #6184F0;">42000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 responsive-column d-flex align-items-center">
+                                        <div class="btn-box">
+                                            <button class="theme-btn insurance_coverage_footer_btn" type="submit">إضافة الوثيقة</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+
+                    <div class="form-box" style="direction: ltr">
+
+
+
+                        <div id="">
+                            <script src="https://eu-prod.oppwa.com/v1/paymentWidgets.js?checkoutId={{$res['id']}}"></script>
+                            <form action="{{route('checkout')}}" class="paymentWidgets" data-brands="VISA MASTER"></form>
+                        </div>
+
                         <div class="row form-title-wrap" style="display: block;">
                             <div class="col-lg-8 responsive-column">
                                 <h3 class="title  ">رقم الحساب الدولي الخاص بمالك الوثيقة (الايبان)</h3>
@@ -894,7 +1001,7 @@
 
 
 
-
+    <!--start  for upload 5 image -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{asset('dist-up/jquery.uploader.min.js')}}"></script>
     <script type="application/javascript">
@@ -911,6 +1018,7 @@
                             data: windowURL.createObjectURL(uploadFile.file)
                         })
                     }
+
                 }, 300)
             }
         }
@@ -927,7 +1035,7 @@
         $("#demo13").uploader({ajaxConfig: ajaxConfig})
         $("#demo14").uploader({ajaxConfig: ajaxConfig})
     </script>
-
+    <!--end  for upload 5 image -->
 
 
 

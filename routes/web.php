@@ -15,7 +15,7 @@ use App\Http\Controllers\Auth\ApiAuthController;
 use App\Http\Controllers\InsuranceTypesController;
 use App\Http\Controllers\SubInsuranceTypeController;
 use App\Http\Controllers\VerifyCarController;
-
+use App\Http\Controllers\PaymentProviderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,15 +40,44 @@ Route::get('/loading_page3', function () {
     return view('website.loading_page3');
 });
 Route::get('/purchase_flow/add_vehicle', function () {
+    // $videos_sessions = session()->get('DriverInfo');
+    // return $videos_sessions;
     return view('website.addVehicle');
 });
-Route::get('/purchase_flow/checkout', function () {
-    return view('website.checkout');
-});
+// Route::get('/purchase_flow/checkout', function () {
+//     return view('website.checkout');
+// });
+Route::get('/purchase_flow/checkout', [EndUserController::class, 'checkoutFromPc']);
+Route::get('/purchase_flow/checkout/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', [EndUserController::class, 'checkoutFromMobile']);
+Route::get('checkout', [PaymentProviderController::class, 'checkout'])->name('checkout');
+// Route::get('/purchase_flow/checkout/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', function () {
+//     $videos_sessions = session()->get('DriverInfo');
+//         if(!$videos_sessions) {
+//             $driver_nfo =[
+//                 "id_number" => $request->id_number,
+//                 "start_date" => $request->start_date,
+//                 "code" => $request->code,
+//             ];
+//             // $driver_nfo['name']="hamada";
+//             session()->put('DriverInfo', $driver_nfo);
+//         }
+//     return view('website.checkout');
+// });
 Route::get('/purchase_flow/price_list', function () {
+    // $videos_sessions = session()->get('DriverInfo');
+    // return $videos_sessions;
     $companies = Company::all();
     return view('website.priceList', compact('companies'));
 });
+
+// Route::get('/purchase_flow/send-link-mobile', function () {
+//     $videos_sessions = session()->get('DriverInfo');
+//     return $videos_sessions;
+// });
+Route::post('/purchase_flow/send-link', [EndUserController::class, 'sendLink'])->name('sendlink');    
+// Route::post('/purchase_flow/send-link', [EndUserController::class, 'sendLinkMobile']);    
+// Route::post('/send-link-mobile/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', [EndUserController::class, 'sendLinkMobile']);
+
 Route::get('/car/تأمين-ضد-الغير', function () {
     return view('website.Third_party_insurance');
 });
@@ -103,6 +132,7 @@ Route::resources([
 
 Route::post('/Driver-Info', [EndUserController::class, 'GetDriverInfo'])->name('driver-info');
 Route::post('/car-Info', [EndUserController::class, 'GetCarInfo'])->name('car-info');
+Route::post('/company-info', [EndUserController::class, 'GetCompanyInfo'])->name('company-info');
 
 
 Route::post('/verifyCar', [VerifyCarController::class, 'index'])->name('verifyCar');

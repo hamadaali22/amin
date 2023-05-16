@@ -229,31 +229,78 @@
                                                                         </div>
                                                                     </div>
                                                                 </div><!-- end col-lg-3 -->
-                                                                <div class="col-lg-3">
-                                                                    <div class="section-tab section-tab-2 pb-3">
+                                                                <div class="col-lg-3 pr-0">
+                                                                    <div class="input-box">
+                                                                        <label
+                                                                            class="label-text d-flex justify-content-between">قيمة المركبة
+                                                                            <span class=" tt" data-toggle="modal"
+                                                                                data-target="#SerialNumber">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="22" height="22"
+                                                                                    viewBox="0 0 25 25">
+                                                                                    <path
+                                                                                        id="info_FILL0_wght400_GRAD0_opsz48"
+                                                                                        d="M15.656,22.75h1.875v-7.5H15.656Zm.844-9.813a1.027,1.027,0,0,0,.734-.281.947.947,0,0,0,.3-.719,1.05,1.05,0,0,0-.3-.75,1.019,1.019,0,0,0-1.469,0,1.05,1.05,0,0,0-.3.75.947.947,0,0,0,.3.719A1.027,1.027,0,0,0,16.5,12.937ZM16.5,29a12.1,12.1,0,0,1-4.844-.984,12.594,12.594,0,0,1-6.672-6.672,12.486,12.486,0,0,1,0-9.719A12.492,12.492,0,0,1,7.672,7.656a12.814,12.814,0,0,1,3.984-2.672,12.486,12.486,0,0,1,9.719,0,12.48,12.48,0,0,1,6.641,6.641,12.486,12.486,0,0,1,0,9.719,12.814,12.814,0,0,1-2.672,3.984,12.492,12.492,0,0,1-3.969,2.687A12.172,12.172,0,0,1,16.5,29Zm.031-1.875a10.188,10.188,0,0,0,7.5-3.109,10.3,10.3,0,0,0,3.094-7.547,10.213,10.213,0,0,0-3.094-7.5A10.25,10.25,0,0,0,16.5,5.875,10.265,10.265,0,0,0,8.984,8.969,10.224,10.224,0,0,0,5.875,16.5a10.239,10.239,0,0,0,3.109,7.516A10.276,10.276,0,0,0,16.531,27.125ZM16.5,16.5Z"
+                                                                                        transform="translate(-4 -4)"
+                                                                                        fill="#858585"></path>
+                                                                                </svg>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="form-group">
+                                                                            <span class=" form-icon"
+                                                                                style="top: 9px; left: auto;right: 13px;"><svg
+                                                                                    id="pin_black_24dp_1_"
+                                                                                    data-name="pin_black_24dp (1)"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <g id="Group_12"
+                                                                                        data-name="Group 12">
+                                                                                        <path id="Path_13"
+                                                                                            data-name="Path 13"
+                                                                                            d="M0,0H24V24H0Z"
+                                                                                            fill="none" />
+                                                                                    </g>
+                                                                                    <g id="Group_14"
+                                                                                        data-name="Group 14">
+                                                                                        <g id="Group_13"
+                                                                                            data-name="Group 13">
+                                                                                            <path id="Path_14"
+                                                                                                data-name="Path 14"
+                                                                                                d="M20,4H4A2.006,2.006,0,0,0,2,6V18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V6A2.006,2.006,0,0,0,20,4ZM7.64,15H6.49V10.5l-.9.66-.58-.89L6.77,9h.87Zm5.86,0H9.61V13.98c1.07-1.07,1.77-1.77,2.13-2.15a1.45,1.45,0,0,0,.54-1.06.736.736,0,0,0-.81-.72.945.945,0,0,0-.9.72l-1.01-.42a1.861,1.861,0,0,1,1-1.15,2.343,2.343,0,0,1,1.95.03,1.622,1.622,0,0,1,.91,1.48,2.632,2.632,0,0,1-.92,1.86c-.25.25-.72.71-1.4,1.39l.03.05H13.5V15Zm5.25-.85a1.972,1.972,0,0,1-1.76.85,2.042,2.042,0,0,1-2.05-1.51l1.03-.41a1.039,1.039,0,0,0,1.02.86.842.842,0,0,0,.89-.77c0-.55-.48-.79-1.04-.79h-.5v-1h.46c.33,0,.88-.14.88-.72a.671.671,0,0,0-.75-.65.857.857,0,0,0-.85.64l-.99-.41A1.868,1.868,0,0,1,16.94,9a1.883,1.883,0,0,1,1.62.75,1.5,1.5,0,0,1,.02,1.57,1.387,1.387,0,0,1-.52.48v.07a1.468,1.468,0,0,1,.68.52A1.626,1.626,0,0,1,18.75,14.15Z"
+                                                                                                fill="#858585" />
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </svg></span>
+                                                                            <input id="vehicle_value"
+                                                                                name="vehicle_value"
+                                                                                class="form-control" type="number"
+                                                                                placeholder="قيمة المركبة">
+                                                                            <span class="error_validate">
+                                                                                <span class="text-danger"
+                                                                                    id="vehicle-value-error"></span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- <div class="col-lg-3">
+                                                                    <div class="input-box">
                                                                         <label class="label-text">
-                                                                            <svg id="help_black_24dp"
-                                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                                width="24" height="24"
-                                                                                viewBox="0 0 24 24">
-                                                                                <path id="Path_15" data-name="Path 15"
-                                                                                    d="M0,0H24V24H0Z" fill="none" />
-                                                                                <path id="Path_16" data-name="Path 16"
-                                                                                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm1,17H11V17h2Zm2.07-7.75-.9.92A3.4,3.4,0,0,0,13,15H11v-.5a4.025,4.025,0,0,1,1.17-2.83l1.24-1.26A1.955,1.955,0,0,0,14,9a2,2,0,0,0-4,0H8a4,4,0,0,1,8,0A3.182,3.182,0,0,1,15.07,11.25Z"
-                                                                                    fill="#858585" />
-                                                                            </svg>
-                                                                            هل تريد نقل ملكية المركبة؟</label>
+                                                                            قيمة المركبة</label>
                                                                         <label id="toggle"
                                                                             class="toggle d-flex justify-content-center">
-                                                                            <input name="Ownership" id="toggle-me"
-                                                                                class="toggle-checkbox" type="checkbox">
-                                                                            <div id="toggle-switch" class="toggle-switch">
-                                                                            </div>
-
+                                                                            <input name="vehicle_value" id="vehicle-value"
+                                                                                class="form-control" type="number">
+                                                                                <br/>
+                                                                            <span class="error_validate">
+                                                                                <span class="text-danger"
+                                                                                    id="vehicle-value-error"></span>
+                                                                            </span>
                                                                         </label>
 
-                                                                    </div><!-- end section-tab -->
-                                                                </div><!-- end col-lg-3 -->
+                                                                    </div>
+                                                                </div> -->
+                                                                
                                                                 <div class="col-lg-2 col-sm-12 pr-0">
                                                                     <div class="input-box">
                                                                         <label
@@ -305,7 +352,31 @@
                                                                         تحقّق
                                                                     </button>
                                                                 </div>
+                                                                <div class="col-lg-3">
+                                                                    <div class="section-tab section-tab-2 pb-3">
+                                                                        <label class="label-text">
+                                                                            <svg id="help_black_24dp"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                width="24" height="24"
+                                                                                viewBox="0 0 24 24">
+                                                                                <path id="Path_15" data-name="Path 15"
+                                                                                    d="M0,0H24V24H0Z" fill="none" />
+                                                                                <path id="Path_16" data-name="Path 16"
+                                                                                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm1,17H11V17h2Zm2.07-7.75-.9.92A3.4,3.4,0,0,0,13,15H11v-.5a4.025,4.025,0,0,1,1.17-2.83l1.24-1.26A1.955,1.955,0,0,0,14,9a2,2,0,0,0-4,0H8a4,4,0,0,1,8,0A3.182,3.182,0,0,1,15.07,11.25Z"
+                                                                                    fill="#858585" />
+                                                                            </svg>
+                                                                            هل تريد نقل ملكية المركبة؟</label>
+                                                                        <label id="toggle"
+                                                                            class="toggle d-flex justify-content-center">
+                                                                            <input name="Ownership" id="toggle-me"
+                                                                                class="toggle-checkbox" type="checkbox">
+                                                                            <div id="toggle-switch" class="toggle-switch">
+                                                                            </div>
 
+                                                                        </label>
+
+                                                                    </div>
+                                                                </div>
 
 
                                                                 <div id="manufacturing-year"

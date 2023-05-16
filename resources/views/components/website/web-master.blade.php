@@ -459,20 +459,23 @@
                     </div>
                     <div class="modal-body">
                         <div class="contact-form-action">
-                            <form method="post" action="{{ route('login') }}">
+                            <form  method="post" action="{{url('purchase_flow/send-link')}}" >
                                 @csrf
                                 <div class="input-box">
                                     <label class="label-text font-size-17">أدخل رقم جوالك واستكمل عملية الشراء من جوالك.</label>
+                                    <input type="hidden" name="company_id" id="company_id" >
+                                    <input type="hidden" name="company_name" id="company_name">
                                     <div class="form-group">
                                         {{-- <span class="la la-user form-icon"></span> --}}
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text" style="direction: ltr">+962</div>
                                               </div>
-                                            <input class="form-control" type="text" name="phone"
+                                            <input class="form-control" type="text" name="phone" id="phone" 
                                                 value="{{ old('phone') }}" required autofocus
                                                 placeholder="أدخل رقم الجوال">
                                         </div>
+                                            <span class="text-danger" id="phone-error"></span>
                                     </div>
                                 </div><!-- end input-box -->
                                 {{-- <div class="input-box">
@@ -525,6 +528,20 @@
     <script src="{{ asset('js/quantity-input.js') }}"></script>
     <script src="{{ asset('js/main-rtl.js') }}"></script>
     @yield('script')
+        <script>   
+            $('#continueUsingMobileModal').on('show.bs.modal', function (event) {
+                console.log('erfoehr');
+                  var button = $(event.relatedTarget) 
+
+                  var cat_id = button.data('catid') 
+                  var company_name = button.data('companyname') 
+                  
+                  var modal = $(this)
+                  modal.find('.modal-body #company_id').val(cat_id);
+                  modal.find('.modal-body #company_name').val(company_name);
+            })
+        </script>
 </body>
+
 
 </html>

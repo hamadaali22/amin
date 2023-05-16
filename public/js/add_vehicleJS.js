@@ -1,6 +1,7 @@
 $('#the_form').on('submit', function (event) {
     event.preventDefault();
     $('#Serial-Number-error').text('');
+    $('#vehicle-value-error').text('');
     $('#use-error').text('');
     $('#production_year-error').text('');
     $('#Birth-error').text('');
@@ -8,6 +9,8 @@ $('#the_form').on('submit', function (event) {
 
     _token = $("input[name='_token']").val();
     customs_serial_number = $('#Serial-Number').val();
+    vehicle_value = $('#vehicle_value').val();
+    
     Ownership = document.getElementById('toggle-me').checked;
     manufacturing_year = $('#manufacturing-year');
     use_purpose = $('#Purpose-of-use').val();
@@ -24,6 +27,7 @@ $('#the_form').on('submit', function (event) {
         data: {
             _token: _token,
             customs_serial_number: customs_serial_number,
+            vehicle_value: vehicle_value,
             use_purpose: use_purpose,
             Ownership: Ownership,
             production_year: production_year,
@@ -36,6 +40,7 @@ $('#the_form').on('submit', function (event) {
                 console.log(response[0]);
                 agreed == false ? $('#agree-error').text('يرجى قراءة الإقرار والموافقة عليه للمتابعة') : $('#agree-error').text('');
                 $('#Serial-Number-error').text(response['error'].customs_serial_number);
+                $('#vehicle-value-error').text(response['error'].vehicle_value);
                 $('#use-error').text(response['error'].use_purpose);
 
                 if (manufacturing_year.css('display') == 'none') {
@@ -47,7 +52,7 @@ $('#the_form').on('submit', function (event) {
 
             } else {
                 console.log(response);
-                window.location = "https://amin-jo.net/loading_page";
+                window.location = "http://127.0.0.1:8000/purchase_flow/price_list";
                 // window.location = "http://127.0.1.1:8080//loading_page";
             }
         },

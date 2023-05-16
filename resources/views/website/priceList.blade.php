@@ -278,7 +278,7 @@
                             <div class="quote-top-row col-sm-12" style="     height: 60px;">
                                 <div class="row col-sm-12">
                                     <div class="col-lg-6 col-sm-8">
-                                        <div class="icname">أسم الشركة</div>
+                                        <div class="icname">أسم الشركة : شركة دراية</div>
                                     </div>
                                     <div class="col-lg-2 col-sm-4">
                                         <!-- <input type="hidden" value="34" id="hdnInsuranceCompanyId" class="clearable x onX">
@@ -450,7 +450,7 @@
                                                     @else
                                                         @guest
                                                             <a href="#" class="theme-btn theme-btn-small"
-                                                                data-toggle="modal"
+                                                                data-toggle="modal" data-catid="8" data-companyname="draya company"
                                                                 style="    padding: 3px 89px; font-size: large;"
                                                                 data-target="#continueUsingMobileModal"> المتابعة باستخدام الجوال</a>
                                                         @else
@@ -471,7 +471,7 @@
                             <div class="quote-top-row col-sm-12" style="     height: 60px;">
                                 <div class="row col-sm-12">
                                     <div class="col-lg-6 col-sm-8">
-                                        <div class="icname">أسم الشركة</div>
+                                        <div class="icname">أسم الشركة : شركة سعود</div>
                                     </div>
                                     <div class="col-lg-2 col-sm-4">
                                         <!-- <input type="hidden" value="34" id="hdnInsuranceCompanyId" class="clearable x onX">
@@ -573,12 +573,10 @@
                                             </div>
                                             <div class="benifits-list-icons icon-feature">
                                                 <ul>
-
                                                     <li>
                                                         <a href="javascript:void(0)" data-toggle="tooltip" title=""
                                                             data-placement="top"
                                                             data-original-title="لا يوجد تغطيات إضافية">
-
                                                             <img
                                                                 src="//dmul2da2acg0k.cloudfront.net/Resources//images/featureicon/na-icon.svg">
                                                         </a>
@@ -639,12 +637,11 @@
                                                             <a href="/purchase_flow/checkout"
                                                                 class="theme-btn theme-btn-small">
                                                                 اختر</a>
-
                                                         @endguest
                                                     @else
                                                         @guest
                                                             <a href="#" class="theme-btn theme-btn-small"
-                                                                data-toggle="modal"
+                                                                data-toggle="modal" data-catid="8" data-companyname="saod company"
                                                                 style="    padding: 3px 89px; font-size: large;"
                                                                 data-target="#continueUsingMobileModal"> المتابعة باستخدام الجوال</a>
                                                         @else
@@ -728,7 +725,11 @@
         <!-- ================================
                                                         END INFO AREA
                                                     ================================= -->
+
     @endsection
+    
     @section('script')
+    <script type="text/javascript" src="{{asset('js/price_list.js')}}"></script>
     @endsection
+    
 </x-website.web-master>
