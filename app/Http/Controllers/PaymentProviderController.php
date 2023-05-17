@@ -42,14 +42,13 @@ class PaymentProviderController extends Controller
         $timenow=$time->format("h:i");
        
         
-        
-
         if (request('id') && request('resourcePath')) {
             $payment_status = $this->getPaymentStatus(request('id'), request('resourcePath'));
             // dd($payment_status['result']['code']);
             // dd($payment_status['id']);
             if(isset($payment_status['id'])) { //success payment id -> transaction bank id
                 $showSuccessPaymentMessage = true;
+
                 return view($this->module_view_folder)-> with(['success' =>  'تم الاشتراك بنجاح يمكنك الان تسجيل الدخول ومشاهدة جميع الدورات']);
                 
             }else{
@@ -71,38 +70,26 @@ class PaymentProviderController extends Controller
         $t=time();
         $random = $number.''.$t;
         $merchantTransactionId=$random.'444';
-        $user = Auth::guard('instructors')->user(); 
-        $create_type= Session::get('create_type');
-        if($user){
-            $customer_id= $user->id; 
-        }else{
-            $customer_id= Session::get('customer_idd'); 
-        }
+        
+           
+        
             
            
-            $userSign = Instructor::where("id",$customer_id)->first();
-            $country = Country::where("id", $userSign->countryId)->first();
-            if($create_type=="curriculums"){
-                $price=$userSign->sub_curriculas;
-            }else{
-                $price=$userSign->subscription_value;
-            }    
-            // dd($price);
-
+        $price=44;    
             $url = "https://eu-prod.oppwa.com/v1/checkouts";
             $data = "entityId=8acda4c782aad9470182e30dfec203f9" .
                         "&amount=". $price .
                         "&currency=USD" .
                         "&paymentType=DB".
                         "&merchantTransactionId=". $merchantTransactionId .
-                        "&customer.email=". $userSign->email .
-                        "&billing.street1=". $userSign->street1 .
-                        "&billing.city=". $userSign->city .
-                        "&billing.state=". $userSign->state .
-                        "&billing.country=". $country->iso .
-                        "&billing.postcode=". $userSign->postal_code .
-                        "&customer.givenName=". $userSign->first_name .
-                        "&customer.surname=". $userSign->last_name ;
+                        "&customer.email=". 'hamada@gmail.com' .
+                        "&billing.street1=". 'cairo' .
+                        "&billing.city=".'cairo' .
+                        "&billing.state=". 'cairo' .
+                        "&billing.country=". 'EG' .
+                        "&billing.postcode=". '123456' .
+                        "&customer.givenName=". 'hamada' .
+                        "&customer.surname=". 'ali;' ;
         
            
             $ch = curl_init();
@@ -120,16 +107,11 @@ class PaymentProviderController extends Controller
             curl_close($ch);
             $res = json_decode($responseData, true); 
             // return $res;
-            return view('front.payment',compact('res'));
-            
-            
-            // $view = view('front.ajax.form')->with(['responseData' => $res])->renderSections();
-            // return response()->json([
-            //     'status' => true,
-            //     'content' => $view['main']
-            // ]);
+            return view('website.pay',compact('res'));
+          
     }
     
+
     
     
     public function getCheckOutIdCertificate($typeCourse,$id,Request $request)
@@ -235,5 +217,20 @@ class PaymentProviderController extends Controller
 
     }
 
+
+
+
+
+
+
+
+
+
+    public function getCheckoutSdad(Request $request)
+    {
+        return view('website.pay_sadad');
+          
+    }
+    
     
 }

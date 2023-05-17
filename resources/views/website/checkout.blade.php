@@ -217,30 +217,28 @@
                             </div><!-- end contact-form-action -->
                         </div><!-- end form-content -->
                     </div><!-- end form-box -->
-
-                    <div class="form-box">
-                        <!-- <div class="form-title-wrap">
-                            <h3 class="title">تقديم الحجز</h3>
-                        </div>form-title-wrap -->
+                <form id="checkout-submite"  >
+                   <!--  <div class="form-box">
+                       
                         <div class="form-content ">
                             <div class="contact-form-action">
 
                                 <div class="d-flex flex-column mt-2">
                                     <label class="Form-label--tick" style="position: relative;">
-                                        <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
+                                        <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="cobon" name="cobon" type="checkbox" value="false" tabindex="108">
                                         <span class="Form-label-text"> هل لديك قسيمة خصم (كوبون)؟</span>
 
                                     </label>
-                                    <!-- <span class="">
+                                    <span class="">
                                         <span class="text-danger" id="agree-error"></span>
-                                    </span> -->
+                                    </span>
                                 </div>
 
 
-                            </div><!-- end contact-form-action -->
-                        </div><!-- end form-content -->
-                    </div><!-- end form-box -->
-
+                            </div>
+                        </div>
+                    </div>
+ -->
                     <!-- start my update -->
                     <div class="form-box">
                         <div class="form-content ">
@@ -253,17 +251,21 @@
 
                                 </div>
                                 <div class="row mb-3 mt-3 insurance_coverage_body">
+
                                     <div class="col-lg-2  col-4">
                                         <ul>
                                             <li>
                                                 <span>الامامية </span>
                                                 <input type="text" id="demo1" value="" accept="image/*" >
                                             </li>
-                                            
+                                                    
                                         </ul>
                                     </div>
                                     <div class="col-lg-8 col-8">
                                         <ul style="padding: 5px;">
+                                            <span class="error_validate">
+                                                <span class="text-danger" id="demo1-error"></span>
+                                            </span>    
                                             <br>
                                             <i>صورة من الجهة الأمامية للمركبة ، بحيث تتوسط مقدمة المركبة الصورة ويمكن من خلالها روؤية لوحة المركبة بشكل واضح</i>
                                         </ul>
@@ -281,6 +283,9 @@
                                     </div>
                                     <div class="col-lg-8 col-8">
                                         <ul style="padding: 5px;">
+                                            <span class="error_validate">
+                                                <span class="text-danger" id="demo2-error"></span>
+                                            </span>    
                                             <br>
                                             <i>صورة من الجهة الخلفية للمركبة ، بحيث تتوسط مؤخرة المركبة الصورة ويمكن من خلالها روؤية لوحة المركبة بشكل واضح وكامل الصدام الخلفي</i>
                                         </ul>
@@ -297,6 +302,9 @@
                                     </div>
                                     <div class="col-lg-8 col-8">
                                         <ul style="padding: 5px;">
+                                            <span class="error_validate">
+                                                <span class="text-danger" id="demo3-error"></span>
+                                            </span>    
                                             <br>
                                             <i>صورة من الجانب الأيمن للمركبة يجب ان تشمل جانب المركبة كاملا ومن خلالها يمكن روؤية الرفرف الأمامي و الأبواب الجانبية و الرفرف الخلفي </i>
                                         </ul>
@@ -313,6 +321,9 @@
                                     </div>
                                     <div class="col-lg-8 col-8">
                                         <ul style="padding: 5px;">
+                                            <span class="error_validate">
+                                                <span class="text-danger" id="demo4-error"></span>
+                                            </span>    
                                             <br>
                                             <i>صورة من الجانب الأيسر للمركبة يجب ان تشمل جانب المركبة كاملا ومن خلالها يمكن روؤية الرفرف الأمامي و الأبواب الجانبية و الرفرف الخلفي </i>
                                         </ul>
@@ -329,6 +340,9 @@
                                     </div>
                                     <div class="col-lg-8 col-8">
                                         <ul style="padding: 5px;">
+                                            <span class="error_validate">
+                                                <span class="text-danger" id="demo5-error"></span>
+                                            </span>    
                                             <br>
                                             <i>صوره رقم هيكل المربة (رقم الشاص) و الموجود على النافذة الأمامية في الزاوية السفلية من جهة السائق يجب ان يكون رقم الهيكل مقروء ويمكن التعرف عليه بكل سهولة من خلال الصورة</i>
                                         </ul>
@@ -346,6 +360,9 @@
                                     </div>
                                     <div class="col-lg-8 col-8">
                                         <ul style="padding: 5px;">
+                                            <span class="error_validate">
+                                                <span class="text-danger" id="demo6-error"></span>
+                                            </span>    
                                             <br>
                                             <i>تصوير فيديو كامل للمركبة يبدأ من الجهة اليسرى او اليمنى ويكون فيها واضحة الرفرف الامامي والابواب الجانبية والرفرف الخلفي ويكمل تصوير الفيديو للجهة الخلفية للمركبة مع اللوحة والصدام الخلفي كاملا ومن ثم الجانب الاخر مثل الجانب الاول ومن ثم مقدمة السيارة مع ابراز اللوحه ومن ثم هيكل السياره على الزجاج الامامي ان يكون بشكل واضح وثابت لمدة دقيقه واحده</i>
                                         </ul>
@@ -418,13 +435,13 @@
                                        
                                         <div class="d-flex flex-column mt-2 ">
                                             <label class="Form-label--tick" style="position: relative;">
-                                                <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
+                                                <input class="Form-label-checkbox valid" id="declaration" name="declaration" type="checkbox"  tabindex="108">
                                                 <span class="Form-label-text">أقر بأن الصور والفيديو المرفوعه هي الصور و الفيديو الحقيقية للمركبة المؤمن عليها والتي تم اخذها مؤخرا ولم يتم التعديل عليها بأي شكل من الأشكال و أقر بمعرفتي بأن في حال إثبات عكس ذلك فإن هذا سيؤدي الى الغاء وثيقة التأمين وسيؤثر على المطالبات المرفوعة على المركبة</span>
 
                                             </label>
-                                            <!-- <span class="">
-                                            <span class="text-danger" id="agree-error"></span>
-                                        </span> -->
+                                            <span class="">
+                                            <span class="text-danger" id="declaration-error"></span>
+                                        </span>
                                         </div>
                                     </div>
                                 </div>                              
@@ -533,14 +550,7 @@
                     </div> -->
                     
 
-                    <div class="form-box" style="direction: ltr">
-
-
-
-                        <div id="">
-                            <script src="https://eu-prod.oppwa.com/v1/paymentWidgets.js?checkoutId={{$res['id']}}"></script>
-                            <form action="{{route('checkout')}}" class="paymentWidgets" data-brands="VISA MASTER"></form>
-                        </div>
+                    <div class="form-box">
 
                         <div class="row form-title-wrap" style="display: block;">
                             <div class="col-lg-8 responsive-column">
@@ -551,12 +561,10 @@
                                     <div class="form-group">
                                         <div class="select-contain w-auto">
                                             <div class="dropdown bootstrap-select select-contain-select">
-                                                <div class="dropdown bootstrap-select select-contain-select"><select class="select-contain-select" tabindex="-98">
+                                                <div class="dropdown bootstrap-select select-contain-select">
+                                                    <select class="select-contain-select" tabindex="-98">
                                                         <option value="select-country">اختر من القائمة</option>
-
                                                     </select>
-
-
                                                 </div>
                                             </div>
                                         </div>
@@ -566,8 +574,12 @@
                             <div class="col-lg-10  responsive-column">
                                 <div class="input-box">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" name="text" placeholder="000000000000000000000000000000000">
+                                        <input class="form-control" type="text" name="bank_number" id="bank_number" placeholder="0000000000000">
+                                        <span class="error_validate">
+                                            <span class="text-danger" id="bank_number-error"></span>
+                                        </span>   
                                     </div>
+                                    
                                 </div>
                             </div>
                             <div class="row col-lg-12 responsive-column">
@@ -582,8 +594,12 @@
                                         </label>
                                         <div class="form-group">
 
-                                            <input class="form-control" type="text" name="text" placeholder=" البريد الالكتروني لمالك الوثيقة">
+                                            <input class="form-control" type="text" name="email" id="email" placeholder=" البريد الالكتروني لمالك الوثيقة">
+                                            <span class="error_validate">
+                                                <span class="text-danger" id="email-error"></span>
+                                            </span> 
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-6 responsive-column">
@@ -601,8 +617,12 @@
                                             </svg>
                                             رقم هاتف مالك الوثيقة</label>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" name="text" placeholder=" رقم هاتف مالك الوثيقة">
+                                            <input class="form-control" type="text" name="mobile" id="mobile" placeholder=" رقم هاتف مالك الوثيقة">
+                                            <span class="error_validate">
+                                                <span class="text-danger" id="mobile-error"></span>
+                                            </span> 
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -613,104 +633,53 @@
                             <div class="section-tab check-mark-tab text-center pb-4">
                                 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="credit-card-tab" data-toggle="tab" href="#credit-card" role="tab" aria-controls="credit-card" aria-selected="false">
+                                        <a class="nav-link " >
                                             <i class="la la-check icon-element"></i>
                                             <img src="{{asset('images/Image 8.png')}}" alt="">
-                                            <span class="d-block pt-2"> بطاقة بنكية</span>
+                                            <div class="">
+                                                <input class="form-check-input" type="radio"  name="pay_type" id="pay_type1" value="visa">
+                                                <label class="" for="pay_type1">بطاقة بنكية</label>
+                                            </div>
+                                            <!-- <span class="d-block pt-2"> بطاقة بنكية</span> -->
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link pt-3" id="paypal-tab2" data-toggle="tab" href="#paypal2" role="tab" aria-controls="paypal" aria-selected="true">
-                                            <i class="la la-check icon-element"></i>
-                                            <img src="{{asset('images/Image 9.png')}}" alt="">
-                                            <span class="d-block pt-2">ماستركارد</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="paypal-tab" data-toggle="tab" href="#paypal4" role="tab" aria-controls="paypal" aria-selected="true">
-                                            <i class="la la-check icon-element"></i>
-                                            <img src="{{asset('images/Image 10.png')}}" alt="">
-                                            <span class="d-block pt-2">فيزا</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="payoneer-tab" data-toggle="tab" href="#payoneer4" role="tab" aria-controls="payoneer" aria-selected="true">
+                                        <a class="nav-link"  >
                                             <i class="la la-check icon-element"></i>
                                             <img src="{{asset('images/Image 11.png')}}" alt="">
-                                            <span class="d-block pt-2">فاتورة سداد</span>
+                                            <div class="">
+                                                <input class="form-check-input" type="radio" name="pay_type" id="pay_type2" value="sdad">
+                                                <label class="" for="pay_type">فاتورة سداد</label>
+                                            </div>
+                                            <!-- <span class="d-block pt-2">فاتورة سداد</span> -->
                                         </a>
                                     </li>
                                 </ul>
+                                <span class="error_validate">
+                                    <span class="text-danger pay-type"  id="pay_type-error"></span>
+                                </span> 
                             </div><!-- end section-tab -->
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="credit-card" role="tabpanel" aria-labelledby="credit-card-tab">
                                     <div class="contact-form-action">
-                                        <form method="post">
+                                       <!--  <form method="post"> -->
                                             <div class="row">
-                                                <!-- <div class="col-lg-6">
-                                                    <div class="input-box">
-                                                        <label class="label-text">إسم صاحب البطاقة</label>
-                                                        <div class="form-group">
-                                                            <span class="la la-credit-card form-icon"></span>
-                                                            <input class="form-control" type="text" name="text" placeholder="إسم صاحب البطاقة">
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- end col-lg-6 -->
-                                                <!-- <div class="col-lg-6">
-                                                    <div class="input-box">
-                                                        <label class="label-text">رقم البطاقة</label>
-                                                        <div class="form-group">
-                                                            <span class="la la-credit-card form-icon"></span>
-                                                            <input class="form-control" type="text" name="text" placeholder="رقم البطاقة">
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- end col-lg-6 -->
-                                                <!-- <div class="col-lg-6">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="input-box">
-                                                                <label class="label-text">شهر انتهاء الصلاحية</label>
-                                                                <div class="form-group">
-                                                                    <span class="la la-credit-card form-icon"></span>
-                                                                    <input class="form-control" type="text" name="text" placeholder="MM">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="input-box">
-                                                                <label class="label-text">سنة انتهاء الصلاحية</label>
-                                                                <div class="form-group">
-                                                                    <span class="la la-credit-card form-icon"></span>
-                                                                    <input class="form-control" type="text" name="text" placeholder="YY">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- end col-lg-6 -->
-                                                <!-- <div class="col-lg-6">
-                                                    <div class="input-box">
-                                                        <label class="label-text">CVV</label>
-                                                        <div class="form-group">
-                                                            <span class="la la-pencil form-icon"></span>
-                                                            <input class="form-control" type="text" name="text" placeholder="CVV">
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- end col-lg-6 -->
                                                 <div class="col-lg-12">
                                                     <div class="input-box">
                                                         <div class="form-group">
-                                                            <div class="custom-checkbox">
+                                                            <!-- <div class="custom-checkbox">
                                                                 <input type="checkbox" id="agreechb">
                                                                 <label for="agreechb">لا أرغب في التأمين الشامل على مركبتي و أدرك أن مسؤولية الشركة تقتصر على تعويض الغير فقط (تأمين ضد الغير) ولا تشمل التغطية إصلاح مركبتي</label>
-                                                            </div>
+
+                                                            </div> -->
                                                             <div class="custom-checkbox">
-                                                                <input type="checkbox" id="agreechb">
+                                                                <input type="checkbox" id="agreechb" name="agreechb" value="1">
                                                                 <label for="agreechb">أقبل <a href="#">الشروط و الأحكام</a>.</label>
                                                             </div>
+                                                            <span class="error_validate">
+                                                                <span class="text-danger pay-type"  id="agreechb-error"></span>
+                                                                <br>
+                                                            </span> 
                                                         </div>
 
                                                     </div>
@@ -719,81 +688,24 @@
                                                 <!-- end col-lg-12 -->
                                                 <div class="col-lg-12">
                                                     <div class="btn-box">
-                                                        <button class="theme-btn" type="button" data-toggle="modal" data-target="#confirm_number">ادفع الآن
+                                                        <!-- <button class="theme-btn" type="button" data-toggle="modal" data-target="#confirm_number">ادفع الآن
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
                                                                 <path id="arrow_forward_FILL0_wght400_GRAD0_opsz48" d="M24,40l2.1-2.15L13.75,25.5H40v-3H13.75L26.1,10.15,24,8,8,24Z" transform="translate(-8 -8)" fill="#fff" />
-                                                            </svg></button>
+                                                            </svg></button> -->
+                                                    <button type="submit" class="theme-btn" >ادفع الآن
+                                                </button>
                                                     </div>
                                                 </div><!-- end col-lg-12 -->
                                             </div>
-                                        </form>
+                                       <!--  </form> -->
                                     </div><!-- end contact-form-action -->
                                 </div><!-- end tab-pane-->
-                                <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
-                                    <div class="contact-form-action">
-                                        <form method="post">
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="input-box">
-                                                        <label class="label-text">عنوان البريد الإلكتروني</label>
-                                                        <div class="form-group">
-                                                            <span class="la la-envelope form-icon"></span>
-                                                            <input class="form-control" type="email" name="email" placeholder="عنوان البريد الإلكتروني">
-                                                        </div>
-                                                    </div>
-                                                </div><!-- end col-lg-6 -->
-                                                <div class="col-lg-6">
-                                                    <div class="input-box">
-                                                        <label class="label-text">كلمه السر</label>
-                                                        <div class="form-group">
-                                                            <span class="la la-lock form-icon"></span>
-                                                            <input class="form-control" type="text" name="text" placeholder="أدخل كلمة المرور">
-                                                        </div>
-                                                    </div>
-                                                </div><!-- end col-lg-6 -->
-                                                <div class="col-lg-12">
-                                                    <div class="btn-box">
-                                                        <button class="theme-btn" type="submit">تسجيل الدخول</button>
-                                                    </div>
-                                                </div><!-- end col-lg-12 -->
-                                            </div>
-                                        </form>
-                                    </div><!-- end contact-form-action -->
-                                </div><!-- end tab-pane-->
-                                <div class="tab-pane fade" id="payoneer" role="tabpanel" aria-labelledby="payoneer-tab">
-                                    <div class="contact-form-action">
-                                        <form method="post">
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="input-box">
-                                                        <label class="label-text">عنوان البريد الإلكتروني</label>
-                                                        <div class="form-group">
-                                                            <span class="la la-envelope form-icon"></span>
-                                                            <input class="form-control" type="email" name="email" placeholder="عنوان البريد الإلكتروني">
-                                                        </div>
-                                                    </div>
-                                                </div><!-- end col-lg-6 -->
-                                                <div class="col-lg-6">
-                                                    <div class="input-box">
-                                                        <label class="label-text">كلمه السر</label>
-                                                        <div class="form-group">
-                                                            <span class="la la-lock form-icon"></span>
-                                                            <input class="form-control" type="text" name="text" placeholder="أدخل كلمة المرور">
-                                                        </div>
-                                                    </div>
-                                                </div><!-- end col-lg-6 -->
-                                                <div class="col-lg-12">
-                                                    <div class="btn-box">
-                                                        <button class="theme-btn" type="submit">تسجيل الدخول</button>
-                                                    </div>
-                                                </div><!-- end col-lg-12 -->
-                                            </div>
-                                        </form>
-                                    </div><!-- end contact-form-action -->
-                                </div><!-- end tab-pane-->
+                                
+                                
                             </div><!-- end tab-content -->
                         </div><!-- end form-content -->
                     </div><!-- end form-box -->
+                 </form>    
                 </div><!-- end col-lg-8 -->
                 <div class="col-lg-4">
                     <div class="form-box booking-detail-form">
@@ -1034,7 +946,10 @@
         $("#demo12").uploader({ajaxConfig: ajaxConfig})
         $("#demo13").uploader({ajaxConfig: ajaxConfig})
         $("#demo14").uploader({ajaxConfig: ajaxConfig})
+
+
     </script>
+   
     <!--end  for upload 5 image -->
 
 
@@ -1046,6 +961,6 @@
 
     @endsection
     @section('script')
-
+        <script type="text/javascript" src="{{asset('js/checkout.js')}}"></script>
     @endsection
 </x-website.web-master>

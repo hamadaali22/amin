@@ -7,9 +7,23 @@ use Illuminate\Support\Facades\Validator;
 use Session;
 class EndUserController extends Controller
 {
+    public function chooseTypeInsurance(Request $request)
+    {       
+        if($request->ajax()) {
+            $videos_sessions = session()->get('DriverInfo');
+            
+            if(isset($videos_sessions['type_insurance'])) {
+                $videos_sessions['type_insurance']=$request->type_insurance;
+                session()->put('DriverInfo', $videos_sessions);
+            }    
+                        // session()->put('DriverInfo.type_insurance',$request->type_insurance;);
+
+        }
+    }
+
     public function GetDriverInfo(Request $request)
     {
-        session()->forget('DriverInfo');
+        // session()->forget('DriverInfo');
         $messages = [
             'id_number.required' => 'الرقم التسلسلي مطلوب',
             'id_number.max' => 'رقم الهوية لا يجب ان يتجاوز 10 خانات',
@@ -27,15 +41,23 @@ class EndUserController extends Controller
             return response()->json(['error' => $validator->errors(), 401]);
         }
 
+        // $videos_sessions = session()->get('DriverInfo');
+        // if(!$videos_sessions) {
+        //     $driver_nfo =[
+        //         "id_number" => $request->id_number,
+        //         "start_date" => $request->start_date,
+        //         "code" => $request->code,
+        //     ];
+        //     // $driver_nfo['name']="hamada";
+        //     session()->put('DriverInfo', $driver_nfo);
+        // }
+
         $videos_sessions = session()->get('DriverInfo');
-        if(!$videos_sessions) {
-            $driver_nfo =[
-                "id_number" => $request->id_number,
-                "start_date" => $request->start_date,
-                "code" => $request->code,
-            ];
-            // $driver_nfo['name']="hamada";
-            session()->put('DriverInfo', $driver_nfo);
+        if($videos_sessions) {
+            $videos_sessions['id_number']= $request->id_number;
+            $videos_sessions['start_date']= $request->start_date;
+            $videos_sessions['code']= $request->code;
+            session()->put('DriverInfo', $videos_sessions);
         }
 
         return response()->json(['success' => 'Form is successfully submitted!']);
@@ -133,7 +155,7 @@ class EndUserController extends Controller
         // dd(getType($to_obj));
         $ggf='ll';
         // $path='http://127.0.0.1:8000/send-link-mobile/'.$obj->start_date;
-        $path='http://127.0.0.1:8000/purchase_flow/checkout/'.$to_obj->id_number.'/'
+        $path='http://127.0.0.1:8000/purchase_flow/checkout/'.$to_obj->type_insurance.'/'.$to_obj->id_number.'/'
                 .$to_obj->start_date.'/'
                 .$to_obj->code.'/'
                 .$to_obj->serial_number.'/'
@@ -155,64 +177,67 @@ class EndUserController extends Controller
         // }
         return view('website.checkout');
     }
-    public function checkoutFromMobile($id_number,$start_date,$code,$serial_number,$vehicle_value,$use_purpose,$company_id,$company_name,$phone)
+    public function checkoutFromMobile($type_insurance,$id_number,$start_date,$code,$serial_number,$vehicle_value,$use_purpose,$company_id,$company_name,$phone)
     {
-        $number = rand(100,100000);
-        $t=time();
-        $random = $number.''.$t;
-        $merchantTransactionId=$random.'444';
+        $car_sessions = session()->get('insuranceInfo');
+        if(!$car_sessions) {
+            $insurance_info =[
+                "type_insurance"=>$type_insurance,
+                "id_number" => $id_number,
+                "start_date" => $start_date,
+                "code" => $code,
+                "serial_number" => $serial_number,
+                "vehicle_value" => $vehicle_value,
+                "use_purpose" => $use_purpose,
+                "company_id" => $company_id,
+                "company_name" => $company_name,
+                "phone" => $phone,
+            ];
+            // $driver_nfo['name']="hamada";
+            session()->put('insuranceInfo', $insurance_info);
+        }
+        return view('website.checkout');
+    }
+    public function GetSaveData(Request $request)
+    {
+        // return $request->pay_type;
+        session()->forget('DriverInfo');
+        $messages = [
+            'demo1.required' => 'الصورة الامامية مطلوبة',
+            'demo2.required' => 'الصورة الخلفية مطلوبه',
+            'demo3.required' => 'الصورة اليمنى مطلوبة',
+            'demo4.required' => 'الصورة اليسرى مطلوبة',
+            'demo5.required' => 'صورة رقم الهيكل مطلوبة',
+            'demo6.required' => 'يجب ارفاق فيديو',
+            'declaration.required'=> 'يجب الضغط على الإقرار',
+            'bank_number.required'=> 'رقم الحساب البنكي',
+            'email.required'=> 'البريد الالكتروني مطلوب',
+            'mobile.required'=> 'رقم الهاتف مطلوب',
+            'pay_type.required'=> 'حدد وسيلة الدفع',
+            'agreechb.required'=>'يجب الموافقة علي الشروط'
+        ];
+        $validator = Validator::make($request->all(), [
+            'demo1'           => 'required',
+            'demo1'           => 'required',
+            'demo2'          => 'required',
+            'demo3'        => 'required',
+            'demo4'        => 'required',
+            'demo5'        => 'required',
+            'demo6'        => 'required',
+            'declaration'=>'required',
+            'bank_number'=>'required',
+            'email'=>'required',
+            'mobile'=>'required',
+            'pay_type'=>'required',
+            'agreechb'=>'required'
+        ], $messages);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors(), 401]);
+        }
+
         
-           
-        
-            
-           
-        $price=44;    
-            $url = "https://eu-prod.oppwa.com/v1/checkouts";
-            $data = "entityId=8acda4c782aad9470182e30dfec203f9" .
-                        "&amount=". $price .
-                        "&currency=USD" .
-                        "&paymentType=DB".
-                        "&merchantTransactionId=". $merchantTransactionId .
-                        "&customer.email=". 'hamada@gmail.com' .
-                        "&billing.street1=". 'cairo' .
-                        "&billing.city=".'cairo' .
-                        "&billing.state=". 'cairo' .
-                        "&billing.country=". 'EG' .
-                        "&billing.postcode=". '123456' .
-                        "&customer.givenName=". 'hamada' .
-                        "&customer.surname=". 'ali;' ;
-        
-           
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                           'Authorization:Bearer OGFjZGE0Y2E4MjYyYWY0NDAxODJlMzBjYTU1NzFjZGJ8Sm03Nlg0aHhiRQ=='));
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);// this should be set to true in production
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $responseData = curl_exec($ch);
-            if(curl_errno($ch)) {
-                return curl_error($ch);
-            }
-            curl_close($ch);
-            $res = json_decode($responseData, true); 
-            // return $res;
-            // return view('front.payment',compact('res'));
-            
-        // dd($company_name);
-        // $videos_sessions = session()->get('DriverInfo');
-        // if(!$videos_sessions) {
-        //     if($videos_sessions){
-        //         $videos_sessions['company_id']=$request->company_id;
-        //         $videos_sessions['company_name']=$request->company_name;
-        //         $videos_sessions['phone']=$request->phone;
-        //         session()->put('DriverInfo', $videos_sessions);
-        //     }
-        //     session()->put('DriverInfo', $driver_nfo);
-        // }
-        return view('website.checkout',compact('res'));
-        
+        return $request->all();
+        return response()->json(['success' => 'Form is successfully submitted!']);
     }
     public function GetCompanyInfo(Request $request)
     {

@@ -28,9 +28,17 @@ use App\Http\Controllers\PaymentProviderController;
 */
 
 Route::get('/', function () {
+     // session()->forget('DriverInfo');
+    $videos_sessions = session()->get('DriverInfo');
+        $driver_nfo =[
+            "type_insurance" => 'flight-tab',
+        ];
+        session()->put('DriverInfo', $driver_nfo);
     return view('website.landingPage');
 });
 Route::get('/loading_page', function () {
+    // $sessions_insurance= session()->get('DriverInfo');
+    // return $sessions_insurance;
     return view('website.loading_page');
 });
 Route::get('/loading_page2', function () {
@@ -47,9 +55,18 @@ Route::get('/purchase_flow/add_vehicle', function () {
 // Route::get('/purchase_flow/checkout', function () {
 //     return view('website.checkout');
 // });
+Route::get('choose-type-insurance', [EndUserController::class, 'chooseTypeInsurance'])->name('choose-type-insurance');
+
 Route::get('/purchase_flow/checkout', [EndUserController::class, 'checkoutFromPc']);
-Route::get('/purchase_flow/checkout/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', [EndUserController::class, 'checkoutFromMobile']);
+Route::get('/purchase_flow/checkout/{type_insurance}/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', [EndUserController::class, 'checkoutFromMobile']);
+
+// for visa
+Route::get('get-checkout', [PaymentProviderController::class, 'getCheckOutId'])->name('get-checkout');
 Route::get('checkout', [PaymentProviderController::class, 'checkout'])->name('checkout');
+
+// for 
+
+Route::get('get-checkout-sdad', [PaymentProviderController::class, 'getCheckoutSdad'])->name('get-checkout-sdad');
 // Route::get('/purchase_flow/checkout/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', function () {
 //     $videos_sessions = session()->get('DriverInfo');
 //         if(!$videos_sessions) {
@@ -133,6 +150,7 @@ Route::resources([
 Route::post('/Driver-Info', [EndUserController::class, 'GetDriverInfo'])->name('driver-info');
 Route::post('/car-Info', [EndUserController::class, 'GetCarInfo'])->name('car-info');
 Route::post('/company-info', [EndUserController::class, 'GetCompanyInfo'])->name('company-info');
+Route::post('/get-save-data', [EndUserController::class, 'GetSaveData']);
 
 
 Route::post('/verifyCar', [VerifyCarController::class, 'index'])->name('verifyCar');

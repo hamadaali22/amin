@@ -452,7 +452,7 @@
                                                             <a href="#" class="theme-btn theme-btn-small"
                                                                 data-toggle="modal" data-catid="8" data-companyname="draya company"
                                                                 style="    padding: 3px 89px; font-size: large;"
-                                                                data-target="#continueUsingMobileModal"> المتابعة باستخدام الجوال</a>
+                                                                data-target="#continueUsingMobileModal"> المتابعة باستخدام الجوال  </a>
                                                         @else
                                                             <a href="/purchase_flow/checkout"
                                                                 class="theme-btn theme-btn-small">
