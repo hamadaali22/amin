@@ -164,6 +164,7 @@
                         <!-- <div class="form-title-wrap">
                             <h3 class="title">تقديم الحجز</h3>
                         </div>form-title-wrap -->
+                        
                         <div class="form-content ">
                             <div class="contact-form-action">
                                 <div class="row mb-3">
@@ -190,8 +191,8 @@
                                         </div>
                                         <div class="col-6">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">5/8/2022</li>
-                                                <li class="list-group-item">5/8/2022</li>
+                                                <li class="list-group-item">{{$sessions_insurance->start_date}}</li>
+                                                <li class="list-group-item">{{$todayDate}}</li>
                                                 <li class="list-group-item">ضد الغير</li>
                                             </ul>
                                         </div>
@@ -218,6 +219,7 @@
                         </div><!-- end form-content -->
                     </div><!-- end form-box -->
                 <form id="checkout-submite"  >
+                    <input type="hidden"  id="insurance_type" name="insurance_type" value="{{$sessions_insurance->insurance_type}}">
                    <!--  <div class="form-box">
                        
                         <div class="form-content ">
@@ -240,6 +242,7 @@
                     </div>
  -->
                     <!-- start my update -->
+                    @if($sessions_insurance->insurance_type == 'shamil')   
                     <div class="form-box">
                         <div class="form-content ">
                             <div class="contact-form-action">
@@ -448,7 +451,9 @@
                             </div><!-- end form-box -->
                         </div><!-- end form-box -->
                     </div><!-- end form-box -->
-                    <!-- <div class="form-box">
+                    @else
+
+                    <div class="form-box">
 
                         <div class="form-content ">
                             <div class="contact-form-action">
@@ -487,7 +492,7 @@
                                         <span class="font-weight-bold">
                                             المميزات
                                         </span>
-                                        <div class="d-flex flex-column mt-2 font-weight-bold">
+                                        <!-- <div class="d-flex flex-column mt-2 font-weight-bold">
                                             <label class="Form-label--tick" style="position: relative;">
                                                 <input class="Form-label-checkbox valid" data-val="true" data-val-mustbetrue="يرجى قراءة الإقرار والموافقة عليه للمتابعة" data-val-required="الرجاء الإقرار بالمدخلات" id="Declaration" name="Declaration" type="checkbox" value="false" tabindex="108">
                                                 <span class="Form-label-text">التكلفة الطبية الطارئة</span>
@@ -496,21 +501,28 @@
                                             <span class="">
                                             <span class="text-danger" id="agree-error"></span>
                                         </span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
-                                <div class="row insurance_coverage_footer">
+                                <!-- <div class="row insurance_coverage_footer">
                                     <div class="col-lg-2 responsive-column ">
                                         <div class="input-box">
                                             <label class="label-text">قيمة التحمل</label>
                                             <div class="form-group">
                                                 <div class="select-contain w-auto">
-                                                    <div class="dropdown bootstrap-select select-contain-select"><select class="select-contain-select" tabindex="-98">
-                                                            <option value="select-country">5000</option>
+                                                    <div class="dropdown bootstrap-select select-contain-select">
+                                                        <select class="select-contain-select" tabindex="-98" id="load_value">
+                                                            <option  selected disabled>pvv</option>
+                                                            <option value="5000">5000</option>
+                                                            <option value="6000">6000</option>
 
                                                         </select>
                                                     </div>
+                                                    
                                                 </div>
+                                                <span class="error_validate">
+                                                    <span class="text-danger" id="load_value-error">ggg</span>
+                                                </span>   
                                             </div>
                                         </div>
                                     </div>
@@ -520,12 +532,15 @@
                                             <div class="form-group">
                                                 <div class="select-contain w-auto">
                                                     <div class="dropdown bootstrap-select select-contain-select">
-                                                        <select class="select-contain-select" tabindex="-98">
+                                                        <select class="select-contain-select" tabindex="-98" id="place_repair">
                                                             <option value="select-country">الورشات المعتمدة</option>
 
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <span class="error_validate">
+                                                    <span class="text-danger" id="place_repair-error"></span>
+                                                </span>  
                                             </div>
                                         </div>
                                     </div>
@@ -544,11 +559,11 @@
                                             <button class="theme-btn insurance_coverage_footer_btn" type="submit">إضافة الوثيقة</button>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
-                    </div> -->
-                    
+                    </div>
+                    @endif 
 
                     <div class="form-box">
 

@@ -28,17 +28,17 @@ use App\Http\Controllers\PaymentProviderController;
 */
 
 Route::get('/', function () {
-     // session()->forget('DriverInfo');
-    $videos_sessions = session()->get('DriverInfo');
-        $driver_nfo =[
-            "type_insurance" => 'flight-tab',
-        ];
-        session()->put('DriverInfo', $driver_nfo);
+    // $videos_sessions = session()->get('DriverInfo');
+    //     $driver_nfo =[
+    //         "type_insurance" => 'flight-tab',
+    //     ];
+    //     session()->put('DriverInfo', $driver_nfo);
+    
     return view('website.landingPage');
 });
 Route::get('/loading_page', function () {
-    // $sessions_insurance= session()->get('DriverInfo');
-    // return $sessions_insurance;
+    $sessions_insurance= session()->get('DriverInfo');
+    return $sessions_insurance;
     return view('website.loading_page');
 });
 Route::get('/loading_page2', function () {
@@ -50,50 +50,31 @@ Route::get('/loading_page3', function () {
 Route::get('/purchase_flow/add_vehicle', function () {
     // $videos_sessions = session()->get('DriverInfo');
     // return $videos_sessions;
+    // dd('jjj');
     return view('website.addVehicle');
 });
-// Route::get('/purchase_flow/checkout', function () {
-//     return view('website.checkout');
-// });
-Route::get('choose-type-insurance', [EndUserController::class, 'chooseTypeInsurance'])->name('choose-type-insurance');
 
 Route::get('/purchase_flow/checkout', [EndUserController::class, 'checkoutFromPc']);
-Route::get('/purchase_flow/checkout/{type_insurance}/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', [EndUserController::class, 'checkoutFromMobile']);
+Route::get('/mobile', [EndUserController::class, 'checkoutFromMobile']);
 
 // for visa
 Route::get('get-checkout', [PaymentProviderController::class, 'getCheckOutId'])->name('get-checkout');
 Route::get('checkout', [PaymentProviderController::class, 'checkout'])->name('checkout');
 
 // for 
-
 Route::get('get-checkout-sdad', [PaymentProviderController::class, 'getCheckoutSdad'])->name('get-checkout-sdad');
-// Route::get('/purchase_flow/checkout/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', function () {
-//     $videos_sessions = session()->get('DriverInfo');
-//         if(!$videos_sessions) {
-//             $driver_nfo =[
-//                 "id_number" => $request->id_number,
-//                 "start_date" => $request->start_date,
-//                 "code" => $request->code,
-//             ];
-//             // $driver_nfo['name']="hamada";
-//             session()->put('DriverInfo', $driver_nfo);
-//         }
-//     return view('website.checkout');
-// });
+
 Route::get('/purchase_flow/price_list', function () {
-    // $videos_sessions = session()->get('DriverInfo');
+    $d_sessions = session()->get('DriverInfo');
+    $to_sring=json_encode($d_sessions);
+    $sessions_insurance = json_decode($to_sring);
     // return $videos_sessions;
     $companies = Company::all();
-    return view('website.priceList', compact('companies'));
+    return view('website.priceList', compact('companies','sessions_insurance'));
 });
 
-// Route::get('/purchase_flow/send-link-mobile', function () {
-//     $videos_sessions = session()->get('DriverInfo');
-//     return $videos_sessions;
-// });
+
 Route::post('/purchase_flow/send-link', [EndUserController::class, 'sendLink'])->name('sendlink');    
-// Route::post('/purchase_flow/send-link', [EndUserController::class, 'sendLinkMobile']);    
-// Route::post('/send-link-mobile/{id_number}/{start_date}/{code}/{serial_number}/{vehicle_value}/{use_purpose}/{company_id}/{company_name}/{phone}', [EndUserController::class, 'sendLinkMobile']);
 
 Route::get('/car/تأمين-ضد-الغير', function () {
     return view('website.Third_party_insurance');

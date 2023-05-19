@@ -1,5 +1,7 @@
 $('#the_form').on('submit', function (event) {
     event.preventDefault();
+
+
     $('#Serial-Number-error').text('');
     $('#vehicle-value-error').text('');
     $('#use-error').text('');
@@ -19,7 +21,6 @@ $('#the_form').on('submit', function (event) {
     Vehicle_document_type = $('#Vehicle-document-type').val();
     agreed = document.getElementById('Declaration').checked;
 
-
     console.log(Ownership);
     $.ajax({
         url: "/car-Info",
@@ -36,7 +37,7 @@ $('#the_form').on('submit', function (event) {
         },
         success: function (response) {
             console.log(response);
-            if (response[0] == 401) { // check whether response is received
+            if (response[0] == 401) { 
                 console.log(response[0]);
                 agreed == false ? $('#agree-error').text('يرجى قراءة الإقرار والموافقة عليه للمتابعة') : $('#agree-error').text('');
                 $('#Serial-Number-error').text(response['error'].customs_serial_number);
@@ -52,8 +53,9 @@ $('#the_form').on('submit', function (event) {
 
             } else {
                 console.log(response);
-                window.location = "http://127.0.0.1:8000/purchase_flow/price_list";
-                // window.location = "http://127.0.1.1:8080//loading_page";
+                window.location = "https://amin-jo.net/purchase_flow/price_list";
+                // window.location = "http://127.0.0.1:8000/purchase_flow/price_list";
+                
             }
         },
 

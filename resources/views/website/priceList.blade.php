@@ -435,31 +435,30 @@
                                                 <input type="hidden" name="tplResponseHiddenID" id="tplResponseHiddenID"
                                                     class="clearable">
                                                 <div class="select-btn select-btn-tpl" id="anch_34">
-                                                    @if (Agent::isMobile())
+                                                @if($sessions_insurance->insurance_type == 'ilzami')    
+                                                    @guest
+                                                        <a href="#" class="theme-btn theme-btn-small" data-toggle="modal"style="padding: 3px 89px; font-size: large;"data-target="#loginPopupForm"> اختر</a>
+                                                    @else
+                                                        <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small">اختر</a>
+                                                    @endguest
+                                                @else
+                                                    @if(Agent::isMobile())
                                                         @guest
-                                                            <a href="#" class="theme-btn theme-btn-small"
-                                                                data-toggle="modal"
-                                                                style="    padding: 3px 89px; font-size: large;"
-                                                                data-target="#loginPopupForm"> اختر</a>
+                                                            <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" style="padding: 3px 89px; font-size: large;" data-target="#loginPopupForm"> اختر</a>
                                                         @else
-                                                            <a href="/purchase_flow/checkout"
-                                                                class="theme-btn theme-btn-small">
+                                                            <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small">
                                                                 اختر</a>
-
                                                         @endguest
                                                     @else
-                                                        @guest
-                                                            <a href="#" class="theme-btn theme-btn-small"
-                                                                data-toggle="modal" data-catid="8" data-companyname="draya company"
-                                                                style="    padding: 3px 89px; font-size: large;"
+                                                        <!-- @guest -->
+                                                            <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-catid="8" data-companyname="draya company" style="    padding: 3px 89px; font-size: large;"
                                                                 data-target="#continueUsingMobileModal"> المتابعة باستخدام الجوال  </a>
-                                                        @else
-                                                            <a href="/purchase_flow/checkout"
-                                                                class="theme-btn theme-btn-small">
-                                                                المتابعة باستخدام الجوال</a>
-
-                                                        @endguest
+                                                       <!--  @else
+                                                            <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small">
+                                                                المتابعة باستخدام الجوال</a> -->
+                                                        <!-- @endguest -->
                                                     @endif
+                                                @endif    
                                                 </div>
                                             </div>
                                         </div>
@@ -626,31 +625,30 @@
                                                 <input type="hidden" name="tplResponseHiddenID" id="tplResponseHiddenID"
                                                     class="clearable">
                                                 <div class="select-btn select-btn-tpl" id="anch_34">
-
-                                                    @if (Agent::isMobile())
+                                                @if($sessions_insurance->insurance_type == 'ilzami')    
+                                                    @guest
+                                                        <a href="#" class="theme-btn theme-btn-small" data-toggle="modal"style="padding: 3px 89px; font-size: large;"data-target="#loginPopupForm"> اختر</a>
+                                                    @else
+                                                        <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small">اختر</a>
+                                                    @endguest
+                                                @else
+                                                    @if(Agent::isMobile())
                                                         @guest
-                                                            <a href="#" class="theme-btn theme-btn-small"
-                                                                data-toggle="modal"
-                                                                style="    padding: 3px 89px; font-size: large;"
-                                                                data-target="#loginPopupForm"> اختر</a>
+                                                            <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" style="padding: 3px 89px; font-size: large;" data-target="#loginPopupForm"> اختر</a>
                                                         @else
-                                                            <a href="/purchase_flow/checkout"
-                                                                class="theme-btn theme-btn-small">
+                                                            <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small">
                                                                 اختر</a>
                                                         @endguest
                                                     @else
                                                         @guest
-                                                            <a href="#" class="theme-btn theme-btn-small"
-                                                                data-toggle="modal" data-catid="8" data-companyname="saod company"
-                                                                style="    padding: 3px 89px; font-size: large;"
-                                                                data-target="#continueUsingMobileModal"> المتابعة باستخدام الجوال</a>
+                                                            <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-catid="8" data-companyname="saod company" style="    padding: 3px 89px; font-size: large;"
+                                                                data-target="#continueUsingMobileModal"> المتابعة باستخدام الجوال  </a>
                                                         @else
-                                                            <a href="/purchase_flow/checkout"
-                                                                class="theme-btn theme-btn-small">
+                                                            <a href="/purchase_flow/checkout" class="theme-btn theme-btn-small">
                                                                 المتابعة باستخدام الجوال</a>
-
                                                         @endguest
                                                     @endif
+                                                @endif   
                                                 </div>
                                             </div>
                                         </div>

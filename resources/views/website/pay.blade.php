@@ -1,9 +1,6 @@
-<x-website.web-master>
-    @section('title')
-    <title>التفاصيل والدفع</title>
-    @endsection
-    @section('content')
 
+    <title>التفاصيل والدفع</title>
+ 
 
     <!-- ================================
     START BOOKING AREA
@@ -38,12 +35,4 @@
 
 
 
-
-
-
-
-    @endsection
-    @section('script')
-
-    @endsection
-</x-website.web-master>
+    

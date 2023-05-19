@@ -35,12 +35,12 @@
                         <div class="section-tab text-center pl-4">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center active" id="flight-tab" onClick="getTypeInsurance(this.id)" data-toggle="tab" href="#flight" role="tab" aria-controls="flight" aria-selected="true">
+                                    <a class="nav-link d-flex align-items-center active" id="flight-tab"  data-toggle="tab" href="#flight" role="tab" aria-controls="flight" aria-selected="true">
                                         <i class="la la-car mr-1"></i> تأمين الإلزامي 
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center" id="hotel-tab" onClick="getTypeInsurance(this.id)"  data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="false">
+                                    <a class="nav-link d-flex align-items-center" id="hotel-tab"  data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="false">
                                         <i class="la la-car mr-1"></i>تأمين شامل
                                     </a>
                                 </li>
@@ -73,7 +73,7 @@
                                         <div class="contact-form-action">
                                             <form id="Third-party-insurance" class="row align-items-center">
                                                 @csrf
-                                                <input hidden id="Insurance-type" type="text" name="Insurance-type" value="ضد الغير">
+                                                <input hidden id="Insurance-type" type="text" name="Insurance-type" value="ilzami">
                                                 <div class="col-lg-6 pr-0">
                                                     <div class="input-box">
                                                         <label class="label-text">رقم الهوية</label>
@@ -134,7 +134,7 @@
 
                                                 <div class="col-lg-6">
                                                     <button type="submit" class="theme-btn w-100 text-center margin-top-20px">ابحث
-                                                        الآن زز</button>
+                                                        الآن </button>
                                                 </div>
                                             </form>
                                         </div>
@@ -147,7 +147,7 @@
                                 <div class="contact-form-action">
                                     <form id="full-insurance" class="row align-items-center">
                                         @csrf
-                                        <input hidden id="full-Insurance-type" type="text" name="Insurance-type" value="شامل">
+                                        <input hidden id="full-Insurance-type" type="text" name="Insurance-type" value="shamil">
                                         <div class="col-lg-6 pr-0">
                                             <div class="input-box">
                                                 <label class="label-text">رقم الهوية</label>
@@ -398,21 +398,7 @@
     <!-- ================================
        START CLIENTLOGO AREA
 ================================= -->
-<script type="text/javascript">
-    function getTypeInsurance(type_insurance)
-    {
-        console.log(type_insurance);
-        $.ajax({
-            url:"{{ route('choose-type-insurance') }}",
-            type:"GET",
-            data:{'type_insurance':type_insurance},
-            success:function (response) {
-                // console.log(response); 
-                // console.log(response); 
-            }
-        })  
-    }
-</script>
+
     @endsection
     @section('script')
     <script type="text/javascript" src="{{asset('js/landingJS.js')}}"></script>

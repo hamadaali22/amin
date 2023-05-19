@@ -23,13 +23,16 @@ $('#checkout-submite').on('submit', function (event) {
     $('#email-error').text('');
     $('#mobile-error').text('');
     $('#pay_type-error').text('');
-    
     $('#agreechb-error').text('');
+
+    // $('#load_value-error').text('');
+    // $('#place_repair-error').text('');
 
     
     var pay_type;
     var declaration;
     var agreechb;
+    insurance_type = $('#insurance_type').val();
     demo1 = $('#demo1').val();
     demo2 = $('#demo2').val();
     demo3 = $('#demo3').val();
@@ -58,7 +61,12 @@ $('#checkout-submite').on('submit', function (event) {
         agreechb = $('#agreechb').val();
     }else{
     }
+
+    // load_value = $('#load_value').val();
+    // place_repair = $('#place_repair').val();
     
+   
+
     _token = $("input[name='_token']").val();
     // console.log(ID_number);
     // start_date = $('#start-date').val();
@@ -81,13 +89,16 @@ $('#checkout-submite').on('submit', function (event) {
             mobile: mobile,
             pay_type:pay_type,
             agreechb: agreechb,
-            // code: code,
+            // load_value:load_value,
+            // place_repair:place_repair
+            insurance_type: insurance_type,
             // Insurance_type: Insurance_type,
         },
         success: function (response) {
+
             // console.log(response);
-            if (response[0] == 401) { // check whether response is received
-                console.log(response[0]);
+            if(response[0] == 401) { // check whether response is received
+                // console.log(response['error'].load_value);
                 console.log(response[0]);
                 $('#demo1-error').text(response['error'].demo1);
                 $('#demo2-error').text(response['error'].demo2);
@@ -101,16 +112,18 @@ $('#checkout-submite').on('submit', function (event) {
                 $('#mobile-error').text(response['error'].mobile);
                 $('#pay_type-error').text(response['error'].pay_type);
                 $('#agreechb-error').text(response['error'].agreechb);
-                
-            } else {
-                // console.log(response);
+                // $('#load_value-error').text(response['error'].load_value);
+                // $('#place_repair-error').text(response['error'].place_repair);
+            }else {
+                console.log(response);
+                console.log(response);
                 // console.log(response.pay_type);
                 if(response.pay_type =='visa'){
-                    $path='http://127.0.0.1:8000/get-checkout';
+                    $path='https://amin-jo.net/get-checkout';
                     window.location = $path;
                 }
                 if(response.pay_type =='sdad'){
-                    $path='http://127.0.0.1:8000/get-checkout-sdad';
+                    $path='https://amin-jo.net/get-checkout-sdad';
                     window.location = $path;
                 }
                 
