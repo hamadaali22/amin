@@ -28,12 +28,6 @@ use App\Http\Controllers\PaymentProviderController;
 */
 
 Route::get('/', function () {
-    // $videos_sessions = session()->get('DriverInfo');
-    //     $driver_nfo =[
-    //         "type_insurance" => 'flight-tab',
-    //     ];
-    //     session()->put('DriverInfo', $driver_nfo);
-    
     return view('website.landingPage');
 });
 Route::get('/loading_page', function () {

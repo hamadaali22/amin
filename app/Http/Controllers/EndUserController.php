@@ -183,30 +183,10 @@ class EndUserController extends Controller
         $vehicle_value=$request->query('vehicle_value');
         return $vehicle_value;
     }
-    // public function checkoutFromMobile($type_insurance,$id_number,$start_date,$code,$serial_number,$vehicle_value,$use_purpose,$company_id,$company_name,$phone)
-    // {
-    //     $car_sessions = session()->get('insuranceInfo');
-    //     if(!$car_sessions) {
-    //         $insurance_info =[
-    //             "type_insurance"=>$type_insurance,
-    //             "id_number" => $id_number,
-    //             "start_date" => $start_date,
-    //             "code" => $code,
-    //             "serial_number" => $serial_number,
-    //             "vehicle_value" => $vehicle_value,
-    //             "use_purpose" => $use_purpose,
-    //             "company_id" => $company_id,
-    //             "company_name" => $company_name,
-    //             "phone" => $phone,
-    //         ];
-    //         session()->put('insuranceInfo', $insurance_info);
-    //     }
-    //     return view('website.checkout');
-    // }
+   
     public function GetSaveData(Request $request)
     {
-        // return $request->insurance_type;
-        // session()->forget('DriverInfo');
+        
          if ($request->insurance_type == 'ilzami') {
 
             $messages = [
@@ -216,9 +196,6 @@ class EndUserController extends Controller
                 'pay_type.required'=> 'حدد وسيلة الدفع',
                 'agreechb.required'=>'يجب الموافقة علي الشروط',
                 
-                // 'load_value.required' => 'حدد قيمة التحميل',
-                // 'place_repair.required' => 'الصورة الخلفية مطلوبه',
-                
             ];
             $validator = Validator::make($request->all(), [
                 'bank_number'=>'required',
@@ -226,8 +203,7 @@ class EndUserController extends Controller
                 'mobile'=>'required',
                 'pay_type'=>'required',
                 'agreechb'=>'required',
-                // 'load_value' => 'required',
-                // 'place_repair' => 'required',
+                
             ], $messages);
             if ($validator->fails()) {
                 return response()->json(['error' => $validator->errors(), 401]);
@@ -276,7 +252,6 @@ class EndUserController extends Controller
     {
         $messages = [
             'phone.required' => 'رقم الهاتق مطلوب',
-            // 'phone.numeric' => 'ارقم الهاتف لا يمكن ان يحتوي على احرف',
         ];
         $validator = Validator::make($request->all(), [
             'phone'           => 'required|',
@@ -294,19 +269,5 @@ class EndUserController extends Controller
         }
         return response()->json(['success' => 'Form is successfully submitted!']);
     }
-
-
-
-    // public function chooseTypeInsurance(Request $request)
-    // {       
-    //     if($request->ajax()) {
-    //         $videos_sessions = session()->get('DriverInfo');
-            
-    //         if(isset($videos_sessions['type_insurance'])) {
-    //             $videos_sessions['type_insurance']=$request->type_insurance;
-    //             session()->put('DriverInfo', $videos_sessions);
-    //         }    
-    //     }
-    // }
 
 }
